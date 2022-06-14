@@ -7,7 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    
+
     <form action="" method="POST">
+        @csrf
         <input type="text" name="first-name"><br>
         <input type="text" name="last-name"><br>
         <input type="email" name="email"><br>
