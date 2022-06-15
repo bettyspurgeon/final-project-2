@@ -16,6 +16,11 @@ class EnsureIsLoggedIn
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if ($request->session()->exists('email')) {
+            // Accept the request :
+            return $next($request);
+        } else{
+            return redirect('/login');
+        }
     }
 }
