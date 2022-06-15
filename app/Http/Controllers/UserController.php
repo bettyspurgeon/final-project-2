@@ -28,7 +28,8 @@ class UserController extends Controller
                 User::where('email', $request->email)->first();
 
             if (Hash::check($request->password, $returnedUser->password)) {
-                var_dump($returnedUser->password);
+                session(['email' => $request->email]);
+                return redirect('/dashboard');
             } else {
                 return "wrong wrong wrong";
             }
@@ -74,6 +75,8 @@ class UserController extends Controller
 
         $newUser->save();
 
-        return redirect('/login')->with('success', 'Registered successfully');
+        session(['email' => $request->email]);
+
+        return redirect('/dashboard')->with('success', 'Registered successfully');
     }
 }
