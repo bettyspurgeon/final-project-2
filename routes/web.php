@@ -30,6 +30,10 @@ Route::post('/register', [UserController::class, 'register_submit']);
 //User Logout Route
 Route::get('/logout', [UserController::class, 'logout']); 
 
+Route::get('/home', function () {
+    return view('homepage');
+});
+
 
 
 
