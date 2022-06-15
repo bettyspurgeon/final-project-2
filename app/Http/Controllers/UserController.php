@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\DB; 
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -14,6 +16,7 @@ class UserController extends Controller
     public function authenticated(Request $request) {
         $validated = $request->validate([
             'email' => 'required',
+            'password'=>'required'
             //add validation for password -> keep only email for testing
         ]);
         session(['email' => $request->email]);
@@ -41,15 +44,19 @@ class UserController extends Controller
             return response()->json(['errors' => $validations->errors()->all()]);
         }
         
-        // $newUser = new User;
+        $newUser = new User;
 
-        // $newUser->username = $request->username;
-        // $newUser->email = $request->email;
-        // $newUser->password = $request->password;
+        $newUser->first_name = $request->first_name;
+        $newUser->last_name=$request->last_name;
+        $newUser->username = $request->username;
+        $newUser->email = $request->email;
+        $newUser->password = $request->password;
+        $newUser->type = $request->type;
         
 
-        // $newUser->save();
+        $newUser->save();
 
-        // return redirect('/flowers')->with('success', 'Registered successfully');
+        return redirect('/login')->with('success', 'Registered successfully');
     }
+
 }
