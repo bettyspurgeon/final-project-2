@@ -1,6 +1,16 @@
 @extends('templates/layoutTemplate')
 
 @section('content')
+
+ <div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
+    </div>
     <form action="" method="POST">
         @csrf
         <input type="text" name="first_name" placeholder="first name"><br>
@@ -18,3 +28,4 @@
         <input type="submit" value="Register">
     </form>
 @endsection
+
