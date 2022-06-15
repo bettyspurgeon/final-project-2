@@ -154,7 +154,7 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        $properties = Properties::where('id',$id)->delete();
+        $properties = Properties::where('id', $id)->delete();
         return redirect('properties');
 
         if($result)
