@@ -30,7 +30,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('new-property');
+        return view('new_properties');
     }
 
     /**
@@ -90,7 +90,7 @@ class PropertyController extends Controller
     {
         $properties = Properties::find($id);
 
-        return view('showproperties', ['properties' => $properties]);
+        return view('properties_details', ['properties' => $properties]);
 
     }
 
@@ -104,7 +104,7 @@ class PropertyController extends Controller
     {
 
         $properties = Properties::where('id', $id)->get();
-        return view('update-properties', ['properties' => $properties[0]]);
+        return view('update_properties', ['properties' => $properties[0]]);
 
     }
 
