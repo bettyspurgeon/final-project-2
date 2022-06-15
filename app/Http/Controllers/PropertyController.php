@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 use App\Models\Properties;
 
 class PropertyController extends Controller
@@ -15,7 +18,9 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Properties::all();
-        return view('properties',['properties'=> $properties]);
+
+        return view('properties', ['properties' => $properties]);
+
     }
 
     /**
@@ -37,21 +42,22 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'type' => 'required| apartment| house| flat share',
-            'price'=>'required|numberic',
-            'location'=> 'required',
-            'date_avaliable'=>'required|date',
-            'area'=>'required|numberic',
-            'bedrooms'=>'required|numberic',
-            'bathrooms'=>'required|numberic',
-            'parking'=>'required',
-            'children'=>'required',
-            'pets'=>'required',
-            'description'=>'required',
-            'pictures'=>'required|image',
+            'type' => 'required',
+            'price' => 'required|numeric',
+            'location' => 'required',
+            'date_avaliable' => 'required|date',
+            'area' => 'required|integer',
+            'bedrooms' => 'required|integer',
+            'bathrooms' => 'required|numeric',
+            'parking' => 'required',
+            'children' => 'required',
+            'pets' => 'required',
+            'description' => 'required',
+            'pictures' => 'required|image',
 
         ]);
         $result = new Properties;
+
         $result->type = $request->type;
         $result->price = $request->price;
         $result->location = $request->location;
@@ -62,16 +68,16 @@ class PropertyController extends Controller
         $result->bathrooms = $request->bathrooms;
         $result->children = $request->children;
         $result->pets = $request->pets;
-        $result->description= $request->description;
+        $result->description = $request->description;
         $result->pictures = $request->pictures;
 
         $result->save();
 
-        if($result)
-        return redirect('properties')->with('message','Inserted new properties sussessfully!');
-        else
-        return redirect ('properties')->with('error','There is some thing wrong for inserted new properties, try again later !');  
-
+        if ($result) {
+            return redirect('properties')->with('message', 'Inserted new properties sussessfully!');
+        } else {
+            return redirect('properties')->with('error', 'There is some thing wrong for inserted new properties, try again later !');
+        }
     }
 
     /**
@@ -83,7 +89,9 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-        return view('showproperties',['properties'=> $properties]);
+
+        return view('showproperties', ['properties' => $properties]);
+
     }
 
     /**
@@ -94,8 +102,10 @@ class PropertyController extends Controller
      */
     public function edit($id)
     {
-        $properties = Properties::where('id',$id)->get();
-        return view('update-properties',['properties'=> $properties[0]]);
+
+        $properties = Properties::where('id', $id)->get();
+        return view('update-properties', ['properties' => $properties[0]]);
+
     }
 
     /**
@@ -108,18 +118,18 @@ class PropertyController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'type' => 'required| apartment| house| flat share',
-            'price'=>'required|numberic',
-            'location'=> 'required',
-            'date_avaliable'=>'required|date',
-            'area'=>'required|numberic',
-            'bedrooms'=>'required|numberic',
-            'bathrooms'=>'required|numberic',
-            'parking'=>'required',
-            'children'=>'required',
-            'pets'=>'required',
-            'description'=>'required',
-            'pictures'=>'required|image',
+            'type' => 'required',
+            'price' => 'required|numeric',
+            'location' => 'required',
+            'date_avaliable' => 'required|date',
+            'area' => 'required|numeric',
+            'bedrooms' => 'required|numeric',
+            'bathrooms' => 'required|numeric',
+            'parking' => 'required',
+            'children' => 'required',
+            'pets' => 'required',
+            'description' => 'required',
+            'pictures' => 'required|image',
 
         ]);
         $result = new Properties;
@@ -132,19 +142,19 @@ class PropertyController extends Controller
         $result->bathrooms = $request->bathrooms;
         $result->children = $request->children;
         $result->pets = $request->pets;
-        $result->description= $request->description;
+        $result->description = $request->description;
         $result->pictures = $request->pictures;
 
         $result->save();
 
-        if($result)
-        return redirect('properties')->with('message','Update properties sussessfully!');
-        else
-        return redirect ('properties')->with('error','There is some thing wrong for update properties, try again later !');  
-
+        if ($result) {
+            return redirect('properties')->with('message', 'Update properties sussessfully!');
+        } else {
+            return redirect('properties')->with('error', 'There is some thing wrong for update properties, try again later !');
+        }
     }
 
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -157,10 +167,10 @@ class PropertyController extends Controller
         $properties = Properties::where('id',$id)->delete();
         return redirect('properties');
 
-        if($result)
-        return redirect('properties')->with('message','Delete properties sussessfully!');
-        else
-        return redirect ('properties')->with('error','There is some thing wrong for delete properties, try again later !');  
-
+        if ($properties) {
+            return redirect('properties')->with('message', 'Delete properties sussessfully!');
+        } else {
+            return redirect('properties')->with('error', 'There is some thing wrong for delete properties, try again later !');
+        }
     }
 }
