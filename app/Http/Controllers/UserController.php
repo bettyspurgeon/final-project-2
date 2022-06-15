@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\DB; 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -50,7 +51,7 @@ class UserController extends Controller
         $newUser->last_name=$request->last_name;
         $newUser->username = $request->username;
         $newUser->email = $request->email;
-        $newUser->password = $request->password;
+        $newUser->password = Hash::make($request->password);
         $newUser->type = $request->type;
         
 
