@@ -36,4 +36,6 @@ Route::get('/home', function () {
 
 
 
-
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
