@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Property;
+use App\Models\Properties;
 
 class PropertyController extends Controller
 {
@@ -14,7 +14,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Property::all();
+        $properties = Properties::all();
         return view('properties',['properties'=> $properties]);
     }
 
@@ -51,12 +51,13 @@ class PropertyController extends Controller
             'pictures'=>'required|image',
 
         ]);
-        $result = new Property;
-        $result->type = $request->name;
+        $result = new Properties;
+        $result->type = $request->type;
         $result->price = $request->price;
         $result->location = $request->location;
         $result->date_aviliable = $request->date_aviliable;
         $result->area = $request->area;
+        $result->parking = $request->parking;
         $result->bedrooms = $request->bedrooms;
         $result->bathrooms = $request->bathrooms;
         $result->children = $request->children;
@@ -81,7 +82,7 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $properties = Property::find($id);
+        $properties = Properties::find($id);
         return view('showproperties',['properties'=> $properties]);
     }
 
@@ -93,7 +94,7 @@ class PropertyController extends Controller
      */
     public function edit($id)
     {
-        $properties = Property::where('id',$id)->get();
+        $properties = Properties::where('id',$id)->get();
         return view('update-properties',['properties'=> $properties[0]]);
     }
 
@@ -121,7 +122,7 @@ class PropertyController extends Controller
             'pictures'=>'required|image',
 
         ]);
-        $result = new Property;
+        $result = new Properties;
         $result->type = $request->name;
         $result->price = $request->price;
         $result->location = $request->location;
@@ -153,7 +154,7 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        $properties = Property::where('id',$id)->delete();
+        $properties = Properties::where('id',$id)->delete();
         return redirect('properties');
 
         if($result)
