@@ -72,3 +72,8 @@ Route::get('/dashboard', function () {
 //user profile update preferences and information
 Route::get('/profile', [UserController::class, 'get_user_info'])->middleware([EnsureIsLoggedIn::class]);
 Route::post('/profile', [UserController::class, 'user_update']);
+
+//route to the page Contact
+Route::get('/contact', function() {
+    return view('contact-page');
+});
