@@ -6,24 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/template.css">
+    <link rel="stylesheet" href="{{ asset('css/template.css') }}">
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <a href="/home">
-                <img src="./css/assets/logo.png" alt="">
+                <img src="{{ asset('css/assets/logo.png') }}" alt="">
             </a>
             <ul class="navlist">
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/">About Us</a></li>
-                <li><a href="/register">Register</a></li>
+
                 @if (session()->has('email'))
                     <li>
-                    <li><a href="/">Help</a></li>
+                        <a href="/">Help</a>
                     </li>
-                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li>
+                        <a href="/dashboard">Dashboard</a>
+                    </li>
                     <li>
                         <a href="/logout">Logout</a>
 
@@ -77,15 +77,19 @@
 
                 <h1>Follow us</h1>
                 <ul class="social-list">
-                    <li><a href=""><img class="social-icons" src="css/assets/facebook-icon.png" /></a></li>
-                    <li><a href=""><img class="social-icons" src="css/assets/instagram-icon.svg" /></a></li>
-                    <li><a href=""><img class="social-icons" src="css/assets/twitter-icon.svg" /></a></li>
+                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/facebook-icon.png') }}"
+                                alt="facebook icon" /></a></li>
+                    <li><a href=""><img class="social-icons"
+                                src="{{ asset('css/assets/instagram-icon.svg') }}"
+                                alt="Instagram icon" /></a></li>
+                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/twitter-icon.svg') }}"
+                                alt="Twitter icon/></a></li>
                 </ul>
             </section>
         </div>
 
         <div class="copy">
-            <p>© copyright MatchHome 2022</p>
+                            <p>© copyright MatchHome 2022</p>
         </div>
 
     </footer>
