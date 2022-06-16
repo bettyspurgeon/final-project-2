@@ -5,34 +5,42 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
 .forminput {
-    display: flex;
-    text-align: center;
-    margin-bottom: -10px;
-    width: 10cm;
-    height: 40px;
-    text-align: center;
-background-color: rgb(255, 255, 255);
-margin-left: auto;
-    margin-right: auto;
-    
-    
-};
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
 
-.form {
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;   
+}
 
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-   margin-left: auto;
-    margin-right: auto;
-    
-   };
- body {
-    position: relative;
- }
-   .myform {
-    
-    height: 1cm;
-   }
- 
+
+#btn {
+    background-color: #45a049;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#btn {
+    background-color: lightgreen;
+
+}
+
+
+
+
+
+
