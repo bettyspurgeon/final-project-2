@@ -31,7 +31,7 @@
         <input type="text" name="bathrooms" placeholder="Bathrooms" value="{{ $property->bathrooms }}"><br>
         <input type="text" name="children" placeholder="Children" value="{{ $property->childern }}"><br>
         <input type="text" name="pets" placeholder="Pets" value="{{ $property->pets }}"><br>
-        <input type="text" name="descripation" placeholder="Discripation" value="{{ $property->discripation }}"><br>
+        <input type="text" name="description" placeholder="Discription" value="{{ $property->discription }}"><br>
         <input type="text" name="picture" placeholder="Picture" value="{{ $property->picture }}"><br>
      
         <input type="submit" value="Update">

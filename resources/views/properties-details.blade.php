@@ -26,7 +26,7 @@
         <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
         <strong>Children: </strong> {{ $property->children }}<br>
         <strong>Pets: </strong> {{ $property->pets }}<br>
-        <strong>Descripation : </strong> {{ $property->descripation}}<br>
+        <strong>Description : </strong> {{ $property->description}}<br>
         <strong>Picture: </strong> {{ $property->picture }}<br>
     <hr>
 
