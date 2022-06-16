@@ -1,18 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/register.css')}}">
-    <title>Document</title>
-</head>
-<body>
-    <form  class="form" action="" method="POST">
+@extends('templates/layoutTemplate')
+<link rel="stylesheet" href="{{asset('css/login.css')}}">
+@section('content')
+
+ <div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            </div>
+        @endif
+    </div> 
+
+    <div class="main-content">
+    <div class="container">
+    <div class="header">
+            <h2>Login Form</h2>
+            </div>
+    <form action="" method="POST">
         @csrf
-        <input class="forminput" id="first" type="email" name="email" placeholder="Email"><br>
-        <input class="forminput" type="password" name="password" placeholder="Password"><br>
-        <input class="forminput" type="submit" value="Login">
+        <label>Your email</label>
+        <input class="forminput"type="form" name="email" placeholder="Email"><br>
+        <label>Your password</label>
+        <input class="forminput"type="form" name="password" placeholder="Password"><br>
+        <input class="forminput"type="form" id="btn" value="Login">
     </form>
-</body>
-</html>
+
+ </div>
+    </div>
+</div>
