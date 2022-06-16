@@ -1,5 +1,7 @@
 @extends('templates/layoutTemplate')
 
+@section('title', 'Manage Account')
+
 @section('content')
     <h2>Manage Account Information</h2>
     @if (session('success'))
