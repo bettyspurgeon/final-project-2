@@ -6,6 +6,7 @@ use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\Properties;
 
 class PropertyController extends Controller
 {
@@ -17,7 +18,9 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Properties::all();
+
         return view('properties', ['properties' => $properties]);
+
     }
 
     /**
@@ -27,7 +30,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('new-property');
+        return view('new_properties');
     }
 
     /**
@@ -54,11 +57,13 @@ class PropertyController extends Controller
 
         ]);
         $result = new Properties;
-        $result->type = $request->name;
+
+        $result->type = $request->type;
         $result->price = $request->price;
         $result->location = $request->location;
         $result->date_aviliable = $request->date_aviliable;
         $result->area = $request->area;
+        $result->parking = $request->parking;
         $result->bedrooms = $request->bedrooms;
         $result->bathrooms = $request->bathrooms;
         $result->children = $request->children;
@@ -84,7 +89,9 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-        return view('showproperties', ['properties' => $properties]);
+
+        return view('properties_details', ['properties' => $properties]);
+
     }
 
     /**
@@ -95,8 +102,10 @@ class PropertyController extends Controller
      */
     public function edit($id)
     {
+
         $properties = Properties::where('id', $id)->get();
-        return view('update-properties', ['properties' => $properties[0]]);
+        return view('update_properties', ['properties' => $properties[0]]);
+
     }
 
     /**
@@ -155,7 +164,8 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        $properties = Properties::where('id', $id)->delete();
+        $properties = Properties::where('id',$id)->delete();
+        return redirect('properties');
 
         if ($properties) {
             return redirect('properties')->with('message', 'Delete properties sussessfully!');
