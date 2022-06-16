@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Properties;
+use Illuminate\Support\Facades\Route;
 
 class PropertyController extends Controller
 {
@@ -83,7 +84,7 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-        return view('showproperties',['properties'=> $properties]);
+        return view('properties-details',['properties'=> $properties]);
     }
 
     /**
