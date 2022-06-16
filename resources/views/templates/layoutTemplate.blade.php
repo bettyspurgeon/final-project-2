@@ -18,7 +18,15 @@
                 <li><a href="/">Contact</a></li>
                 <li><a href="/">About Us</a></li>
                 <li><a href="/">Register</a></li>
-                <li><a href="/">Log In</a></li>
+                @if (session()->has('email'))
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+            @else
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+            @endif
             </ul>
         </nav>
     </header>
