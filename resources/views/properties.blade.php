@@ -27,8 +27,8 @@
         <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
         <strong>Children: </strong> {{ $property->children }}<br>
         <strong>Pets: </strong> {{ $property->pets }}<br>
-        <strong>Descripation : </strong> {{ $property->descripation}}<br>
-        <strong>Picture: </strong> {{ $property->picture }}<br>
+        <strong>Descripation : </strong> {{ $property->description }}<br>
+        <strong>Picture: </strong> <img style="height: 250px; width: 250px;" src= "url{{ $property->picture }} " alt=""></img><br>
        
         <a href="{{ route('properties.details', [$property->id]) }}">Details</a>
         <a href="{{ route('properties.edit', [$property->id]) }}">Edit</a>
