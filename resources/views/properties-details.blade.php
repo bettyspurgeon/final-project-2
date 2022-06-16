@@ -20,6 +20,7 @@
         <strong>Location : </strong> {{$property->location}}<br>
         <strong>Date_aviliable: </strong> {{ $property->date_aviliable}}<br>
         <strong>Area: </strong> {{ $property->area }}<br>
+
         <strong>Parking : </strong> {{ $property->parking }}<br>
         <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
         <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
@@ -29,9 +30,5 @@
         <strong>Picture: </strong> {{ $property->picture }}<br>
     <hr>
 
-    <strong>Comments :</strong>
-
-    @foreach ($property->comments as $comment)
-        <br>{{ $comment->comment }}
-    @endforeach
+   
 @endsection

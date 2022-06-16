@@ -24,7 +24,7 @@
         </select><<br>
         <input type="text" name="price" placeholder="Price" value="{{ $property->price }}"><br>
         <input type="text" name="location" placeholder="Location" value="{{ $property->location }}"><br>
-        <input type="text" name="date_aviliable" placeholder="Date aviliable" value="{{ $property->date_aviliable }}"><br>
+        <input type="date" name="date_avaliable" placeholder="Date avaliable" value="{{ $property->date_avaliable }}"><br>
         <input type="text" name="area" placeholder="Area" value="{{ $property->area }}"><br>
         <input type="text" name="parking" placeholder="Parking" value="{{ $property->parking}}"><br>
         <input type="text" name="beedrooms" placeholder="Bedrooms" value="{{ $property->bedrooms }}"><br>

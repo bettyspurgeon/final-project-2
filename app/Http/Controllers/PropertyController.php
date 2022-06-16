@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Properties;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 class PropertyController extends Controller
 {
@@ -30,7 +30,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('new_properties');
+        return view('new-properties');
     }
 
     /**
@@ -41,35 +41,39 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'type' => 'required',
-            'price' => 'required|numeric',
-            'location' => 'required',
-            'date_avaliable' => 'required|date',
-            'area' => 'required|integer',
-            'bedrooms' => 'required|integer',
-            'bathrooms' => 'required|numeric',
-            'parking' => 'required',
-            'children' => 'required',
-            'pets' => 'required',
-            'description' => 'required',
-            'pictures' => 'required|image',
+        // $request->validate([
+        //     'type' => 'required',
+        //     'price' => 'required|numeric',
+        //     'location' => 'required',
+        //     'date_avaliable' => 'required|date',
+        //     'area' => 'required|integer',
+        //     'bedrooms' => 'required|integer',
+        //     'bathrooms' => 'required|numeric',
+        //     'parking' => 'required',
+        //     'children' => 'required',
+        //     'pets' => 'required',
+        //     // 'pictures' => 'required|image',
 
-        ]);
+        // ]);
+        
         $result = new Properties;
 
-        $result->type = $request->type;
+        $user = User::where('email', session('email'))->first();
+        // dd($user);
+        $result->user_id = $user->id;
+
+        $result->type = strtolower($request->type);
         $result->price = $request->price;
         $result->location = $request->location;
-        $result->date_aviliable = $request->date_aviliable;
+        $result->date_avaliable = $request->date_avaliable;
         $result->area = $request->area;
-        $result->parking = $request->parking;
-        $result->bedrooms = $request->bedrooms;
-        $result->bathrooms = $request->bathrooms;
+        $result->bedrooms = (int)$request->bedrooms;
+        $result->bathrooms = (double)$request->bathrooms;
         $result->children = $request->children;
         $result->pets = $request->pets;
-        $result->description = $request->description;
-        $result->pictures = $request->pictures;
+        $result->parking = true;
+        $result->description = (string)$request->description;
+        $result->pictures = (string)$request->pictures;
 
         $result->save();
 
@@ -89,7 +93,7 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-        return view('properties-details',['properties'=> $properties]);
+        return view('properties-details',['property'=> $properties]);
     }
 
     /**
@@ -102,7 +106,7 @@ class PropertyController extends Controller
     {
 
         $properties = Properties::where('id', $id)->get();
-        return view('update_properties', ['properties' => $properties[0]]);
+        return view('update-properties', ['property' => $properties[0]]);
 
     }
 
@@ -115,33 +119,37 @@ class PropertyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'type' => 'required',
-            'price' => 'required|numeric',
-            'location' => 'required',
-            'date_avaliable' => 'required|date',
-            'area' => 'required|numeric',
-            'bedrooms' => 'required|numeric',
-            'bathrooms' => 'required|numeric',
-            'parking' => 'required',
-            'children' => 'required',
-            'pets' => 'required',
-            'description' => 'required',
-            'pictures' => 'required|image',
+        // $request->validate([
+        //     'type' => 'required',
+        //     'price' => 'required|numeric',
+        //     'location' => 'required',
+        //     'date_avaliable' => 'required|date',
+        //     'area' => 'required|numeric',
+        //     'bedrooms' => 'required|numeric',
+        //     'bathrooms' => 'required|numeric',
+        //     'parking' => 'required',
+        //     'children' => 'required',
+        //     'pets' => 'required',
+        //     'description' => 'required',
+        //     'pictures' => 'required|image',
 
-        ]);
+        // ]);
         $result = new Properties;
-        $result->type = $request->name;
+        $user = User::where('email', session('email'))->first();
+        // dd($user);
+        $result->user_id = $user->id;
+        $result->type = strtolower($request->type);
         $result->price = $request->price;
         $result->location = $request->location;
-        $result->date_aviliable = $request->date_aviliable;
+        $result->date_avaliable = $request->date_avaliable;
         $result->area = $request->area;
-        $result->bedrooms = $request->bedrooms;
-        $result->bathrooms = $request->bathrooms;
+        $result->bedrooms = (int)$request->bedrooms;
+        $result->bathrooms = (double)$request->bathrooms;
         $result->children = $request->children;
         $result->pets = $request->pets;
-        $result->description = $request->description;
-        $result->pictures = $request->pictures;
+        $result->parking = true;
+        $result->description = (string)$request->description;
+        $result->pictures = (string)$request->pictures;
 
         $result->save();
 

@@ -17,11 +17,11 @@
 
     @foreach ($properties as $property)
   
-      
+        <strong>User_ : </strong> {{ $property->type }}<br>
         <strong>Type : </strong> {{ $property->type }}<br>
         <strong>Price : </strong> {{ $property->price }}<br>
         <strong>Location : </strong> {{$property->location}}<br>
-        <strong>Date_aviliable: </strong> {{ $property->date_aviliable}}<br>
+        <strong>Date_avaliable: </strong> {{ $property->date_avaliable}}<br>
         <strong>Area: </strong> {{ $property->area }}<br>
         <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
         <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
