@@ -6,8 +6,6 @@ use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\Properties;
-
 class PropertyController extends Controller
 {
     /**

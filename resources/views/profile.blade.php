@@ -5,13 +5,12 @@
     <div class="main-content">
         <form action="" method="POST">
             @csrf
-            <input type="text" name="first_name" placeholder="first name"><br>
-            <input type="text" name="last_name" placeholder="last name"><br>
-            <input type="email" name="email" placeholder="email"><br>
-            <input type="text" name="username" placeholder="username"><br>
-            <input type="password" name="password" placeholder="password"><br>
+            <input type="text" name="first_name" value="{{$user->first_name}}"><br>
+            <input type="text" name="last_name" value="{{$user->last_name}}"><br>
+            <input type="email" name="email" value="{{$user->email}}"><br>
+            <input type="text" name="username" value="{{$user->username}}"><br>
             <select name="type" id="">
-                <option disabled selected value> -- select an option -- </option>
+                <option disabled selected value> {{$user->type}} </option>
                 <option value="seller">Seller</option>
                 <option value="buyer">Buyer</option>
                 <option value="renter">Renter</option>
