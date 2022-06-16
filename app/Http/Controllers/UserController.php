@@ -81,7 +81,7 @@ class UserController extends Controller
     }
     //functions for getting and update a single user's information
     public function get_user_info($id){
-        $user = User::find($id)
+        $user = User::find($id);
     }
     // public function user_update() {
 
