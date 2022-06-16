@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Properties;
+use Illuminate\Support\Facades\Route;
 
 class PropertyController extends Controller
 {
@@ -87,9 +89,7 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-
-        return view('properties_details', ['properties' => $properties]);
-
+        return view('properties-details',['properties'=> $properties]);
     }
 
     /**
@@ -162,7 +162,7 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        $properties = Properties::where('id',$id)->delete();
+        $properties = Properties::where('id', $id)->delete();
         return redirect('properties');
 
         if ($properties) {

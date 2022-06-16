@@ -20,14 +20,22 @@
                 <li><a href="/">About Us</a></li>
                 <li><a href="/register">Register</a></li>
                 @if (session()->has('email'))
-                <li>
-                    <a href="/logout">Logout</a>
-                </li>
-            @else
-                <li>
-                    <a href="/login">Login</a>
-                </li>
-            @endif
+                    <li>
+                    <li><a href="/">Help</a></li>
+                    </li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li>
+                        <a href="/logout">Logout</a>
+
+                    </li>
+                @else
+                    <li><a href="/">About Us</a></li>
+                    <li><a href="/">Contact</a></li>
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                    <li><a href="/register">Register</a></li>
+                @endif
             </ul>
         </nav>
     </header>
@@ -43,7 +51,7 @@
 
 
     <footer class="footer">
-        
+
         <div class="main-part">
 
 

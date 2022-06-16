@@ -88,7 +88,23 @@ class UserController extends Controller
         
         return view('profile', ['user' => $user]);
     }
-    // public function user_update() {
+    public function user_update(Request $request, $id) {
+        $user = User::find($id); 
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->username = $request->username; 
+        $user->type = $request->type;
 
-    //}
+        $result = $user->save();
+
+        if ($result){
+            return redirect("/profile/$id")->with('success', 'Updated successfully');
+        }
+            
+        else {
+             return redirect("/profile/$id")->with('error', 'Problem inserting. Try later.');
+        }
+           
+    }
 }
