@@ -3,13 +3,14 @@
 }
 body{
     background-image: url(./assets/lux-3.jpg);
-    height: 100%;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
     backdrop-filter: blur(4px) saturate(180%);
 }
-main {
+
+.main-content{
     height:100vh;
     width: 100vw;
     display: flex;
@@ -17,17 +18,18 @@ main {
     justify-content: center;
     align-items: center;
 }
-.big-container {
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-   text-align: center;
-   width: 100%;    
-    
+
+.main-logo{
+    /* display: block;
+    margin-top:80px;
+    margin-right: auto; 
+    margin-left: auto; 
+    width:22%;
+    height:auto; */
 }
 
-.title, .subtitle {
+
+.subtitle {
     text-align: center;
     color: #fff;
 }
@@ -37,12 +39,12 @@ main {
     
 }
 
-.container-form{
+/* .container-form{
     width:100%;
     display:flex;
     justify-content: center;
     align-items:center;
-}
+} */
 
 
 .content-form {
@@ -78,10 +80,10 @@ main {
 }
 
 ::placeholder {
-    color: #000;
-    font-weight: 600;
+    color: rgba(233, 233, 233, 0.5);
     backdrop-filter: none;
     text-align: center;
+    font-style: italic;
 }
 
 .search-bar button img{
