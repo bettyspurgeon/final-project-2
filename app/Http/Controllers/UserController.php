@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\DB;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -27,9 +28,10 @@ class UserController extends Controller
                 User::where('email', $request->email)->first();
 
             if (Hash::check($request->password, $returnedUser->password)) {
-                var_dump($returnedUser->password);
+                session(['email' => $request->email]);
+                return redirect('/dashboard');
             } else {
-                return "wrong wrong wrong"; 
+                return "wrong wrong wrong";
             }
         }
 
@@ -52,13 +54,13 @@ class UserController extends Controller
         $validations = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required',
-            'username' => 'required|max:50',
+            'email' => 'required|unique:users|email',
+            'password' => ['required', Password::min(8)->mixedCase()->numbers()],
+            'username' => 'required|unique:users|max:50',
             'type' => 'required'
         ]);
         if ($validations->fails()) {
-            return response()->json(['errors' => $validations->errors()->all()]);
+            return redirect()->back()->withErrors($validations)->withInput();
         }
 
         $newUser = new User;
@@ -73,6 +75,15 @@ class UserController extends Controller
 
         $newUser->save();
 
-        return redirect('/login')->with('success', 'Registered successfully');
+        session(['email' => $request->email]);
+
+        return redirect('/dashboard')->with('success', 'Registered successfully');
     }
+    //functions for getting and update a single user's information
+    public function get_user_info($id){
+        $user = User::find($id);
+    }
+    // public function user_update() {
+
+    //}
 }
