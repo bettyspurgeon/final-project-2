@@ -64,11 +64,9 @@ Route::get('/home', function () {
 
 
 //Route to get user dashboard after login or sign up 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware([EnsureIsLoggedIn::class]);
+Route::get('/dashboard', [UserController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
 
 
 //user profile update preferences and information
-Route::get('/profile', [UserController::class, 'get_user_info'])->middleware([EnsureIsLoggedIn::class]);
-Route::post('/profile', [UserController::class, 'user_update']);
+Route::get('/profile/{id}', [UserController::class, 'get_user_info'])->middleware([EnsureIsLoggedIn::class])->name('profile');
+Route::post('/profile', [UserController::class, 'user_update'])->middleware([EnsureIsLoggedIn::class]);

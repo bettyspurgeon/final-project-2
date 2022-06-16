@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
-use Illuminate\Support\DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use Error;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function index(Request $request)
+    {
+        $value = $request->session()->get('email');
+        $user = DB::table('users')->where('email', $value)->first();
+        return view('dashboard', ['user' => $user]);
+    }
     public function login()
     {
         return view('user-login');
@@ -31,19 +38,14 @@ class UserController extends Controller
                 session(['email' => $request->email]);
                 return redirect('/dashboard');
             } else {
-                return "wrong wrong wrong";
+                return redirect()->back()->withErrors("Wrong Email or Password.");
             }
         }
-
-
-        //view dashboard does not exist yet - when user logs in they will be redirected
-        // return redirect('dashboard');
     }
     public function logout(Request $request)
     {
         $request->session()->forget('email');
-        //user is redrected back to the login page for now - change this to home page later.
-        return redirect('login');
+        return view('homepage');
     }
     public function register()
     {
@@ -80,9 +82,11 @@ class UserController extends Controller
         return redirect('/dashboard')->with('success', 'Registered successfully');
     }
     //functions for getting and update a single user's information
-    public function get_user_info($id){
-        $user = User::find($id);
-    }
+    // public function get_user_info(Request $request){
+    //     $value = $request->session()->get('email'); 
+    //     $user = User::find($value);
+    //     return view('', ['user'=> $user]);
+    // }
     // public function user_update() {
 
     //}

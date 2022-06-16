@@ -12,7 +12,7 @@
                 </div>
             </a>
 
-            <a href="/register">
+            <a href="/profile/{{$user->id}}">
                 <div class="btn-opt">
                     <img class="card-icon" src="/css/assets/person-icon.png" alt="">
                     <p>My profile</p>
