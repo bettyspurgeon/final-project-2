@@ -58,8 +58,10 @@ class PropertyController extends Controller
         
         $result = new Properties;
 
-        $user = User::where('email', session('email'))->get();
+        $user = User::where('email', session('email'))->first();
+        // dd($user);
         $result->user_id = $user->id;
+
         $result->type = strtolower($request->type);
         $result->price = $request->price;
         $result->location = $request->location;
@@ -133,7 +135,9 @@ class PropertyController extends Controller
 
         // ]);
         $result = new Properties;
-        $result->user_id = $id; 
+        $user = User::where('email', session('email'))->first();
+        // dd($user);
+        $result->user_id = $user->id;
         $result->type = strtolower($request->type);
         $result->price = $request->price;
         $result->location = $request->location;
