@@ -82,11 +82,12 @@ class UserController extends Controller
         return redirect('/dashboard')->with('success', 'Registered successfully');
     }
     //functions for getting and update a single user's information
-    // public function get_user_info(Request $request){
-    //     $value = $request->session()->get('email'); 
-    //     $user = User::find($value);
-    //     return view('', ['user'=> $user]);
-    // }
+    public function get_user_info(Request $request, $id)
+    {
+        $user = User::find($id);
+        
+        return view('profile', ['user' => $user]);
+    }
     // public function user_update() {
 
     //}
