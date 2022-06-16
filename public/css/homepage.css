@@ -2,7 +2,7 @@
     margin: 0;
 }
 body{
-    background-image: url(./assets/lux-2.jpg);
+    background-image: url(./assets/lux-3.jpg);
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -93,6 +93,6 @@ main {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-    background: #58629b;
+    background: rgb(56, 136, 25);
     cursor: pointer;
 }

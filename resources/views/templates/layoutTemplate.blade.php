@@ -12,9 +12,13 @@
 <body>
     <header>
         <nav class="navbar">
-            <img src="https://thumbs.dreamstime.com/b/luxembourg-famous-travel-sketch-lineart-drawing-hand-greeting-card-design-vector-illustration-luxembourg-famous-travel-sketch-103524997.jpg"
-                alt="">
+            <a href="/home">
+                <img src="./css/assets/logo.png" alt="">
+            </a>
             <ul class="navlist">
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/">About Us</a></li>
+                <li><a href="/register">Register</a></li>
                 @if (session()->has('email'))
                     <li>
                     <li><a href="/">Help</a></li>

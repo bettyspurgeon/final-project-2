@@ -13,7 +13,7 @@
         <div class="content-form">
           <form action="/dashboard" class="search-bar">
             <input type="text" placeholder="search..." name="q">
-            <button type="submit"><img src="/css/assets/white-finder-icon.jpg" alt=""></button>
+            <button type="submit"><img src="./css/assets/finder-icon.png" alt=""></button>
           </form>
         </div>   
       </div>
