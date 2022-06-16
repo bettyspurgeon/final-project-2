@@ -15,18 +15,23 @@
             <img src="https://thumbs.dreamstime.com/b/luxembourg-famous-travel-sketch-lineart-drawing-hand-greeting-card-design-vector-illustration-luxembourg-famous-travel-sketch-103524997.jpg"
                 alt="">
             <ul class="navlist">
-                <li><a href="/">Contact</a></li>
-                <li><a href="/">About Us</a></li>
-                <li><a href="/">Register</a></li>
                 @if (session()->has('email'))
-                <li>
-                    <a href="/logout">Logout</a>
-                </li>
-            @else
-                <li>
-                    <a href="/login">Login</a>
-                </li>
-            @endif
+                    <li>
+                    <li><a href="/">Help</a></li>
+                    </li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li>
+                        <a href="/logout">Logout</a>
+
+                    </li>
+                @else
+                    <li><a href="/">About Us</a></li>
+                    <li><a href="/">Contact</a></li>
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                    <li><a href="/register">Register</a></li>
+                @endif
             </ul>
         </nav>
     </header>
@@ -42,7 +47,7 @@
 
 
     <footer class="footer">
-        
+
         <div class="main-part">
 
 
