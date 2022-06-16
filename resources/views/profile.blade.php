@@ -2,6 +2,17 @@
 
 @section('content')
     <h2>Manage Account Information</h2>
+    @if (session('success'))
+        <div class="alert alert-success" style="color: green">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-success" style="color: red">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="main-content">
         <form action="" method="POST">
             @csrf
