@@ -28,7 +28,7 @@
                         </div>
                     </a>
                 @else
-                    <a href="/">
+                    <a href="/properties">
                         <div class="btn-opt">
                             <img class="card-icon" src="/css/assets/white-home-icon.png" alt="">
                             <p>View Properties</p>

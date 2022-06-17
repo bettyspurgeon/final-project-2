@@ -41,6 +41,7 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'type' => 'required',
             'price' => 'required|numeric',
@@ -55,8 +56,11 @@ class PropertyController extends Controller
             'pictures' => 'required|image',
 
         ]);
-        
+
         $result = new Properties;
+        $fileName = $request->pictures->getClientOriginalName();
+        $publicPath = public_path('uploads');
+        $request->pictures->move($publicPath, $fileName);
 
         $user = User::where('email', session('email'))->first();
         $result->user_id = $user->id;
@@ -72,7 +76,7 @@ class PropertyController extends Controller
         $result->pets = $request->pets;
         $result->parking = true;
         $result->description = (string)$request->description;
-        $result->pictures = (string)$request->pictures;
+        $result->pictures = $fileName;;
 
         $result->save();
 
@@ -118,7 +122,7 @@ class PropertyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
+        //$request->validate([
         //     'type' => 'required',
         //     'price' => 'required|numeric',
         //     'location' => 'required',
@@ -130,10 +134,15 @@ class PropertyController extends Controller
         //     'children' => 'required',
         //     'pets' => 'required',
         //     'description' => 'required',
-        //     'pictures' => 'required|image',
+        //    'pictures' => 'required|image',
 
         // ]);
         $result = new Properties;
+        $fileName = $request->pictures;
+    
+        $publicPath = public_path('uploads');
+        $request->pictures->move($publicPath, $fileName);
+
         $user = User::where('email', session('email'))->first();
    
         $result->user_id = $user->id;
@@ -148,7 +157,7 @@ class PropertyController extends Controller
         $result->pets = $request->pets;
         $result->parking = true;
         $result->description = (string)$request->description;
-        $result->pictures = (string)$request->pictures;
+        $result->pictures = $fileName ;
 
         $result->save();
 

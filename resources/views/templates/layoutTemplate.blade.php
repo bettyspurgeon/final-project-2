@@ -42,9 +42,15 @@
             </ul>
 
 
-            <button class="show-nav-list">
+            <button method="POST" class="show-nav-list" name="nav-btn">
                 <img src="{{ asset('css/assets/navbar-menu-icon.png') }}">
             </button>
+
+            <?php
+            if(isset($_POST['nav-btn'])){
+                print_r('hello');
+            };
+            ?>
         </nav>
     </header>
 
@@ -93,12 +99,14 @@
                     <li><a href=""><img class="social-icons"
                                 src="{{ asset('css/assets/instagram-icon-white.png') }}"
                                 alt="Instagram icon" /></a></li>
+
                 </ul>
             </section>
         </div>
 
         <div class="copy">
             <p>© copyright MatchHome 2022</p>
+
         </div>
 
     </footer>
