@@ -20,10 +20,10 @@
                 <form action="" method="POST">
                     @csrf
                     <label>Your email</label>
-                    <input class="forminput"type="form" name="email" placeholder="Email"><br>
+                    <input class="forminput"type="text" name="email" placeholder="Email"><br>
                     <label>Your password</label>
-                    <input class="forminput"type="form" name="password" placeholder="Password"><br>
-                    <input class="forminput"type="form" id="btn" value="Login">
+                    <input class="forminput"type="password" name="password" placeholder="Password"><br>
+                    <input class="forminput"type="submit" id="btn" value="Login">
                 </form>
 
             </div>

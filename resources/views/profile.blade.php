@@ -31,5 +31,6 @@
             </select><br>
             <input type="submit" value="Update Info">
         </form>
+        <a href="/preferences/{{$user->id}}"><h2>Click to Manage Preferences</h2></a>
     </div>
 @endsection

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\UserPreference;
 use Error;
 use Illuminate\Support\Facades\Hash;
 
@@ -85,26 +86,55 @@ class UserController extends Controller
     public function get_user_info(Request $request, $id)
     {
         $user = User::find($id);
-        
+
         return view('profile', ['user' => $user]);
     }
-    public function user_update(Request $request, $id) {
-        $user = User::find($id); 
+    public function user_update(Request $request, $id)
+    {
+        $user = User::find($id);
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
-        $user->username = $request->username; 
+        $user->username = $request->username;
         $user->type = $request->type;
 
         $result = $user->save();
 
-        if ($result){
+        if ($result) {
             return redirect("/profile/$id")->with('success', 'Updated successfully');
+        } else {
+            return redirect("/profile/$id")->with('error', 'Problem inserting. Try later.');
         }
-            
-        else {
-             return redirect("/profile/$id")->with('error', 'Problem inserting. Try later.');
+    }
+    //show user preferences
+    public function preferences()
+    {
+        return view('user-preferences');
+    }
+    //update user preferences
+    public function update_preferences(Request $request, $id)
+    {
+        $user = UserPreference::where("user_id", $id)->first();
+        if (!$user) {
+            $user->user_id = $id;
         }
-           
+
+        $user->price_lowest = $request->price_lowest;
+        $user->price_highest = $request->price_highest;
+        $user->location = $request->location;
+        $user->bedrooms = $request->bedrooms;
+        $user->bathrooms = $request->bathrooms; 
+        $user->children = $request->children;
+        $user->pets = $request->pets;
+        $user->parking = $request->parking;
+        
+
+        $result = $user->save();
+
+        if ($result) {
+            return redirect("/preferences/$id")->with('success', 'Updated successfully');
+        } else {
+            return redirect("/preferences/$id")->with('error', 'Problem inserting. Try later.');
+        }
     }
 }

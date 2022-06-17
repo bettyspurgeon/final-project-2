@@ -23,8 +23,9 @@ use Illuminate\Support\Facades\Storage;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
+
 /*
     Routes for User Actions
 */
@@ -36,12 +37,25 @@ Route::post('/login', [UserController::class, 'authenticated']);
 Route::get('/register', [UserController::class, 'register']);
 Route::post('/register', [UserController::class, 'register_submit']);
 
+//Route to get user dashboard after login or sign up 
+Route::get('/dashboard', [UserController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
+
+//user profile update preferences and information
+Route::get('/profile/{id}', [UserController::class, 'get_user_info'])->middleware([EnsureIsLoggedIn::class])->name('profile');
+Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware([EnsureIsLoggedIn::class]);
+
+//user preference management route
+Route::get('/preferences/{id}', [UserController::class, 'preferences']);
+Route::post('/preferences/{id}', [UserController::class, 'update_preferences']);
 //User Logout Route
 Route::get('/logout', [UserController::class, 'logout']);
 
-//Properties 
 
+/*
 
+Routes for Property actions 
+
+*/
 Route::get('/properties', [PropertyController::class, 'index']);
 
 Route::get('/properties/create', [PropertyController::class, 'create'])->middleware(EnsureIsLoggedIn::class);
@@ -53,15 +67,12 @@ Route::get('/properties/{id}', [PropertyController::class, 'show'])->name('prope
 Route::get('/properties/update/{id}', [PropertyController::class, 'edit'])->name('properties.edit')->middleware(EnsureIsLoggedIn::class);
 Route::put('/properties/update/{id}', [PropertyController::class, 'update']);
 
-// Route::delete('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete');
 Route::get('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
-
 
 
 Route::get('/home', function () {
     return view('homepage');
 });
-
 
 //Route to get user dashboard after login or sign up 
 Route::get('/dashboard', [UserController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
@@ -71,7 +82,6 @@ Route::get('/dashboard', [UserController::class, 'index'])->middleware([EnsureIs
 Route::get('/profile/{id}', [UserController::class, 'get_user_info']);
 // ->middleware([EnsureIsLoggedIn::class])->name('profile');
 Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware([EnsureIsLoggedIn::class]);
-
 
 //route to the page Contact
 Route::get('/contact', function() {
