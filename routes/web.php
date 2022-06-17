@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\HTTP\Controllers\UserController;
 
 use App\Http\Controllers\PropertyController;
+use App\HTTP\Controllers\ContactController;
 use App\Http\Controllers\ApiController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use Illuminate\Support\Facades\Storage;
@@ -84,9 +85,8 @@ Route::get('/profile/{id}', [UserController::class, 'get_user_info']);
 Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware([EnsureIsLoggedIn::class]);
 
 //route to the page Contact
-Route::get('/contact', function() {
-    return view('contact-page');
-});
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/contact', [ContactController::class, 'save']);
 
 
 
