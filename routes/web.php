@@ -88,5 +88,9 @@ Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/contact', [ContactController::class, 'save']);
 
+Route::get('/aboutus', function() {
+    return view('aboutUs');
+});
+
 
 
