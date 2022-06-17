@@ -68,7 +68,8 @@ Route::get('/dashboard', [UserController::class, 'index'])->middleware([EnsureIs
 
 
 //user profile update preferences and information
-Route::get('/profile/{id}', [UserController::class, 'get_user_info'])->middleware([EnsureIsLoggedIn::class])->name('profile');
+Route::get('/profile/{id}', [UserController::class, 'get_user_info']);
+// ->middleware([EnsureIsLoggedIn::class])->name('profile');
 Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware([EnsureIsLoggedIn::class]);
 
 
