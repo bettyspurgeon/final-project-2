@@ -29,7 +29,7 @@ class UserController extends Controller
         $validated = $request->validate([
             'email' => 'required',
             'password' => 'required'
-            //add validation for password -> keep only email for testing
+
         ]);
         if ($validated) {
             $returnedUser =
@@ -114,6 +114,19 @@ class UserController extends Controller
     //update user preferences
     public function update_preferences(Request $request, $id)
     {
+        $validations = Validator::make($request->all(), [
+            'price_lowest' => 'required|lt:price_highest|numeric',
+            'price_highest' => 'required|gt:price_lowest|numeric',
+
+        ], $messages = [
+            'lt' => 'The Min Price must be lower than the Max Price',
+            'gt' => 'The Max Price must be higher than the Min Price',
+        ]);
+
+        if ($validations->fails()) {
+            return redirect()->back()->withErrors($validations)->withInput();
+        }
+
         $user = UserPreference::where("user_id", $id)->first();
         if (!$user) {
             $user->user_id = $id;
@@ -123,11 +136,11 @@ class UserController extends Controller
         $user->price_highest = $request->price_highest;
         $user->location = $request->location;
         $user->bedrooms = $request->bedrooms;
-        $user->bathrooms = $request->bathrooms; 
+        $user->bathrooms = $request->bathrooms;
         $user->children = $request->children;
         $user->pets = $request->pets;
         $user->parking = $request->parking;
-        
+
 
         $result = $user->save();
 
