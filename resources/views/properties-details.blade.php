@@ -27,7 +27,7 @@
         <strong>Children: </strong> {{ $property->children }}<br>
         <strong>Pets: </strong> {{ $property->pets }}<br>
         <strong>Description : </strong> {{ $property->description}}<br>
-        <strong>Picture: </strong> {{ $property->picture }}<br>
+        <strong>Picture: </strong> {{ $property->pictures }}<br>
     <hr>
 
    

@@ -37,7 +37,7 @@
          <option value="1">I have pets!</option>
         </select><<br>
         <input type="text" name="description" placeholder="Discription"><br>
-        <input type="text" name="picture" placeholder="Picture"><br>
+        <input type="text" name="pictures" placeholder="Picture"><br>
         
         <input type="submit" value="Insert">
     </form>
