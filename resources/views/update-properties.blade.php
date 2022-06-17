@@ -41,20 +41,24 @@
 
                 <strong>Avalible:</strong> <input type="date" name="date_avaliable" placeholder="Date avaliable" value="{{ $property->date_avaliable }}"><br>
                 <strong>Land:</strong> <input type="text" name="area" placeholder="Area" value="{{ $property->area }}"><br>
-                <strong>Parking:</strong> <input type="text" name="parking" placeholder="Parking" value="{{ $property->parking}}"><br>
+                <strong>Option:</strong><select id="" name="pets"><option value="parking"> --Do you have parking space?--</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+                </select><br>
+
                 <strong>Bedrooms:</strong> <input type="text" name="beedrooms" placeholder="Bedrooms" value="{{ $property->bedrooms }}"><br>
                 <strong>Bathrooms:</strong> <input type="text" name="bathrooms" placeholder="Bathrooms" value="{{ $property->bathrooms }}"><br>
 
-                <strong>Option:</Option>:</strong> <select id="" name="children" value="{{ $property->children }}">
-                    <option value="{{ $property->children }}"> --Do you live with your kids?--</option>
-                    <option value="0">I don't have kids at this moment!</option>
-                    <option value="1">I live with my children!</option>
+                <strong>Option:</Option></strong> <select id="" name="children" value="{{ $property->children }}">
+                    <option value="children "> --Do you allowed kids live here?--</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
                 </select><br>
 
                 <strong>Option:</strong> <select id="" name="pets" value="{{ $property->pets }}">
-                    <option value="{{ $property->pets }}"> --Do you have pets?--</option>
-                    <option value="0">I don't have pets!</option>
-                    <option value="1">I have pets!</option>
+                    <option value="pets"> --Do you allowed pets?--</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
                 </select><br>
                 <strong>Description:</strong> <input type="text" name="description" placeholder="Description" value="{{ $property->description }}"><br>
                 <div>
