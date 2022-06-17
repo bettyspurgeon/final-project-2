@@ -16,8 +16,8 @@
         <button type="submit"><img src="./css/assets/finder-icon.png" alt=""></button>
       </form>
     </div>
-
   </div>
+
   
 
  @endsection
