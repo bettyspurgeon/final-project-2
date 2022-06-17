@@ -19,16 +19,6 @@ body{
     align-items: center;
 }
 
-.main-logo{
-    /* display: block;
-    margin-top:80px;
-    margin-right: auto; 
-    margin-left: auto; 
-    width:22%;
-    height:auto; */
-}
-
-
 .subtitle {
     text-align: center;
     color: #fff;
@@ -39,18 +29,7 @@ body{
     
 }
 
-/* .container-form{
-    width:100%;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-} */
-
-
 .content-form {
-   
-    /* text-align: center; */
-    /* background-color:red; */
     width:33%;
 }
 
@@ -62,18 +41,13 @@ body{
     justify-content: center;
     border-radius: 60px;
     border: 3px solid #fff;
-    /* padding: 10px 20px; */
-    /* backdrop-filter: blur(4px) saturate(180%); */
 }
 
-/* para esticar a barra flex1 */
 .search-bar input {
     background: transparent;
     flex: 1;
-    /* sem border*/
     border: 0;
     outline: none;
-    /* padding: 24px 20px; */
     font-size: 20px;
     color: brown;
 
@@ -98,3 +72,14 @@ body{
     background: rgb(56, 136, 25);
     cursor: pointer;
 }
+
+
+
+/* RESPONSIVENESS */
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: red;
+    }
+  }
