@@ -93,12 +93,20 @@
                     <li><a href=""><img class="social-icons"
                                 src="{{ asset('css/assets/instagram-icon-white.png') }}"
                                 alt="Instagram icon" /></a></li>
+
+                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/twitter-icon.svg') }}"
+                                alt="Twitter icon"/></a></li>
+
                 </ul>
             </section>
         </div>
 
+        <div class="copyright" >
+                            <p>© copyright MatchHome 2022</p>
+
         <div class="copy">
             <p>© copyright MatchHome 2022</p>
+
         </div>
 
     </footer>

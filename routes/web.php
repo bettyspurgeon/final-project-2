@@ -59,7 +59,7 @@ Routes for Property actions
 */
 Route::get('/properties', [PropertyController::class, 'index']);
 
-Route::get('/properties/create', [PropertyController::class, 'create'])->middleware(EnsureIsLoggedIn::class);
+Route::get('/properties/create', [PropertyController::class, 'create']) ->middleware(EnsureIsLoggedIn::class);
 
 Route::post('/properties/create', [PropertyController::class, 'store']);
 
