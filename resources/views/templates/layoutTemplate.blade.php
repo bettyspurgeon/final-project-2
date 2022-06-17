@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Match Home</title>
     <link rel="stylesheet" href="{{ asset('css/template.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -37,13 +40,18 @@
                     <li><a href="/register">Register</a></li>
                 @endif
             </ul>
+
+
+            <button class="show-nav-list">
+                <img src="{{ asset('css/assets/navbar-menu-icon.png') }}">
+            </button>
         </nav>
     </header>
 
 
 
 
-    <main>@yield('content')</main>
+    <main class="main-content">@yield('content')</main>
 
 
 
@@ -75,21 +83,22 @@
 
             <section class="social-media">
 
-                <h1>Follow us</h1>
+                <h1 class="subscribe">Follow us</h1>
                 <ul class="social-list">
-                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/facebook-icon.png') }}"
+                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/facebook-icon-white.png') }}"
                                 alt="facebook icon" /></a></li>
                     <li><a href=""><img class="social-icons"
-                                src="{{ asset('css/assets/instagram-icon.svg') }}"
+                                src="{{ asset('css/assets/linkedin-icon-white.png') }}"
                                 alt="Instagram icon" /></a></li>
-                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/twitter-icon.svg') }}"
-                                alt="Twitter icon/></a></li>
+                    <li><a href=""><img class="social-icons"
+                                src="{{ asset('css/assets/instagram-icon-white.png') }}"
+                                alt="Instagram icon" /></a></li>
                 </ul>
             </section>
         </div>
 
         <div class="copy">
-                            <p>© copyright MatchHome 2022</p>
+            <p>© copyright MatchHome 2022</p>
         </div>
 
     </footer>
