@@ -3,17 +3,26 @@
 @section('title', 'property Details')
 
 @section('content')
-    @if (session('success'))
-        <div class="alert alert-success" style="color: green">
-            {{ session('success') }}
-        </div>
-    @endif
+@if (session('success'))
+<div class="alert alert-success" style="color: green">
+    {{ session('success') }}
+</div>
+@endif
 
-    @if (session('error'))
-        <div class="alert alert-success" style="color: red">
-            {{ session('error') }}
-        </div>
-    @endif
+@if (session('error'))
+<div class="alert alert-success" style="color: red">
+    {{ session('error') }}
+</div>
+@endif
+
+<div class="properties_container" style="display: flex; display: flex;
+    flex-direction: row; justify-content: space-around; align-items: center;">
+
+    <div class="properties_picture">
+        <strong>Picture: </strong> <br>
+        <img style="height: 400px; width: 400px;" src="{{ $property->pictures }}" alt=""></img><br>
+    </div>
+    <div class="properties_description">
 
         <strong>Type : </strong> {{ $property->type }}<br>
         <strong>Price : </strong> {{ $property->price }}<br>
@@ -27,8 +36,13 @@
         <strong>Children: </strong> {{ $property->children }}<br>
         <strong>Pets: </strong> {{ $property->pets }}<br>
         <strong>Description : </strong> {{ $property->description}}<br>
-        <strong>Picture: </strong> {{ $property->pictures }}<br>
+
+    </div>
+    <div>
+
+    </div>
+
     <hr>
 
-   
-@endsection
+
+    @endsection

@@ -14,7 +14,7 @@
     @endif
 
     <h2>Create new property</h2>
-    <form action="" method="POST" id="myForm">
+    <form action="" method="POST" id="myForm" enctype="multipart/form-data">
         @csrf
 
         <select id=""  name="type" >  
@@ -37,7 +37,10 @@
          <option value="1">I have pets!</option>
         </select><<br>
         <input type="text" name="description" placeholder="Discription"><br>
-        <input type="text" name="pictures" placeholder="Picture"><br>
+        <div>
+        <input type="file" name="pictures" value="Upload your pictures" placeholder="Picture"><br>
+        </div>
+        
         
         <input type="submit" value="Insert">
     </form>
