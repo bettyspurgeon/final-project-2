@@ -12,7 +12,7 @@ class ContactController extends Controller
     public function index() {
         return view('contact-page');
     }
-    //
+    //save contact details including message as well as send the email
     public function save(Request $request) {
         $this->validate($request, [
             'name'=> 'required',

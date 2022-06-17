@@ -41,28 +41,28 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-          $request->validate([
-        //     'type' => 'required',
-        //     'price' => 'required|numeric',
-        //     'location' => 'required',
-        //     'date_avaliable' => 'required|date',
-        //     'area' => 'required|integer',
-        //     'bedrooms' => 'required|integer',
-        //     'bathrooms' => 'required|numeric',
-        //     'parking' => 'required',
-        //     'children' => 'required',
-        //     'pets' => 'required',
-               'pictures' => 'required|image',
 
-         ]);
-        
+        $request->validate([
+            'type' => 'required',
+            'price' => 'required|numeric',
+            'location' => 'required',
+            'date_avaliable' => 'required|date',
+            'area' => 'required|integer',
+            'bedrooms' => 'required|integer',
+            'bathrooms' => 'required|numeric',
+            'parking' => 'required',
+            'children' => 'required',
+            'pets' => 'required',
+            'pictures' => 'required|image',
+
+        ]);
+
         $result = new Properties;
         $fileName = $request->pictures->getClientOriginalName();
         $publicPath = public_path('uploads');
         $request->pictures->move($publicPath, $fileName);
 
         $user = User::where('email', session('email'))->first();
-        // dd($user);
         $result->user_id = $user->id;
 
         $result->type = strtolower($request->type);
@@ -144,7 +144,7 @@ class PropertyController extends Controller
         $request->pictures->move($publicPath, $fileName);
 
         $user = User::where('email', session('email'))->first();
-        // dd($user);
+   
         $result->user_id = $user->id;
         $result->type = strtolower($request->type);
         $result->price = $request->price;
@@ -179,12 +179,16 @@ class PropertyController extends Controller
     public function destroy($id)
     {
         $properties = Properties::where('id', $id)->delete();
-        return redirect('properties');
 
         if ($properties) {
             return redirect('properties')->with('message', 'Delete properties sussessfully!');
         } else {
             return redirect('properties')->with('error', 'There is some thing wrong for delete properties, try again later !');
         }
+    }
+
+    //Return a specific user's properties
+    public function user_properties() {
+        
     }
 }
