@@ -10,10 +10,14 @@
     background-color: #f2f2f2;
     padding: 50px;
     max-width: 500px;
-    margin: auto ;
+    margin: auto;
 }
 
-input[type=text], select {
+h2 {
+    margin-bottom: 10px;
+}
+
+input[type=text], [type=email], select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -34,4 +38,9 @@ input[type=text], select {
 
 .submitBtn:hover{
     background-color: lightgreen;
+}
+
+a {
+    margin-top: 20px;
+    text-align: center;
 }
