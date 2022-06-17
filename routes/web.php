@@ -77,5 +77,9 @@ Route::get('/contact', function() {
     return view('contact-page');
 });
 
+Route::get('/aboutus', function() {
+    return view('aboutUs');
+});
+
 
 
