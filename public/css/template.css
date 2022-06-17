@@ -12,6 +12,8 @@
     position:fixed;
     border: 1px solid rgb(56, 136, 25);
 }
+
+
 .navbar img{
    width: 100px;
    height: 70px;
@@ -52,8 +54,10 @@ footer{
     height:auto;
     background-color: rgb(56, 136, 25);
 }
+
 .main-part{
     display:flex;
+    justify-content: center;
 }
 
 

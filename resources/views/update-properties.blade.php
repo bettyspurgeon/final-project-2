@@ -24,15 +24,15 @@
         </select><<br>
         <input type="text" name="price" placeholder="Price" value="{{ $property->price }}"><br>
         <input type="text" name="location" placeholder="Location" value="{{ $property->location }}"><br>
-        <input type="text" name="date_aviliable" placeholder="Date aviliable" value="{{ $property->date_aviliable }}"><br>
+        <input type="date" name="date_avaliable" placeholder="Date avaliable" value="{{ $property->date_avaliable }}"><br>
         <input type="text" name="area" placeholder="Area" value="{{ $property->area }}"><br>
         <input type="text" name="parking" placeholder="Parking" value="{{ $property->parking}}"><br>
         <input type="text" name="beedrooms" placeholder="Bedrooms" value="{{ $property->bedrooms }}"><br>
         <input type="text" name="bathrooms" placeholder="Bathrooms" value="{{ $property->bathrooms }}"><br>
         <input type="text" name="children" placeholder="Children" value="{{ $property->childern }}"><br>
         <input type="text" name="pets" placeholder="Pets" value="{{ $property->pets }}"><br>
-        <input type="text" name="descripation" placeholder="Discripation" value="{{ $property->discripation }}"><br>
-        <input type="text" name="picture" placeholder="Picture" value="{{ $property->picture }}"><br>
+        <input type="text" name="description" placeholder="Discription" value="{{ $property->discription }}"><br>
+        <input type="text" name="pictures" placeholder="Picture" value="{{ $property->pictures }}"><br>
      
         <input type="submit" value="Update">
     </form>

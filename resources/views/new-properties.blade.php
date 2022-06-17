@@ -25,45 +25,21 @@
         </select><<br>
         <input type="text" name="price" placeholder="Price"><br>
         <input type="text" name="location" placeholder="Location"><br>
-        <input type="text" name="date_aviliable" placeholder="Date aviliable"><br>
+        <input type="date" name="date_avaliable" placeholder="Date avaliable"><br>
         <input type="text" name="area" placeholder="Area"><br>
         <input type="text" name="parking" placeholder="Parking"><br>
-        <input type="text" name="beedrooms" placeholder="Bedrooms"><br>
+        <input type="text" name="bedrooms" placeholder="Bedrooms"><br>
         <input type="text" name="bathrooms" placeholder="Bathrooms"><br>
-        <input type="checkbox" name="children" placeholder="Children"><br>
-        <input type="checkbox" name="pets" placeholder="Pets" ><br>
-        <input type="text" name="descripation" placeholder="Discripation"><br>
-        <input type="text" name="picture" placeholder="Picture"><br>
+        <input type="text" name="children" placeholder="Children"><br>
+        <select id=""  name="pets" >  
+         <option value="pets"> --Please choose an option--</option>
+         <option value="0">I don't have pets!</option>
+         <option value="1">I have pets!</option>
+        </select><<br>
+        <input type="text" name="description" placeholder="Discription"><br>
+        <input type="text" name="pictures" placeholder="Picture"><br>
         
         <input type="submit" value="Insert">
     </form>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script>
-        /* Wait for the page to be loaded/ready */
-        $(function() {
-            $('#myForm').submit(function(e) {
-                // Stop the default behavior of the form
-                e.preventDefault();
-
-                $.ajax({
-                        url: "{{ url('/properties/create') }}",
-                        method: 'post',
-                        data: $("form").serialize()
-                    })
-                    .done(function(result) {
-                        console.log(result.success);
-                        console.log(result.errors);
-                    })
-                    .fail(function(result) {
-                        // Fail means : file not found, 500 errors.
-                        // Fail doesnt mean : problem with php, syntax, db...
-                        console.log('AJAX FAILED');
-                    })
-
-            });
-        });
-    </script>
 @endsection

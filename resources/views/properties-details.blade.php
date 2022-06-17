@@ -20,18 +20,15 @@
         <strong>Location : </strong> {{$property->location}}<br>
         <strong>Date_aviliable: </strong> {{ $property->date_aviliable}}<br>
         <strong>Area: </strong> {{ $property->area }}<br>
+
         <strong>Parking : </strong> {{ $property->parking }}<br>
         <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
         <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
         <strong>Children: </strong> {{ $property->children }}<br>
         <strong>Pets: </strong> {{ $property->pets }}<br>
-        <strong>Descripation : </strong> {{ $property->descripation}}<br>
-        <strong>Picture: </strong> {{ $property->picture }}<br>
+        <strong>Description : </strong> {{ $property->description}}<br>
+        <strong>Picture: </strong> {{ $property->pictures }}<br>
     <hr>
 
-    <strong>Comments :</strong>
-
-    @foreach ($property->comments as $comment)
-        <br>{{ $comment->comment }}
-    @endforeach
+   
 @endsection
