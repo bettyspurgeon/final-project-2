@@ -38,10 +38,11 @@
                 </select><br>
                 <strong>Avaiable:</strong> <input type="date" name="date_avaliable" placeholder="Date avaliable"><br>
                 <strong>Land:</strong> <input type="text" name="area" placeholder="Area"><br>
-    
-                <strong>Option:</strong><select id="" name="pets"><option value="parking"> --Do you have parking space?--</option>
-                <option value="1">Yes</option>
-                <option value="0">No</option>
+
+                <strong>Option:</strong><select id="" name="parking">
+                    <option value="parking"> --Do you have parking space?--</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
                 </select><br>
 
                 <strong>Bedrooms:</strong> <input type="text" name="bedrooms" placeholder="Bedrooms"><br>
@@ -62,7 +63,10 @@
                     <strong>Pricture:</strong> <input type="file" name="pictures" value="Upload your pictures" placeholder="Upload your pictures"><br>
                 </div>
                 <strong>Ready ?</strong> <input type="submit" value="Insert">
-
+                <div class="properties_links">
+                    <a href="/properties">Go Back</a>
+                    <hr>
+                </div>
         </div>
 
 

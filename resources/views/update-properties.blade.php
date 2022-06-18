@@ -14,7 +14,7 @@
 @endif
 
 
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="properties_update_container" style="display: flex; display: flex;
     flex-direction: clomn; justify-content: space-around; align-items: center; margin:50px">
@@ -22,7 +22,7 @@
             @method('PUT')
 
 
-            <strong>Type:</strong> <select id="" name="type" enctype="multipart/form-data">
+            <strong>Type:</strong> <select id="" name="type" >
                 <option value="{{ $property->type }}"> --Please choose an option--</option>
                 <option value="apartment">Apartment</option>
                 <option value="house">House</option>
@@ -41,9 +41,10 @@
 
                 <strong>Avalible:</strong> <input type="date" name="date_avaliable" placeholder="Date avaliable" value="{{ $property->date_avaliable }}"><br>
                 <strong>Land:</strong> <input type="text" name="area" placeholder="Area" value="{{ $property->area }}"><br>
-                <strong>Option:</strong><select id="" name="pets"><option value="parking"> --Do you have parking space?--</option>
-                <option value="1">Yes</option>
-                <option value="0">No</option>
+                <strong>Option:</strong><select id="" name="parking">
+                    <option value="parking"> --Do you have parking space?--</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
                 </select><br>
 
                 <strong>Bedrooms:</strong> <input type="text" name="beedrooms" placeholder="Bedrooms" value="{{ $property->bedrooms }}"><br>
@@ -67,6 +68,11 @@
                 </div>
 
                 <strong>Ready for update?</strong> <input type="submit" value="Update">
+                <hr>
+                <div class="properties_links" >
+                    <a href="{{ route('properties.details', [$property->id]) }}">Go Back</a>
+                    <hr>
+                </div>
         </div>
 
     </div>
