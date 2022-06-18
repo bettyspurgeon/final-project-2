@@ -20,8 +20,9 @@
 
     <div class="properties_picture">
         <strong>Picture: </strong> <br>
-        <img style="height: 400px; width: 400px;" src="{{ $property->pictures }}" alt=""></img><br>
+        <img style="height: 400px; width: 400px;" src= "/uploads/{{ $property->pictures }}" alt=""></img><br>
     </div>
+
     <div class="properties_description">
 
         <strong>Type : </strong> {{ $property->type }}<br>
@@ -37,12 +38,18 @@
         <strong>Pets: </strong> {{ $property->pets }}<br>
         <strong>Description : </strong> {{ $property->description}}<br>
 
-    </div>
+   
     <div>
-
-    </div>
-
+    <hr>
+    <a href="/properties">See More Properties</a>
+    <a href="{{ route('properties.edit', [$property->id]) }}">Edit</a>
+    <a href="{{ route('properties.delete', [$property->id]) }}">Delete</a>
+    <hr>
+    <a href="/properties/create">Add Properties</a>
     <hr>
 
+
+    </div>
+    </div>
 
     @endsection

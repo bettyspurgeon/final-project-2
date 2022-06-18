@@ -6,6 +6,7 @@ use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Storage;
 use App\Models\User;
 
 class PropertyController extends Controller
@@ -137,14 +138,9 @@ class PropertyController extends Controller
         //    'pictures' => 'required|image',
 
         // ]);
-        $result = new Properties;
-        $fileName = $request->pictures;
-    
-        $publicPath = public_path('uploads');
-        $request->pictures->move($publicPath, $fileName);
-
+        $result = Properties::find($id);
+        
         $user = User::where('email', session('email'))->first();
-   
         $result->user_id = $user->id;
         $result->type = strtolower($request->type);
         $result->price = $request->price;
@@ -157,7 +153,27 @@ class PropertyController extends Controller
         $result->pets = $request->pets;
         $result->parking = true;
         $result->description = (string)$request->description;
-        $result->pictures = $fileName ;
+   
+
+        if($request->pictures != ''){        
+            $publicPath = public_path('uploads');
+   
+             //code for remove old file
+             if($request->pictures != ''  && $request->pictures != null){
+                  $file_old =  $_POST['pictures'];
+                  //dd($file_old);
+                  $file_old->delete();
+             }
+   
+             //upload new file
+             $file = $result->pictures = $request->pictures;
+             $fileName = $file->getClientOriginalName();
+             $file->move($publicPath, $fileName);
+   
+             //for update in table
+             $result->update(['pictures' => $fileName]);
+        }
+      
 
         $result->save();
 

@@ -77,9 +77,8 @@ Route::get('/properties/update/{id}', [PropertyController::class, 'edit'])->midd
 Route::put('/properties/update/{id}', [PropertyController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
 Route::get('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
-Routes for Matches
 
-*/
+
 //Show Buyers and Renters Matched houses 
 
 

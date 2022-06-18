@@ -22,7 +22,8 @@
 
     <div class="properties_picture">
         <strong>Picture: </strong> <br>
-         <img style= "height: 250px; width: 250px;" src="{{ $property->pictures }}" alt=""></img><br>
+         <!-- <img style= "height: 250px; width: 250px;" src="{{ $property->pictures }}" alt=""></img><br> -->
+         <img style= "height: 250px; width: 250px;" src="uploads/{{ $property->pictures }}" alt=""></img><br>
     </div>
     <div class="properties_description">
         <strong>Type : </strong> {{ $property->type }}<br>
@@ -38,8 +39,7 @@
     <hr>
         <div class="properties_links">
         <a href="{{ route('properties.details', [$property->id]) }}">Details</a>
-        <a href="{{ route('properties.edit', [$property->id]) }}">Edit</a>
-        <a href="{{ route('properties.delete', [$property->id]) }}">Delete</a>
+        
         <hr>
     </div>
 
