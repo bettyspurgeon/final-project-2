@@ -74,10 +74,6 @@ Route::get('/properties/update/{id}', [PropertyController::class, 'edit'])->midd
 Route::put('/properties/update/{id}', [PropertyController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
 Route::get('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
-
-//Interact with singular property details
-Route::get('/properties/{id}', [PropertyController::class, 'show'])->middleware([EnsureIsLoggedIn::class])->name('properties.details');
-
 //Routes for Matches
 
 
