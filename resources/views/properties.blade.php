@@ -36,13 +36,16 @@
         <strong>Pets: </strong> {{ $property->pets }}<br>
         <strong>Descripation : </strong> {{ $property->description }}<br>
     <hr>
-        <div class="properties_links">
-        <a href="{{ route('properties.details', [$property->id]) }}">Details</a>
+       
+    
+     <div class="properties_links">
+        <a href="{{ route('properties.details', [$property->id]) }}">Details</a> 
+        </div>
         
         <hr>
-    </div>
 
     </div>
+    </div> 
 
    
 </div>
