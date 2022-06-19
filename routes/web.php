@@ -70,9 +70,12 @@ Route::post('/properties/create', [PropertyController::class, 'store']);
 
 //get a singular user's properties
 Route::get('/myproperties/{id}', [PropertyController::class, 'user_properties']);
-Route::get('/properties/update/{id}', [PropertyController::class, 'edit'])->middleware([EnsureIsLoggedIn::class])->name('properties.edit')->middleware(EnsureIsLoggedIn::class);
-Route::put('/properties/update/{id}', [PropertyController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
-Route::get('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
+
+Route::get('/myproperties/update/{id}', [PropertyController::class, 'edit'])->middleware([EnsureIsLoggedIn::class])->name('properties.edit')->middleware(EnsureIsLoggedIn::class);
+
+Route::put('/myproperties/update/{id}', [PropertyController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
+
+Route::get('/myproperties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
 //Routes for Matches
 

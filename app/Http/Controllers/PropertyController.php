@@ -139,21 +139,21 @@ class PropertyController extends Controller
         //    'pictures' => 'required|image',
 
         // ]);
-        $result = Properties::find($id);
+        $property = Properties::find($id);
         
         $user = User::where('email', session('email'))->first();
-        $result->user_id = $user->id;
-        $result->type = strtolower($request->type);
-        $result->price = $request->price;
-        $result->location = $request->location;
-        $result->date_avaliable = $request->date_avaliable;
-        $result->area = $request->area;
-        $result->bedrooms = (int)$request->bedrooms;
-        $result->bathrooms = (double)$request->bathrooms;
-        $result->children = $request->children;
-        $result->pets = $request->pets;
-        $result->parking = true;
-        $result->description = (string)$request->description;
+        $property->user_id = $user->id;
+        $property->type = strtolower($request->type);
+        $property->price = $request->price;
+        $property->location = $request->location;
+        $property->date_avaliable = $request->date_avaliable;
+        $property->area = $request->area;
+        $property->bedrooms = (int)$request->bedrooms;
+        $property->bathrooms = (double) $request->bathrooms;
+        $property->children = $request->children;
+        $property->pets = $request->pets;
+        $property->parking = true;
+        $property->description = (string)$request->description;
    
 
         if($request->pictures != ''){        
@@ -167,21 +167,21 @@ class PropertyController extends Controller
              }
    
              //upload new file
-             $file = $result->pictures = $request->pictures;
+             $file = $property->pictures = $request->pictures;
              $fileName = $file->getClientOriginalName();
              $file->move($publicPath, $fileName);
    
              //for update in table
-             $result->update(['pictures' => $fileName]);
+             $property->update(['pictures' => $fileName]);
         }
       
 
-        $result->save();
+        $result = $property->save();
 
         if ($result) {
-            return redirect('properties')->with('message', 'Update properties sussessfully!');
+            return redirect("/myproperties/update/$id")->with('message', 'Update properties sussessfully!');
         } else {
-            return redirect('properties')->with('error', 'There is some thing wrong for update properties, try again later !');
+           redirect("/myproperties/update/$id")->with('error', 'There is some thing wrong for update properties, try again later !');
         }
     }
 
