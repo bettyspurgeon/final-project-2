@@ -20,15 +20,15 @@ class ContactController extends Controller
             'subject' => 'required',
             'message' => 'required'
         ]);
-        // $contact = new Contact;
+        $contact = new Contact;
 
-        // $contact->name = $request->name;
-        // $contact->email = $request->email;
-        // $contact->subject = $request->subject;
-        // $contact->phone_number = $request->phone_number;
-        // $contact->message = $request->message;
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->phone_number = $request->phone_number;
+        $contact->message = $request->message;
 
-        // $contact->save();
+        $result=$contact->save();
         \Mail::send(
             'contact-email',
             array(
@@ -43,7 +43,11 @@ class ContactController extends Controller
                 $message->to('hello@admin.com', 'Adminphp');
             }
         );
-       
-        return back()->with('success', 'Thank you for contact us!');
+       if($result) {
+        return back()->with('success', 'Thank you for contacting us!');
+       } else {
+        return back()->with('error', 'Could not send email.');
+       }
+        
     }
 }

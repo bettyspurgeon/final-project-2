@@ -21,7 +21,7 @@ Route::get('/dashboard', [UserController::class, 'index'])->middleware([EnsureIs
 
 //route to the page Contact
 Route::get('/contact', [ContactController::class, 'index']);
-Route::post('/contact', [ContactController::class, 'save']);
+Route::post('/contact', [ContactController::class, 'save'])->name('contact.save');
 
 //About us route page
 Route::get('/aboutus', function () {
