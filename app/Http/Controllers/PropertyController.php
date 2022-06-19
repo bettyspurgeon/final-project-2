@@ -6,6 +6,7 @@ use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+//What is the storage controller here?
 use App\Http\Controllers\Storage;
 use App\Models\User;
 
@@ -158,10 +159,10 @@ class PropertyController extends Controller
         if($request->pictures != ''){        
             $publicPath = public_path('uploads');
    
-             //code for remove old file
+             //code to remove an old file
              if($request->pictures != ''  && $request->pictures != null){
                   $file_old =  $_POST['pictures'];
-                  //dd($file_old);
+                 
                   $file_old->delete();
              }
    
@@ -204,7 +205,10 @@ class PropertyController extends Controller
     }
 
     //Return a specific user's properties
-    public function user_properties() {
+    public function user_properties($id) {
+        $properties = Properties::where('user_id', $id)->get();
+        
+        return view('user-properties', ['properties' => $properties]);
         
     }
 }
