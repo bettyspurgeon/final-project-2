@@ -22,7 +22,6 @@
 
     <div class="properties_picture">
         <strong>Picture: </strong> <br>
-         <!-- <img style= "height: 250px; width: 250px;" src="{{ $property->pictures }}" alt=""></img><br> -->
          <img style= "height: 250px; width: 250px;" src="uploads/{{ $property->pictures }}" alt=""></img><br>
     </div>
     <div class="properties_description">

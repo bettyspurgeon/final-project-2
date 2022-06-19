@@ -69,14 +69,16 @@ Route::get('/properties/create', [PropertyController::class, 'create'])->middlew
 Route::post('/properties/create', [PropertyController::class, 'store']);
 
 //get a singular user's properties
-Route::get('/myproperties', [PropertyController::class, 'user_properties'])->middleware([EnsureIsLoggedIn::class]);
-
-//Interact with singular property details
-Route::get('/properties/{id}', [PropertyController::class, 'show'])->middleware([EnsureIsLoggedIn::class])->name('properties.details');
+Route::get('/myproperties/{id}', [PropertyController::class, 'user_properties']);
 Route::get('/properties/update/{id}', [PropertyController::class, 'edit'])->middleware([EnsureIsLoggedIn::class])->name('properties.edit')->middleware(EnsureIsLoggedIn::class);
 Route::put('/properties/update/{id}', [PropertyController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
 Route::get('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
+
+//Interact with singular property details
+Route::get('/properties/{id}', [PropertyController::class, 'show'])->middleware([EnsureIsLoggedIn::class])->name('properties.details');
+
+//Routes for Matches
 
 
 //Show Buyers and Renters Matched houses 
