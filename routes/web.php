@@ -63,10 +63,19 @@ Routes for Property actions
 
 //return properties page
 Route::get('/properties', [PropertyController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
+
 //create new property and store
 Route::get('/properties/create', [PropertyController::class, 'create'])->middleware(EnsureIsLoggedIn::class);
 
 Route::post('/properties/create', [PropertyController::class, 'store']);
+
+//Interact with singular property details
+Route::get('/properties/{id}', [PropertyController::class, 'show'])->middleware([EnsureIsLoggedIn::class])->name('properties.details');
+Route::get('/properties/update/{id}', [PropertyController::class, 'edit'])->middleware([EnsureIsLoggedIn::class])->name('properties.edit')->middleware(EnsureIsLoggedIn::class);
+Route::put('/properties/update/{id}', [PropertyController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
+Route::get('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
+
+
 
 //get a singular user's properties
 Route::get('/myproperties/{id}', [PropertyController::class, 'user_properties']);
