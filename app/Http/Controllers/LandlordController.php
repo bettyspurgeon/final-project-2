@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\LandlordPreference;
-
+use App\Models\Properties;
 use App\Models\User;
 
 
@@ -17,7 +17,7 @@ class LandlordController extends Controller
     $landlordPreference = LandlordPreference::all();
     //dd($landlordPreference);
 
-        return view('landlordPreference', ['landlordPreference' => $landlordPreference]);
+        return view('landlordpreference', ['landlordPreference' => $landlordPreference]);
 
     }
     /**
@@ -27,7 +27,7 @@ class LandlordController extends Controller
      */
     public function create()
     {
-        return view('new-landlordPreference');
+        return view('landlordpreference-new');
     }
 
     /**
@@ -36,32 +36,33 @@ class LandlordController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
 
         $request->validate([
             'contract' => 'required',
-            'income' => 'required|numeric',
+            'income' => 'required',
 
         ]);
 
         $result = new LandlordPreference;
-
+        
         $user = User::where('email', session('email'))->first();
         $result->user_id = $user->id;
 
-        // $result->property_id = $request->$id;
+        $properties = Properties::where('property_id', $id)->first();
+        $result->property_id = $properties->id;
 
         $result->contract = strtolower($request->contract);
-        $result->income = $request->price;
+        $result->income = $request->income;
 
 
         $result->save();
 
         if ($result) {
-            return redirect('properties')->with('message', 'Inserted new properties sussessfully!');
+            return redirect('landlordpreference')->with('message', 'Inserted new landlordpreference sussessfully!');
         } else {
-            return redirect('properties')->with('error', 'There is some thing wrong for inserted new properties, try again later !');
+            return redirect('landlordpreference')->with('error', 'There is some thing wrong for inserted new landlordpreference, try again later !');
         }
     }
 
@@ -87,7 +88,7 @@ class LandlordController extends Controller
     {
 
         $landlordPreference = LandlordPreference::where('id', $id)->get();
-        return view('update-landlordPreference', ['landlordPreference' => $landlordPreference[0]]);
+        return view('landlordPreference-update', ['landlordPreference' => $landlordPreference[0]]);
 
     }
 
@@ -109,12 +110,13 @@ class LandlordController extends Controller
         
         $user = User::where('email', session('email'))->first();
         $landlordPreference->user_id = $user->id;
-        $landlordPreference->property_id = $request->$id;
+
+        $property = Properties::where("property_id", $id)->first();
+        $landlordPreference->property_id = $property->$id;
+
         $landlordPreference->contract = $request->contract;
         $landlordPreference->income = $request->income;
 
-       
-      
 
         $result = $landlordPreference->save();
 
@@ -124,7 +126,6 @@ class LandlordController extends Controller
            redirect("/myproperties/update/$id")->with('error', 'There is some thing wrong for update properties, try again later !');
         }
     }
-
 
 
     /**
@@ -138,9 +139,9 @@ class LandlordController extends Controller
         $landlordPreference = LandlordPreference::where('id', $id)->delete();
 
         if ($landlordPreference) {
-            return redirect('properties')->with('message', 'Delete properties sussessfully!');
+            return redirect('landlordpreference')->with('message', 'Delete landlordpreference sussessfully!');
         } else {
-            return redirect('properties')->with('error', 'There is some thing wrong for delete properties, try again later !');
+            return redirect('landlordpreference')->with('error', 'There is some thing wrong for delete landlordpreference, try again later !');
         }
     }
 
