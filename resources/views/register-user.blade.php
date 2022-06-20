@@ -15,23 +15,23 @@
     <div class="main-content">
     <div class="container">
     <div class="header">
-            <h2>Registration Form</h2>
+            <h1>Registration Form</h1>
             </div>
     <form class="form" action="" method="POST">
         @csrf
-        <label>Your Firstame</label>
+          <strong>Your Firstame</strong>
         <input class="forminput" type="text" name="first_name" placeholder="first name"><br>
-        <label>Your Lastame</label>
+        <strong>Your Lastame</strong>
         <input class="forminput" type="text" name="last_name" placeholder="last name"><br>
-        <label>Your Email</label>
+        <strong>Your Email</strong> 
         <input class="forminput" type="email" name="email" placeholder="email"><br>
-        <label>Your Username</label>
+        <strong>Your Username</strong>
         <input class="forminput" type="text" name="username" placeholder="username"><br>
-        <label>Your Password</label>
+         <strong>Your Password</strong>
         <input class="forminput" type="password" name="password" placeholder="password"><br>
-        <label>Your ID</label>
+        <strong>Your ID</strong>
         <select class="forminput" name="type" id="">
-            <option disabled selected value> -- select an option -- </option>
+            <option disabled selected value> Select an option </option>
             <option value="seller">Seller</option>
             <option value="buyer">Buyer</option>
             <option value="renter">Renter</option>

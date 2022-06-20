@@ -36,3 +36,7 @@ input[type=text], select, textarea {
     background-color: lightgreen;
 
 }
+
+h1 {
+    padding:0cm 1cm 0.8cm 1.3cm;
+}
