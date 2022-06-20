@@ -13,7 +13,7 @@
 </div>
 @endif
 
-<h1>Create new property</h1>
+<h1 class="contactus">Create new property</h1>
 <form action="" method="POST" id="myForm" enctype="multipart/form-data">
     @csrf
     <div class="properties_create_container" style="display: flex; display: flex;
