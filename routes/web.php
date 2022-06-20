@@ -10,6 +10,8 @@ use App\HTTP\Controllers\LandlordController;
 use App\Http\Controllers\ApiController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController; 
 
 //Routes return homepage.
 Route::get('/home', function () {
@@ -52,6 +54,16 @@ Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware
 //user preference management route
 Route::get('/preferences/{id}', [UserController::class, 'preferences'])->middleware([EnsureIsLoggedIn::class]);
 Route::post('/preferences/{id}', [UserController::class, 'update_preferences'])->middleware([EsnureIsLoggedIn::class]);
+
+//forgotten password routes
+Route::get('/forget-password', [ForgotPasswordController::class, 'getEmail']);
+Route::post('/forget-password', [ForgotPasswordController::class, 'postEmail']);
+
+//Reset Password routes
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'getPassword']);
+Route::post('/reset-password', [ResetPasswordController::class, 'updatePassword']);
+
+
 //User Logout Route
 Route::get('/logout', [UserController::class, 'logout']);
 
@@ -61,7 +73,6 @@ Route::get('/logout', [UserController::class, 'logout']);
 Routes for Property actions 
 
 */
-
 
 //return properties page
 Route::get('/properties', [PropertyController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
@@ -77,8 +88,6 @@ Route::get('/properties/update/{id}', [PropertyController::class, 'edit'])->midd
 Route::put('/properties/update/{id}', [PropertyController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
 Route::get('/properties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
-
-
 //get a singular user's properties
 Route::get('/myproperties/{id}', [PropertyController::class, 'user_properties']);
 
@@ -89,6 +98,9 @@ Route::put('/myproperties/update/{id}', [PropertyController::class, 'update'])->
 Route::get('/myproperties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
 
+/*
+
+
 
 //Routes for Landlord perference
 Route::get('/landlordpreference', [LandlordController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
@@ -97,7 +109,23 @@ Route::get('/landlordpreference', [LandlordController::class, 'index'])->middlew
 
 
 
-//Show Buyers and Renters Matched houses 
+Routes for Matches
 
+*/
+
+/*
+
+Show Buyers and Renters Matched houses 
+
+*/
+
+
+/*
+
+Show Landlords and Sellers matched buyers/renters on each house
+
+
+*/
 
 //Show Landlords and Sellers matched buyers/renters on each house
+

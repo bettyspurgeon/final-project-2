@@ -32,6 +32,7 @@
                     <option value="renter">Renter</option>
                     <option value="landlord">Landlord</option>
                 </select><br>
+                <p><a href="/forget-password">Change Password</a></p>
                 <button type="submit" class="submitBtn">Update Info</button>
             </form>
             <a href="/preferences/{{$user->id}}"><h2>Click to Manage Preferences</h2></a>
