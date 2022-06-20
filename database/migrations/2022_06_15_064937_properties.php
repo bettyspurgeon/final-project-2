@@ -18,8 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->enum('type', ['apartment', 'house', 'flat share']);
+            $table->enum('purpose', ['For sale', 'For rent', 'Rent to buy']);
             $table->integer('price');
             $table->string('location', 255);
+            $table->string('number', 255);
+            $table->string('road', 255);
+            $table->string('post', 255);
             $table->date('date_avaliable');
             $table->integer('area');
             $table->integer('bedrooms');
