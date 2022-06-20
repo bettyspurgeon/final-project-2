@@ -5,6 +5,8 @@ use App\HTTP\Controllers\UserController;
 
 use App\Http\Controllers\PropertyController;
 use App\HTTP\Controllers\ContactController;
+use App\HTTP\Controllers\LandlordController;
+
 use App\Http\Controllers\ApiController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use Illuminate\Support\Facades\Storage;
@@ -86,7 +88,13 @@ Route::put('/myproperties/update/{id}', [PropertyController::class, 'update'])->
 
 Route::get('/myproperties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
-//Routes for Matches
+
+
+//Routes for Landlord perference
+Route::get('/landlordpreference', [LandlordController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
+
+
+
 
 
 //Show Buyers and Renters Matched houses 
