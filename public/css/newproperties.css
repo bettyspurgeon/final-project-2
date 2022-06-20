@@ -46,7 +46,7 @@ input {
         border-radius: 4px;
         box-sizing: border-box;
         margin-top: 6px;
-        margin-bottom: 16px;
+        margin-bottom: 16px;  
        
         
     }
@@ -58,16 +58,25 @@ input {
         
         background-color: #f2f2f2;
         padding: 1cm 1cm 1cm 1cm;
-            border-radius: 5px;
+            border-radius: 5px; 
     }
 
    
 
-    .properties_links, a:link {
+    .properties_links, .goback {
         text-align: center;
+        background-color: #45a049;
+        
+
+        
     }
 
     h1 {
         padding:0cm 1cm 1cm 1cm;
 
     }
+    .goback:hover {
+        background-color: lightgreen;
+        color: #45a049;;
+    }
+ 
