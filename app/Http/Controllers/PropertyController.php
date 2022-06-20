@@ -6,8 +6,6 @@ use App\Models\Properties;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
-//What is the storage controller here?
-use App\Http\Controllers\Storage;
 use App\Models\User;
 
 class PropertyController extends Controller

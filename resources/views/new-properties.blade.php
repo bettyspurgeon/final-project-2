@@ -1,5 +1,5 @@
 @extends('templates/layoutTemplate')
-
+<link rel="stylesheet" href="{{asset('css/newproperties.css')}}">
 @section('title', 'Insert new property')
 
 @section('content')
@@ -13,7 +13,7 @@
 </div>
 @endif
 
-<h2>Create new property</h2>
+<h1 class="contactus">Create new property</h1>
 <form action="" method="POST" id="myForm" enctype="multipart/form-data">
     @csrf
     <div class="properties_create_container" style="display: flex; display: flex;
@@ -25,7 +25,7 @@
                 <option value="house">House</option>
                 <option value="share_flat">Share flat</option>
             </select>
-            <<br>
+            <br>
                 <strong>Price:</strong> <input type="text" name="price" placeholder="Price"><br>
                 <strong>Name:</strong> <select id="" name="location">
                     <strong>Location:</strong>

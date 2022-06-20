@@ -7,7 +7,7 @@
 
             <section class="wrapper-one">
                 @if ($user->type == 'buyer' || $user->type == 'renter')
-                    <a href="/">
+                    <a href="/propertymatches">
                         <div class="btn-opt">
                             <img class="card-icon" src="/css/assets/white-home-icon.png" alt="">
                             <p>View Matches</p>
@@ -20,7 +20,7 @@
                             <p>Manage Account</p>
                         </div>
                     </a>
-                    <a href="/">
+                    <a href="/properties">
                         <div class="btn-opt">
                             <img class="card-icon" src="/css/assets/white-home-icon.png" alt="">
                             <p>View Properties</p>
