@@ -64,7 +64,7 @@
                 </div>
                 <strong>Ready ?</strong> <input type="submit" value="Insert">
                 <div class="properties_links">
-                    <a href="/properties">Go Back</a>
+                    <a class="goback" href="/properties">Go Back</a>
 
                     
                    
