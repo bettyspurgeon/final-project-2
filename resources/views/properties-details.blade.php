@@ -48,7 +48,7 @@
             <a href="/properties/create">Add Properties</a>
             <hr>
 
-            <a href="/landlordpreference/{id}">Interested ?</a>
+            <a href="{{ route('landlordpreference.details, ')}}">Interested ?</a>
 
         </div>
     </div>
