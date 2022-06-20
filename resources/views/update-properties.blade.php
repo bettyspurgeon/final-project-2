@@ -1,5 +1,5 @@
 @extends('templates/layoutTemplate')
-
+<link rel="stylesheet" href="{{asset('css/updateproperties.css')}}">
 @section('title', 'Insert new property')
 
 @section('content')
@@ -15,7 +15,11 @@
         </div>
     @endif
 
-    <div class="properties-update-container"
+    <div class="properties-update-container "
+    style=" padding: 1cm;"
+    
+
+
         style="display: flex; display: flex;
     flex-direction: clomn; justify-content: space-around; align-items: center; margin:50px; height:80vh">
         <form action="" method="POST" enctype="multipart/form-data">
@@ -24,7 +28,7 @@
             <div>
                 @method('PUT')
 
-
+              
                 <strong>Type:</strong>
                 <select id="" name="type">
                     <option value="{{ $property->type }}"> --Please choose an option--</option>

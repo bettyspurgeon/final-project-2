@@ -17,9 +17,7 @@
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
-   
 }
-
 
 .container {
     border-radius: 5px;
@@ -29,7 +27,6 @@
     margin: auto;  
 }
 
-
 #btn {
     background-color: #45a049;
     color: white;
@@ -38,7 +35,7 @@
     border-radius: 4px;
     cursor: pointer;
 }
-#btn {
+#btn:hover {
     background-color: lightgreen;
 
 }
