@@ -7,7 +7,7 @@
     <div class="main-content">
         <div class="container">
             <div class="header">
-                <h2>Contact Form</h2>
+                <h1>Contact Form</h1>
             </div>
             @if (Session::has('success'))
                 <div class="alert alert-success">
