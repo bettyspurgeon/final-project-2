@@ -22,7 +22,7 @@
 
                 @if (session()->has('email'))
                     <li>
-                        <a href="/">Help</a>
+                        <a href="/contact">Help</a>
                     </li>
                     <li>
                         <a href="/dashboard">Dashboard</a>
@@ -32,8 +32,8 @@
 
                     </li>
                 @else
-                    <li><a href="/">About Us</a></li>
-                    <li><a href="/">Contact</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
                     <li>
                         <a href="/login">Login</a>
                     </li>
@@ -72,10 +72,10 @@
             <section class="stuff">
                 <h1>Stuff</h1>
                 <ul class="stuff-list">
-                    <li><a href="">Home</a> </li>
-                    <li><a href="">Contact</a> </li>
-                    <li><a href="">Become a partner</a> </li>
-                    <li><a href="">About us</a> </li>
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="/contact">Contact</a> </li>
+                    <li><a href="/">Become a partner</a> </li>
+                    <li><a href="/aboutus">About us</a> </li>
                 </ul>
             </section>
 
