@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\LandlordPreference;
-
+use App\Models\Properties;
 use App\Models\User;
 
 
@@ -14,10 +14,10 @@ class LandlordController extends Controller
 {
     public function index()
     {
-    $landlordPreference = LandlordPreference::all();
+    $landlordpreference = LandlordPreference::all();
     //dd($landlordPreference);
 
-        return view('landlordPreference', ['landlordPreference' => $landlordPreference]);
+        return view('landlordpreference', ['landlordpreference' => $landlordpreference]);
 
     }
     /**
@@ -27,7 +27,7 @@ class LandlordController extends Controller
      */
     public function create()
     {
-        return view('new-landlordPreference');
+        return view('landlordpreference-new');
     }
 
     /**
@@ -36,32 +36,33 @@ class LandlordController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
 
         $request->validate([
             'contract' => 'required',
-            'income' => 'required|numeric',
+            'income' => 'required',
 
         ]);
 
         $result = new LandlordPreference;
-
+        
         $user = User::where('email', session('email'))->first();
         $result->user_id = $user->id;
 
-        // $result->property_id = $request->$id;
+        $properties = Properties::where('property_id', $id)->first();
+        $result->property_id = $properties->id;
 
         $result->contract = strtolower($request->contract);
-        $result->income = $request->price;
+        $result->income = $request->income;
 
 
         $result->save();
 
         if ($result) {
-            return redirect('properties')->with('message', 'Inserted new properties sussessfully!');
+            return redirect('landlordpreference')->with('message', 'Inserted new landlordpreference sussessfully!');
         } else {
-            return redirect('properties')->with('error', 'There is some thing wrong for inserted new properties, try again later !');
+            return redirect('landlordpreference')->with('error', 'There is some thing wrong for inserted new landlordpreference, try again later !');
         }
     }
 
@@ -73,8 +74,8 @@ class LandlordController extends Controller
      */
     public function show($id)
     {
-        $landlordPreference = landlordPreference::find($id);
-        return view('landlordPreference-details',['landlordPreference'=> $landlordPreference]);
+        $landlordpreference = landlordPreference::find($id);
+        return view('landlordpreference-details',['landlordpreference'=> $landlordpreference]);
     }
 
     /**
@@ -86,8 +87,8 @@ class LandlordController extends Controller
     public function edit($id)
     {
 
-        $landlordPreference = LandlordPreference::where('id', $id)->get();
-        return view('update-landlordPreference', ['landlordPreference' => $landlordPreference[0]]);
+        $landlordpreference = LandlordPreference::where('id', $id)->get();
+        return view('landlordpreference-update', ['landlordpreference' => $landlordpreference[0]]);
 
     }
 
@@ -105,18 +106,19 @@ class LandlordController extends Controller
             'contract' => 'required',
             'income' => 'required|numeric',
         ]);
-        $landlordPreference = landlordPreference::find($id);
+        $landlordpreference = landlordPreference::find($id);
         
         $user = User::where('email', session('email'))->first();
-        $landlordPreference->user_id = $user->id;
-        $landlordPreference->property_id = $request->$id;
-        $landlordPreference->contract = $request->contract;
-        $landlordPreference->income = $request->income;
+        $landlordpreference->user_id = $user->id;
 
-       
-      
+        $property = Properties::where("property_id", $id)->first();
+        $landlordpreference->property_id = $property->$id;
 
-        $result = $landlordPreference->save();
+        $landlordpreference->contract = $request->contract;
+        $landlordpreference->income = $request->income;
+
+
+        $result = $landlordpreference->save();
 
         if ($result) {
             return redirect("/myproperties/update/$id")->with('message', 'Update properties sussessfully!');
@@ -124,7 +126,6 @@ class LandlordController extends Controller
            redirect("/myproperties/update/$id")->with('error', 'There is some thing wrong for update properties, try again later !');
         }
     }
-
 
 
     /**
@@ -135,12 +136,12 @@ class LandlordController extends Controller
      */
     public function destroy($id)
     {
-        $landlordPreference = LandlordPreference::where('id', $id)->delete();
+        $landlordpreference = LandlordPreference::where('id', $id)->delete();
 
-        if ($landlordPreference) {
-            return redirect('properties')->with('message', 'Delete properties sussessfully!');
+        if ($landlordpreference) {
+            return redirect('landlordpreference')->with('message', 'Delete landlordpreference sussessfully!');
         } else {
-            return redirect('properties')->with('error', 'There is some thing wrong for delete properties, try again later !');
+            return redirect('landlordpreference')->with('error', 'There is some thing wrong for delete landlordpreference, try again later !');
         }
     }
 

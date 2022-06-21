@@ -106,6 +106,16 @@ Route::get('/myproperties/delete/{id}', [PropertyController::class, 'destroy'])-
 
 //Routes for Landlord perference
 Route::get('/landlordpreference', [LandlordController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
+Route::get('/landlordpreference/create', [LandlordController::class, 'create'])->middleware(EnsureIsLoggedIn::class);
+
+Route::post('/landlordpreference/create', [LandlordController::class, 'store']);
+
+//Interact with singular LandlordController details
+Route::get('/landlordpreference/{id}', [LandlordController::class, 'show'])->middleware([EnsureIsLoggedIn::class])->name('landlordpreference.details');
+Route::get('/landlordpreference/update/{id}', [LandlordController::class, 'edit'])->middleware([EnsureIsLoggedIn::class])->name('landlordpreference.edit')->middleware(EnsureIsLoggedIn::class);
+Route::put('/landlordpreference/update/{id}', [LandlordController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
+Route::get('/landlordpreference/delete/{id}', [LandlordController::class, 'destroy'])->name('landlordpreference.delete')->middleware(EnsureIsLoggedIn::class);
+
 
 
 
