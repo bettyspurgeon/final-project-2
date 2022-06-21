@@ -3,11 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  
     
 }
-
-    
-
 
 .forminput {
     width: 100%;
@@ -17,6 +15,8 @@
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
+    
+  
 }
 
 .container {
@@ -25,6 +25,8 @@
     padding: 20px;
     max-width: 500px;
     margin: auto;  
+    padding-top: 1cm;
+    
 }
 
 #btn {
@@ -39,6 +41,12 @@
     background-color: lightgreen;
 
 }
+
+h1  {
+        padding:0cm 1cm 1cm 1cm;
+
+    }
+
 
 
 

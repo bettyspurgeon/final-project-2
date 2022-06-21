@@ -5,10 +5,7 @@
     align-items: center;
     padding-top: 1cm;
     padding-bottom: 1cm;
-}
-
-body {
-    margin: 0%;
+    
 }
 
 select {
@@ -42,7 +39,6 @@ input {
         background-color: lightgreen;
      }
 
-
     .properties_links {
         width: 100%;
         padding: 12px;
@@ -50,23 +46,37 @@ input {
         border-radius: 4px;
         box-sizing: border-box;
         margin-top: 6px;
-        margin-bottom: 16px;
-        background-color: #45a049;
+        margin-bottom: 16px;  
+       
+        
     }
     .properties_links:hover {
-       
         background-color: lightgreen;
     }
 
     .properties_create_container{
         
         background-color: #f2f2f2;
-padding: 2cm 1cm 1cm 1cm;
-border-radius: 5px;
+        padding: 1cm 1cm 1cm 1cm;
+            border-radius: 5px; 
     }
 
-   .contactus {position:absolute;
-      bottom: 88.4%;
-      
-       
+   
+
+    .properties_links, .goback {
+        text-align: center;
+        background-color: #45a049;
+        
+
+        
     }
+
+    h1 {
+        padding:0cm 1cm 1cm 1cm;
+
+    }
+    .goback:hover {
+        background-color: lightgreen;
+        color: #45a049;;
+    }
+ 

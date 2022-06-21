@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar">
             <a href="/home">
-                <img src="{{ asset('css/assets/logo.png') }}" alt="">
+                <img class="nav-logo" src="{{ asset('css/assets/logo.png') }}" alt="">
             </a>
             <ul class="navlist">
 
@@ -41,18 +41,25 @@
                 @endif
             </ul>
 
+            <div class="container-menu" onclick="myFunction(this),toggleMenu()">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
 
-            <button method="POST" class="show-nav-list" name="nav-btn">
-                <img src="{{ asset('css/assets/navbar-menu-icon.png') }}">
-            </button>
-
-            <?php
-            if(isset($_POST['nav-btn'])){
-                print_r('hello');
-            };
-            ?>
+            
         </nav>
     </header>
+
+
+    <div class="hidden-menu">
+        <ul class="menu-box" id="menu-box">
+            <li><a href="/aboutus">ABOUT US</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+            <li><a href="/login">LOGIN</a></li>
+            <li><a href="/register">REGISTER</a></li>
+        </ul>
+    </div>
 
 
 
@@ -66,42 +73,41 @@
 
     <footer class="footer">
 
-        <div class="main-part">
+        <div class="footer-container">
 
 
-            <section class="stuff">
-                <h1>Stuff</h1>
-                <ul class="stuff-list">
+            <div class="actions">
+                <h1>Need help?</h1>
+                <ul class="actions-list">
                     <li><a href="/">Home</a> </li>
                     <li><a href="/contact">Contact</a> </li>
                     <li><a href="/">Become a partner</a> </li>
                     <li><a href="/aboutus">About us</a> </li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="something">
+            <div class="newsletter">
                 <h1>Subscribe for our newsletter</h1>
-                <form action="">
-                    <input type="text" name="email-subs" placeholder="Email">
-                    <input type="submit" name="subsBtn" value=subscribe>
+                <form class="form-container"action="">
+                    <input class="subs-email"type="text" name="email-subs" placeholder="Email">
+                    <input class="subs-submit-btn"type="submit" name="subsBtn" value=subscribe>
                 </form>
-            </section>
+            </div>
 
-            <section class="social-media">
+            <div class="social-media">
 
                 <h1 class="subscribe">Follow us</h1>
                 <ul class="social-list">
                     <li><a href=""><img class="social-icons" src="{{ asset('css/assets/facebook-icon-white.png') }}"
                                 alt="facebook icon" /></a></li>
-                    <li><a href=""><img class="social-icons"
-                                src="{{ asset('css/assets/linkedin-icon-white.png') }}"
+                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/linkedin-icon-white.png') }}"
                                 alt="Instagram icon" /></a></li>
                     <li><a href=""><img class="social-icons"
-                                src="{{ asset('css/assets/instagram-icon-white.png') }}"
-                                alt="Instagram icon" /></a></li>
+                                src="{{ asset('css/assets/instagram-icon-white.png') }}" alt="Instagram icon" /></a>
+                    </li>
 
                 </ul>
-            </section>
+            </div>
         </div>
 
         <div class="copy">
@@ -110,6 +116,8 @@
         </div>
 
     </footer>
+
+    <script src="js/template.js"></script>
 </body>
 
 </html>
