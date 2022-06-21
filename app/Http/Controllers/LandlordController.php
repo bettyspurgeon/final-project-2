@@ -14,8 +14,11 @@ class LandlordController extends Controller
 {
     public function index()
     {
-    $landlordpreference = LandlordPreference::all();
-    //dd($landlordPreference);
+    $landlordpreference = LandlordPreference::JOIN( 'Properties', 'properties.id', '=', 'landlord_preferences.property_id')->get();
+     //->INNERJOIN('Properties', 'properties.id', '=', 'landlordpreference.property_id')
+     
+
+    dd($landlordpreference);
 
         return view('landlordpreference', ['landlordpreference' => $landlordpreference]);
 

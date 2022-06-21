@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use App\Models\LandlordPreference;
 
 class PropertyController extends Controller
 {
@@ -17,7 +18,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Properties::all();
+        $properties = Properties::JOIN( 'landlord_preferences', 'landlord_preferences.property_id','=','properties.id')->get();
+        //dd($properties);
 
         return view('properties', ['properties' => $properties]);
 
@@ -152,6 +154,8 @@ class PropertyController extends Controller
         $property->pets = $request->pets;
         $property->parking = true;
         $property->description = (string)$request->description;
+       
+
    
 
         if($request->pictures != ''){        

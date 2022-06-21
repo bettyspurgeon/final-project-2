@@ -100,7 +100,7 @@ Route::put('/myproperties/update/{id}', [PropertyController::class, 'update'])->
 Route::get('/myproperties/delete/{id}', [PropertyController::class, 'destroy'])->name('properties.delete')->middleware(EnsureIsLoggedIn::class);
 
 
-/*
+
 
 
 
@@ -121,9 +121,9 @@ Route::get('/landlordpreference/delete/{id}', [LandlordController::class, 'destr
 
 
 
-Routes for Matches
+//Routes for Matches
 
-*/
+
 
 /*
 
