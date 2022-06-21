@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="{{ asset('css/template.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -47,7 +49,7 @@
                 <div class="bar3"></div>
             </div>
 
-            
+
         </nav>
     </header>
 
@@ -98,10 +100,12 @@
 
                 <h1 class="footer-headers">Follow us</h1>
                 <ul class="social-list">
-                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/facebook-icon-white.png') }}"
-                                alt="facebook icon" /></a></li>
-                    <li><a href=""><img class="social-icons" src="{{ asset('css/assets/linkedin-icon-white.png') }}"
-                                alt="Instagram icon" /></a></li>
+                    <li><a href=""><img class="social-icons"
+                                src="{{ asset('css/assets/facebook-icon-white.png') }}" alt="facebook icon" /></a>
+                    </li>
+                    <li><a href=""><img class="social-icons"
+                                src="{{ asset('css/assets/linkedin-icon-white.png') }}" alt="Instagram icon" /></a>
+                    </li>
                     <li><a href=""><img class="social-icons"
                                 src="{{ asset('css/assets/instagram-icon-white.png') }}" alt="Instagram icon" /></a>
                     </li>
@@ -111,13 +115,13 @@
         </div>
 
         <div class="copy">
-            <p>© copyright MatchHome 2022</p>
+            <p>&copy; copyright MatchHome 2022</p>
 
         </div>
 
     </footer>
 
-    <script type="text/javascript" src="{{asset('js/template.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/template.js') }}"></script>
 </body>
 
 </html>
