@@ -17,7 +17,7 @@ class UserController extends Controller
     {
         $value = $request->session()->get('email');
         $user = DB::table('users')->where('email', $value)->first();
-        return view('dashboard', ['user' => $user]);
+        return view('UI-views.dashboard', ['user' => $user]);
     }
     public function login()
     {
@@ -46,7 +46,7 @@ class UserController extends Controller
     public function logout(Request $request)
     {
         $request->session()->forget('email');
-        return view('homepage');
+        return view('UI-views.homepage');
     }
     public function register()
     {
@@ -87,7 +87,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
-        return view('profile', ['user' => $user]);
+        return view('user-pages.profile', ['user' => $user]);
     }
     public function user_update(Request $request, $id)
     {
@@ -109,7 +109,7 @@ class UserController extends Controller
     //show user preferences
     public function preferences()
     {
-        return view('user-preferences');
+        return view('user-pages.user-preferences');
     }
     //update user preferences
     public function update_preferences(Request $request, $id)

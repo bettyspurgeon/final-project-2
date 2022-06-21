@@ -10,7 +10,7 @@ class ContactController extends Controller
 {
     //shouw contact page
     public function index() {
-        return view('contact-page');
+        return view('contact.contact-page');
     }
     //save contact details including message as well as send the email
     public function save(Request $request) {
@@ -30,7 +30,7 @@ class ContactController extends Controller
 
         $result=$contact->save();
         \Mail::send(
-            'contact-email',
+            'contact.contact-email',
             array(
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),

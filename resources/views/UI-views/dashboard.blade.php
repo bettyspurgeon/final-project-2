@@ -1,4 +1,4 @@
-@extends('templates/layoutTemplate')
+@extends('templates.layoutTemplate')
 <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
 @section('content')

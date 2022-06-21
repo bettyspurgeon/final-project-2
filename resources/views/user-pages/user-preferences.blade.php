@@ -1,4 +1,4 @@
-@extends('templates/layoutTemplate')
+@extends('templates.layoutTemplate')
 <link rel="stylesheet" href="{{ asset('css/user-preferences.css') }}">
 
 @section('title', 'Manage Preferences')

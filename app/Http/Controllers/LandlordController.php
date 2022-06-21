@@ -17,7 +17,7 @@ class LandlordController extends Controller
     $landlordpreference = LandlordPreference::all();
     //dd($landlordPreference);
 
-        return view('landlordpreference', ['landlordpreference' => $landlordpreference]);
+        return view('landlord-views.landlordpreference', ['landlordpreference' => $landlordpreference]);
 
     }
     /**
@@ -27,7 +27,7 @@ class LandlordController extends Controller
      */
     public function create()
     {
-        return view('landlordpreference-new');
+        return view('landlord-views.landlordpreference-new');
     }
 
     /**
@@ -75,7 +75,7 @@ class LandlordController extends Controller
     public function show($id)
     {
         $landlordpreference = landlordPreference::find($id);
-        return view('landlordpreference-details',['landlordpreference'=> $landlordpreference]);
+        return view('landlord-views.landlordpreference-details',['landlordpreference'=> $landlordpreference]);
     }
 
     /**
@@ -88,7 +88,7 @@ class LandlordController extends Controller
     {
 
         $landlordpreference = LandlordPreference::where('id', $id)->get();
-        return view('landlordpreference-update', ['landlordpreference' => $landlordpreference[0]]);
+        return view('landlord-views.landlordpreference-update', ['landlordpreference' => $landlordpreference[0]]);
 
     }
 
