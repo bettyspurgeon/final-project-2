@@ -17,7 +17,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height:100vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -52,9 +52,9 @@ body{
 
 .rent-buy-btns-container{
     display:flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-top:20px;
-    width:20vw;
+    width:100vw;
 }
 
 .rent-btn, .buy-btn{
@@ -64,6 +64,7 @@ body{
     border-radius:4%;
     background-color:rgb(56, 136, 25);
     color:#fff;
+    margin: 20px;
 }
 .rent-btn:hover, .buy-btn:hover{
 
@@ -79,7 +80,6 @@ body{
     justify-content: center;
 }
 .register-to-see-all{
-    width: 150px;
     height: 50px;
     border:1px solid #fff;
     border-radius:4%;
@@ -128,11 +128,15 @@ body{
 
 
 
-
+/* @media only screen and (min-width: 769px) and (max-width: 1280px){
+    .main-logo{
+        display: none;
+    }
+} */
 
 @media only screen and (max-width: 768px) {
 .main-logo{
-    width:60%;
+    width:50vw;
     height: auto;
 }
 
@@ -143,11 +147,19 @@ body{
 .content-form input {
     width:60%;
 }
+.centralize-register-btn{
+    width:100vw;
+   
+}
+.register-to-see-all{
+    width:80%;
+    margin: 10px;
+}
 }
 
-@media only screen and (max-width: 996px){
+@media only screen and (min-width: 769px)and(max-width: 996px){
 .main-logo{
-    width:50%;
+    width:50vw;
     height: auto;
 }
 
@@ -157,5 +169,25 @@ body{
 }
 .content-form input {
     width:60%;
+}
+
+.rent-buy-btns-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:70vw;
+}
+
+.rent-btn, .buy-btn{
+    margin:10px;
+    width:100%;
+}
+.centralize-register-btn{
+    width:100vw;
+   
+}
+.register-to-see-all{
+    width:80%;
+    margin: 10px;
 }
 }
