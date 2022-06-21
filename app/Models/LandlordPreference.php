@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class landlordPreference extends Model
+class LandlordPreference extends Model
 {
     use HasFactory;
     public $timestamps = false;
