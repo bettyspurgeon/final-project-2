@@ -22,6 +22,8 @@ class PropertyController extends Controller
         //dd($properties);
 
         return view('property-views.properties', ['properties' => $properties]);
+        return view('property-show.properties', ['properties' => $properties]);
+
 
     }
 

@@ -110,7 +110,7 @@ Route::get('/user-profile/{id}', function() {
     return view('user-pages.renter-file-upload');
 Route::post('/user-profile/{id}', [UserProfileController::class, 'upload_user_file']);
 
-/*
+
 
 
 //Routes for Landlord perference
