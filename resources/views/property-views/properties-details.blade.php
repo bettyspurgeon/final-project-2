@@ -50,14 +50,7 @@
 
 
         </div>
-        <div>
-            <div class="landlord_preference">
-                <h4>Landlord Request
-                </h4>
-                <strong>Contract : </strong> {{ $property->contract }}<br>
-                <strong>Income : </strong> {{ $property->income }}<br>
-                <hr>
-            </div>
+                    
         </div>
 
         @endsection
