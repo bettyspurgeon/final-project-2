@@ -17,37 +17,35 @@
 
 @foreach ($properties as $property)
 
-<div class="properties_container" style="display: flex; display: flex;
-    flex-direction: row; justify-content: space-evenly; align-items: center;">
+<div class="big-container">
 
-    <div class="properties_picture">
-        <strong>Picture: </strong> <br>
-         <img style= "height: 250px; width: 250px;" src="uploads/{{ $property->pictures }}" alt=""></img><br>
-    </div>
-    <div class="properties_description">
-        <strong>Type : </strong> {{ $property->type }}<br>
-        <strong>Price : </strong> {{ $property->price }}<br>
-        <strong>Location : </strong> {{$property->location}}<br>
-        <strong>Date_avaliable: </strong> {{ $property->date_avaliable}}<br>
-        <strong>Area: </strong> {{ $property->area }}<br>
-        <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
-        <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
-        <strong>Children: </strong> {{ $property->children }}<br>
-        <strong>Pets: </strong> {{ $property->pets }}<br>
-        <strong>Descripation : </strong> {{ $property->description }}<br>
-    <hr>
-       
-    
-     <div class="properties_links">
-        <a href="{{ route('properties.details', [$property->id]) }}">Details</a> 
+    <div class="properties-container">
+        <div class="properties-picture">
+            <!-- <strong>Picture: </strong> <br> -->
+            <img class="properties-img" src="uploads/{{ $property->pictures }}" alt=""></img><br>
         </div>
-        
-        <hr>
+        <div class="properties-description">
+            <div class="wrapper-1">
+                <strong>Type : </strong><p class="p-description"> {{ $property->type }}</p><br>
+                <strong>Price : </strong><p class="p-description"> {{ $property->price }}</p><br>
+                <strong>Location : </strong><p class="p-description"> {{$property->location}}</p><br>
+                <strong>Date_avaliable: </strong><p class="p-description"> {{ $property->date_avaliable}}</p><br>
+                <strong>Area: </strong><p class="p-description"> {{ $property->area }}</p><br>
+            </div>
+            <div class="wrapper-2">
+                <strong>Bedrooms : </strong><p class="p-description"> {{ $property->bedrooms }}</p><br>
+                <strong>Bathrooms : </strong><p class="p-description"> {{ $property->bathrooms }}</p><br>
+                <strong>Children: </strong><p class="p-description"> {{ $property->children }}</p><br>
+                <strong>Pets: </strong><p></p class="p-description"> {{ $property->pets }}</p><br>
+                <strong>Descripation : </strong><p class="p-description"> {{ $property->description }}</p><br>
+            </div>
+        </div>
 
+        <div class="properties-links">
+            <a class="properties-a-link" href="{{ route('properties.details', [$property->id]) }}">Details</a> 
+        </div>
+     
     </div>
-    </div> 
-
-   
 </div>
 
 

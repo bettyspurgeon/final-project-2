@@ -15,13 +15,13 @@
         <div class="main-content">
             <div class="container">
                 <div class="header">
-                    <h2>Login Form</h2>
+                    <h1>Login Form</h1>
                 </div>
                 <form action="" method="POST">
                     @csrf
-                    <label>Your email</label>
+                   <strong>Your email</strong>
                     <input class="forminput"type="text" name="email" placeholder="Email"><br>
-                    <label>Your password</label>
+                    <strong>Your password</strong>
                     <input class="forminput"type="password" name="password" placeholder="Password"><br>
                     <input class="forminput"type="submit" id="btn" value="Login">
                 </form>

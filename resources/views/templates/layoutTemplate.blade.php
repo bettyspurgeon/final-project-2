@@ -73,28 +73,28 @@
 
     <footer class="footer">
 
-        <div class="main-part">
+        <div class="footer-container">
 
 
-            <section class="stuff">
-                <h1>Stuff</h1>
-                <ul class="stuff-list">
+            <div class="actions">
+                <h1>Need help?</h1>
+                <ul class="actions-list">
                     <li><a href="/">Home</a> </li>
                     <li><a href="/contact">Contact</a> </li>
                     <li><a href="/">Become a partner</a> </li>
                     <li><a href="/aboutus">About us</a> </li>
                 </ul>
-            </section>
+            </div>
 
-            <section class="something">
+            <div class="newsletter">
                 <h1>Subscribe for our newsletter</h1>
-                <form action="">
-                    <input type="text" name="email-subs" placeholder="Email">
-                    <input type="submit" name="subsBtn" value=subscribe>
+                <form class="form-container"action="">
+                    <input class="subs-email"type="text" name="email-subs" placeholder="Email">
+                    <input class="subs-submit-btn"type="submit" name="subsBtn" value=subscribe>
                 </form>
-            </section>
+            </div>
 
-            <section class="social-media">
+            <div class="social-media">
 
                 <h1 class="subscribe">Follow us</h1>
                 <ul class="social-list">
@@ -107,7 +107,7 @@
                     </li>
 
                 </ul>
-            </section>
+            </div>
         </div>
 
         <div class="copy">

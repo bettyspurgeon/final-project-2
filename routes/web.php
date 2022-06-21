@@ -55,6 +55,8 @@ Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware
 Route::get('/preferences/{id}', [UserController::class, 'preferences'])->middleware([EnsureIsLoggedIn::class]);
 Route::post('/preferences/{id}', [UserController::class, 'update_preferences'])->middleware([EsnureIsLoggedIn::class]);
 
+Route::get('/renter-profile/{id}', [UserProfileController::class, 'save']); 
+
 //forgotten password routes
 Route::get('/forget-password', [ForgotPasswordController::class, 'getEmail']);
 Route::post('/forget-password', [ForgotPasswordController::class, 'postEmail']);
