@@ -17,6 +17,7 @@
     justify-content: space-between;
     align-content:center;
     padding:25px;
+    padding-bottom:5cm;
 }
 
 .wrapper-two{
@@ -36,7 +37,7 @@
 .btn-opt{
     width: 300px;
     height: 300px;
-    background-color:rgb(62, 13, 177);
+    background-color:rgb(14, 143, 5);
     border-radius:30px;
     transition: all .3s ease-in-out;
     display:flex;
@@ -45,11 +46,12 @@
     align-items: center;
     text-decoration:none;
     margin: 1cm;
+   
 }
 .btn-opt:hover{
     transform: scale(0.95);
     cursor: pointer;
-  background-color: rgb(98, 234, 14);  
+    background-color: rgb(94, 234, 94);
 
 }
 .card-icon{
