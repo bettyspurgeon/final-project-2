@@ -1,21 +1,15 @@
-* {
-  box-sizing: border-box;
-}
 body {
     margin: 0;
   }
   
-  .column {
-    float: left;
+  .card-inner-container {
+
     width: 33.3%;
-    margin-bottom: 16px;
     padding: 0 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 16px;
   }
  
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
-  }
   
   .about-section {
     padding: 50px;
@@ -24,33 +18,28 @@ body {
     color: white;
   }
   
-  .container {
-    padding: 0 16px;
-  }
-  .values-cards{ 
-    display:flex;
-    flex-direction: row; 
+  .our-values{ 
+    display:flex; 
     align-items: center;
     justify-content: center;
-    gap: 3rem;
-    
+}
+.people-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
 
-  }
-  
-  .container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .title {
+.card-inner-container{
+  flex: 0 0 25%;
+}
+
+.person-title {
     color: grey;
-  }
+}
   
-  .button {
-    border: none;
-    outline: 0;
-    display: inline-block;
+  .contact-btn {
+    border:1px solid #fff;
    
     color: white;
     background-color: #45a049;
@@ -59,28 +48,32 @@ body {
     width: 100%;
 
     padding: 12px 20px;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
   }
   
-  .button:hover {
-    background-color: lightgreen;
+  .contact-btn:hover {
+    background-color: #fff;
+    color:#45a049;
+    border: 1px solid #45a049;
+    font-weight: 600;
   }
   
  
-  .container {
+  .page-container {
   display: flex;
-  align-content: center;
   justify-content: center;
-  justify-items: center;
   align-items: center;
   flex-direction: column;
-  
-  
-  
 }
-.text {
+  .card-inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:16px;
+}
+.who-we-are {
     max-width: 80%;
     background-color: #f2f2f2;
     text-align: center;
@@ -89,27 +82,50 @@ body {
   padding-right: 10px;
     margin: 15px;   
 }
+.who-we-are h2{
+    padding-top:4px;
+    padding-bottom:4px;
+}
 
-h1,h2,p {
+.our-team{
+  padding:10px; 
+  text-align: center;
+}
+.main-title{
+  padding:10px; 
+  text-align: center;
+}
+
+
+/* h1,h2,p {
     padding-top:4px ;
     padding-bottom:4px ;
-}
+} */
 
 
-/*   mobile version */
 
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .values-cards{
+@media screen and (min-width: 400px) and (max-width: 796px) {
+  .our-values{
     width: 100%;
     display: block;
    
-  
   }
+  .people-cards{
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-inner-container{
+    width:70vw;
+  }
+  .contact-btn {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: #45a049;
+    text-align: center;
+    width: 100%;
+
+  }
+
 }
