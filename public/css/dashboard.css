@@ -17,6 +17,7 @@
     justify-content: space-between;
     align-content:center;
     padding:25px;
+    padding-bottom:5cm;
 }
 
 .wrapper-two{
@@ -24,9 +25,7 @@
     justify-content: space-between;
     align-content:center;
     padding:25px;
-
 }
-
 
 
 .btn-opt p{
@@ -38,7 +37,7 @@
 .btn-opt{
     width: 300px;
     height: 300px;
-    background-color:green;
+    background-color:rgb(14, 143, 5);
     border-radius:30px;
     transition: all .3s ease-in-out;
     display:flex;
@@ -46,14 +45,28 @@
     justify-content: center;
     align-items: center;
     text-decoration:none;
+    margin: 1cm;
+   
 }
 .btn-opt:hover{
     transform: scale(0.95);
-    background-color:rgb(81, 189, 81);
     cursor: pointer;
-}
+    background-color: rgb(94, 234, 94);
 
+}
 .card-icon{
     width:120px;
     height:120px;
 }
+
+@media screen and (max-width: 650px) {
+    .wrapper-one{
+      width: 100%;
+      display: block;
+    }
+  }
+
+  p {
+    text-decoration: none;
+   
+  }
