@@ -11,13 +11,6 @@
 
         <img class="main-logo" src="{{ asset('css/assets/logo-white-green.png') }}" alt="">
 
-        {{-- <div class="content-form">
-      <form action="/dashboard" class="search-bar">
-        <input type="text" placeholder="search..." name="q">
-        <button type="submit"><img src="./css/assets/finder-icon.png" alt=""></button>
-      </form>
-    </div> --}}
-
 
         <div class="rent-buy-btns-container" >
             <button class="rent-btn" onclick="displayRentProps()">I want to rent!</button>
@@ -80,9 +73,17 @@
           Property to buy #7
         </div>
     </div>
+
+
+
+
     <div class="centralize-register-btn">
         <button onclick="goToRegisterPage()" class="register-to-see-all" id="register-to-see-all">Register to see all of them!</button>
     </div>
+
+
+
+
 
     <script type="text/javascript" src="{{ asset('js/homepage.js') }}"></script>
 

@@ -29,8 +29,7 @@
                     <label>Phone Number</label>
                     <input type="text" name="phone-number" placeholder="Your phone number"><br>
                     <label>Subject</label>
-                    <input type="text" name="subject" placeholder="Write your subject here"
-                        placeholder="Write the subject"><br>
+                    <input type="text" name="subject" placeholder="Write your subject here"><br>
                     <label>Message</label>
                     <textarea name="message" placeholder="How can we help..."></textarea><br>
                     <input type="submit" class="sendBtn" value="Send">
