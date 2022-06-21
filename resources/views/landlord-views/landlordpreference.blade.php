@@ -15,7 +15,7 @@
 </div>
 @endif
 
-@foreach ($landlordPreference as $landlordPf)
+@foreach ($landlordpreference as $landlordPf)
 
 <div class="properties_container" style="display: flex; display: flex;
     flex-direction: row; justify-content: space-evenly; align-items: center;">
