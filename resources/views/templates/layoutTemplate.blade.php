@@ -77,7 +77,7 @@
 
 
             <div class="actions">
-                <h1>Need help?</h1>
+                <h1 class="footer-headers">Need help?</h1>
                 <ul class="actions-list">
                     <li><a href="/">Home</a> </li>
                     <li><a href="/contact">Contact</a> </li>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="newsletter">
-                <h1>Subscribe for our newsletter</h1>
+                <h1 class="footer-headers">Subscribe for our newsletter</h1>
                 <form class="form-container"action="">
                     <input class="subs-email"type="text" name="email-subs" placeholder="Email">
                     <input class="subs-submit-btn"type="submit" name="subsBtn" value=subscribe>
@@ -96,7 +96,7 @@
 
             <div class="social-media">
 
-                <h1 class="subscribe">Follow us</h1>
+                <h1 class="footer-headers">Follow us</h1>
                 <ul class="social-list">
                     <li><a href=""><img class="social-icons" src="{{ asset('css/assets/facebook-icon-white.png') }}"
                                 alt="facebook icon" /></a></li>
