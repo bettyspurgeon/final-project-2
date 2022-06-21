@@ -1,17 +1,7 @@
 *{
     margin: 0;
 }
-body{
-    /* background-image: url(./assets/lux-3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
-}
 
-.main-content{
-    display:flex;
-    flex-direction:column;
-}
 .search-section{
     background-image: url(./assets/lux-3.jpg);
     background-repeat: no-repeat;
@@ -41,10 +31,6 @@ body{
     height: auto;
 }
 
-.subtitle {
-    text-align: center;
-    color: #fff;
-}
 
 .title{
     font-size: 3em;
@@ -103,36 +89,10 @@ body{
 }
 
 
-.properties-section{
-    width:100vw;
-    height:200px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.avatar{
-    display:flex;
-    flex-direction:column;
-    width:30vw;
-
-}
-.avatar img{
-    width:20vw;
-    height:auto;
-}
-.description{
-    width:50vw;
-    margin-left:40px;
-}
 
 
 
-/* @media only screen and (min-width: 769px) and (max-width: 1280px){
-    .main-logo{
-        display: none;
-    }
-} */
+
 
 @media only screen and (max-width: 768px) {
 .main-logo{
