@@ -22,7 +22,7 @@
 
   <h2 class="prop-title">These are some of our properties. Register to see all of them!</h2>
 
-  <div class="properties-section">
+  {{-- <div class="properties-section">
       
       <div class="avatar">
         <h2 class="price">€1890/mo </h2>
@@ -35,7 +35,7 @@
 
       <div class="map">
 
-  </div>
+  </div> --}}
 
   
 

@@ -38,16 +38,12 @@
 }
 
 strong {
-    font-family: Raleway,sans-serif;
     font-weight: 700;
     margin-bottom: 0.8rem;
     font-style: italic;
     color: #45a049;
 }
 
-.p-description {
-    font-family: Raleway,sans-serif;
-}
 
 .properties-links {
     text-align: center;
@@ -66,6 +62,5 @@ strong {
 
 .properties-a-link {
     color: white;
-    font-family: Raleway,sans-serif;
     font-weight: 700;
 }
