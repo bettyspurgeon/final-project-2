@@ -19,7 +19,7 @@ class PropertyController extends Controller
     {
         $properties = Properties::all();
 
-        return view('properties', ['properties' => $properties]);
+        return view('property-views.properties', ['properties' => $properties]);
 
     }
 
@@ -30,7 +30,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('new-properties');
+        return view('landlord-views.new-properties');
     }
 
     /**
@@ -96,7 +96,7 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-        return view('properties-details',['property'=> $properties]);
+        return view('property-views.properties-details',['property'=> $properties]);
     }
 
     /**
@@ -109,7 +109,7 @@ class PropertyController extends Controller
     {
 
         $properties = Properties::where('id', $id)->get();
-        return view('update-properties', ['property' => $properties[0]]);
+        return view('property-views.update-properties', ['property' => $properties[0]]);
 
     }
 
@@ -206,7 +206,7 @@ class PropertyController extends Controller
     public function user_properties($id) {
         $properties = Properties::where('user_id', $id)->get();
         
-        return view('user-properties', ['properties' => $properties]);
+        return view('landlord-views.user-properties', ['properties' => $properties]);
         
     }
 }

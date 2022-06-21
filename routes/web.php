@@ -15,10 +15,10 @@ use App\Http\Controllers\ResetPasswordController;
 
 //Routes return homepage.
 Route::get('/home', function () {
-    return view('homepage');
+    return view('UI-views.homepage');
 });
 Route::get('/', function () {
-    return view('homepage');
+    return view('UI-views.homepage');
 });
 //Route to get user dashboard after login or sign up 
 Route::get('/dashboard', [UserController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
@@ -29,7 +29,7 @@ Route::post('/contact', [ContactController::class, 'save'])->name('contact.save'
 
 //About us route page
 Route::get('/aboutus', function () {
-    return view('aboutUs');
+    return view('UI-views.aboutUs');
 });
 
 /*
@@ -101,7 +101,15 @@ Route::get('/myproperties/delete/{id}', [PropertyController::class, 'destroy'])-
 
 
 /*
+    Manage User Documents and Salary Information (User Profile)
+*/
 
+
+/*
+
+
+
+*/
 
 
 //Routes for Landlord perference
@@ -120,6 +128,7 @@ Route::get('/landlordpreference/delete/{id}', [LandlordController::class, 'destr
 
 
 
+/* 
 
 Routes for Matches
 
@@ -136,8 +145,8 @@ Show Buyers and Renters Matched houses
 
 Show Landlords and Sellers matched buyers/renters on each house
 
-
 */
+
 
 //Show Landlords and Sellers matched buyers/renters on each house
 

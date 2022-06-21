@@ -1,4 +1,4 @@
-@extends('templates/layoutTemplate')
+@extends('templates.layoutTemplate')
 
 @section('title', 'Insert new landlordpreference')
 

@@ -1,4 +1,4 @@
-@extends('templates/layoutTemplate')
+@extends('templates.layoutTemplate')
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 
 @section('title', 'Manage Account')

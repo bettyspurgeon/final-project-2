@@ -117,7 +117,7 @@
 
     </footer>
 
-    <script src="js/template.js"></script>
+    <script type="text/javascript" src="{{asset('js/template.js')}}"></script>
 </body>
 
 </html>
