@@ -12,24 +12,39 @@
             @endif
         </div> 
 
+        <section class="loginform">
         <div class="main-content">
             <div class="container">
-                <div class="header">
-                    <h1>Login Form</h1>
+                <div class="screen_content">
+                    <div class="header">
+                        <h1>Login</h1>
+                    </div>
+                    <form class="login" action="" method="POST">
+                        @csrf
+                    <!-- <strong>Your email</strong> -->
+                        <div class="login_field">
+                            <i class="login_icon fa-solid fa-user"></i>
+                            <input type="text" class="forminput" name="email" placeholder="Username / Email">
+                        </div>
+                        <div class="login_field">
+                            <i class="login_icon fa-solid fa-lock"></i>
+                            <input type="password" class="forminput" placeholder="Password">
+                        </div>
+                        <input type="submit" id="btn" value="Log-in"><i class="button__icon fas fa-chevron-right"></i>
+                    </form>
                 </div>
-                <form action="" method="POST">
-                    @csrf
-                   <strong>Your email</strong>
-                    <input class="forminput"type="text" name="email" placeholder="Email"><br>
-                    <strong>Your password</strong>
-                    <input class="forminput"type="password" name="password" placeholder="Password"><br>
-                    <input class="forminput"type="submit" id="btn" value="Login">
-                </form>
+                <div class="screen_background">
+                    <span class="screen_bg_shape screen_bg_shape4"></span>
+                    <span class="screen_bg_shape screen_bg_shape3"></span>
+                    <span class="screen_bg_shape screen_bg_shape2"></span>
+                    <span class="screen_bg_shape screen_bg_shape1"></span>
+                </div>
 
             </div>
         </div>
 
 
     </div>
+    </section>
     
 @endsection

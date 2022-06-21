@@ -21,7 +21,7 @@ class UserController extends Controller
     }
     public function login()
     {
-        return view('user-login');
+        return view('customauth.user-login');
     }
 
     public function authenticated(Request $request)
@@ -50,7 +50,7 @@ class UserController extends Controller
     }
     public function register()
     {
-        return view('register-user');
+        return view('customauth.register-user');
     }
     public function register_submit(Request $request)
     {
