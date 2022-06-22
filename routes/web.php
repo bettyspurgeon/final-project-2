@@ -12,6 +12,7 @@ use App\Http\Controllers\CoordinatesController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\MatchhomeController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserProfileController;
 use App\Models\UserProfile;
@@ -56,7 +57,7 @@ Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware
 
 //user preference management route
 Route::get('/preferences/{id}', [UserController::class, 'preferences'])->middleware([EnsureIsLoggedIn::class]);
-Route::post('/preferences/{id}', [UserController::class, 'update_preferences'])->middleware([EsnureIsLoggedIn::class]);
+Route::post('/preferences/{id}', [UserController::class, 'update_preferences']);
 
 Route::get('/renter-profile/{id}', [UserProfileController::class, 'save']); 
 
@@ -132,21 +133,13 @@ Route::get('/landlordpreference/delete/{id}', [LandlordController::class, 'destr
 Routes for Matches
 
 */
-Route::get('/propertymatches', function() {
-    return view('match-pages.matches');
-});
+Route::get('/propertymatches/{id}', [MatchhomeController::class, 'display_matches']);
 
 
 //return properties homepage
 Route::get('/hproperties', [PropertyController::class, 'homer_properties']);
 Route::get('/hsproperties', [PropertyController::class, 'homes_properties']);
 
-Route::get('/hproperties', function () {
-    return view('UI-views.homepage');
-});
-Route::get('/hsroperties', function () {
-    return view('UI-views.homepage');
-});
 
 
 //Show Buyers and Renters Matched houses 

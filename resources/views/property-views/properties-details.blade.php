@@ -3,54 +3,60 @@
 @section('title', 'property Details')
 
 @section('content')
-@if (session('success'))
-<div class="alert alert-success" style="color: green">
-    {{ session('success') }}
-</div>
-@endif
+    @if (session('success'))
+        <div class="alert alert-success" style="color: green">
+            {{ session('success') }}
+        </div>
+    @endif
 
-@if (session('error'))
-<div class="alert alert-success" style="color: red">
-    {{ session('error') }}
-</div>
-@endif
+    @if (session('error'))
+        <div class="alert alert-success" style="color: red">
+            {{ session('error') }}
+        </div>
+    @endif
 
-<div class="properties_container" style="display: flex; display: flex;
+    <div class="properties_container"
+        style="display: flex; display: flex;
     flex-direction: row; justify-content: space-around; align-items: center;">
 
-    <div class="properties_picture">
-        <strong>Picture: </strong> <br>
-        <img style="height: 400px; width: 400px;" src="{{asset('uploads/'.$property->pictures)}}" alt=""></img><br>
-    </div>
-
-    <div class="properties_description">
-
-        <strong>Type : </strong> {{ $property->type }}<br>
-        <strong>Price : </strong> {{ $property->price }}<br>
-        <strong>Location : </strong> {{$property->location}}<br>
-        <strong>Date_available: </strong> {{ $property->date_available}}<br>
-        <strong>Area: </strong> {{ $property->area }}<br>
-
-        <strong>Parking : </strong> {{ $property->parking }}<br>
-        <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
-        <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
-        <strong>Children: </strong> {{ $property->children }}<br>
-        <strong>Pets: </strong> {{ $property->pets }}<br>
-        <strong>Description : </strong> {{ $property->description}}<br>
-
-
-        <div>
-            <hr>
-            <a href="/properties">See More Properties</a>
-            <a href="{{ route('properties.edit', [$property->id]) }}">Edit</a>
-            <a href="{{ route('properties.delete', [$property->id]) }}">Delete</a>
-            <hr>
-            <a href="/properties/create">Add Properties</a>
-            <hr>
-
-
-        </div>
-                    
+        <div class="properties_picture">
+            <strong>Picture: </strong> <br>
+            <img style="height: 400px; width: 400px;" src="{{ asset('uploads/' . $property->pictures) }}"
+                alt=""></img><br>
         </div>
 
-        @endsection
+        <div class="properties_description">
+
+            <strong>Type : </strong> {{ $property->type }}<br>
+            <strong>Price : </strong> {{ $property->price }}<br>
+            <strong>Location : </strong> {{ $property->location }}<br>
+            <strong>Date_available: </strong> {{ $property->date_available }}<br>
+            <strong>Area: </strong> {{ $property->area }}<br>
+
+            <strong>Parking : </strong> {{ $property->parking }}<br>
+            <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
+            <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
+            <strong>Children: </strong> {{ $property->children }}<br>
+            <strong>Pets: </strong> {{ $property->pets }}<br>
+            <strong>Description : </strong> {{ $property->description }}<br>
+
+
+            <div>
+                <hr>
+                <a href="/properties">See More Properties</a>
+                <a href="{{ route('properties.edit', [$property->id]) }}">Edit</a>
+                <a href="{{ route('properties.delete', [$property->id]) }}">Delete</a>
+                <hr>
+                <a href="/properties/create">Add Properties</a>
+                <hr>
+            </div>
+            <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/view?key=AIzaSyA0MAOg9gkDSlSBTc11ZLa2-TZupNytSxc&center={{ $property->latitude }},{{ $property->longitude }}&zoom=15">
+            </iframe>
+
+        </div>
+
+
+
+    @endsection

@@ -43,9 +43,9 @@ class UserProfileController extends Controller
             $newProfile->contract = $request->contract_type;
             $newProfile->save();
             if ($newProfile) {
-                return view('renter-file-upload')->with('message', 'Updated your profile information Successfully!!');
+                return redirect("/user-profile/$id")->with('message', 'Updated your profile information Successfully!!');
             } else {
-                return view('renter-file-upload')->with('error', 'There was a problem updating your profile information.');
+                return redirect("/user-profile/$id")->with('error', 'There was a problem updating your profile information.');
             }
         } else {
             $userProfile->document_path = $fileName;

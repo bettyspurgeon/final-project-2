@@ -7,46 +7,51 @@
 
             <section class="wrapper-one">
                 @if ($user->type == 'buyer' || $user->type == 'renter')
-                    <a href="/propertymatches">
+
+                    <a href="/propertymatches/{{$user->id}}">
+
                         <div class="btn-opt">
-                            <img class="card-icon" src="/css/assets/white-home-icon.png" alt="">
-                            <p>View Matches</p>
+                        <i class="fa-solid fa-heart fa-7x " style="color:white" ></i>
+                            <p class="paragraph">View Matches</p>
                         </div>
                     </a>
 
                     
-                    <a href="/profile/{{ $user->id }}">
+                    <a class="btn-title" href="/profile/{{ $user->id }}">
                         <div class="btn-opt">
-                            <img class="card-icon" src="/css/assets/person-icon.png" alt="">
-                            <p>Manage Account</p>
-                        </div>
+                        <i class="fa-solid fa-user-gear fa-7x" style="color:white"></i>
+                            <p class="paragraph">Manage Account</p>
+                        </div>  
                     </a>
-                    <a href="/properties">
+                    <a class="btn-title" href="/properties">
                         <div class="btn-opt">
                             <img class="card-icon" src="/css/assets/white-home-icon.png" alt="">
-                            <p>View Properties</p>
+                            <p class="paragraph">View Properties</p>
                         </div>
                     </a>
                 @else
-                    <a href="/myproperties/{{ $user->id }}">
+                    <a  class="btn-title"href="/myproperties/{{ $user->id }}">
                         <div class="btn-opt">
-                            <img class="card-icon" src="/css/assets/white-home-icon.png" alt="">
-                            <p>Manage My Properties</p>
+                        <i class="fa-solid fa-house-chimney-user fa-7x" style="color:white" ></i>
+                            <p class="paragraph">Manage My Properties</p>
                         </div>
                     </a>
-                    <a href="/profile/{{ $user->id }}">
+                    <a class="btn-title" href="/profile/{{ $user->id }}">
                         <div class="btn-opt">
-                            <img class="card-icon" src="/css/assets/home-icon.png" alt="">
-                            <p>Manage Account</p>
+                        <i class="fa-solid fa-user-gear fa-7x" style="color:white"></i>
+                            <p class="paragraph">Manage Account</p>
                         </div>
                     </a>
-                    <a href="/properties">
+                    <a class="btn-title" href="/properties">
+                    
                         <div class="btn-opt">
-                            <img class="card-icon" src="/css/assets/person-icon.png" alt="">
-                            <p>View All Properties</p>
+                        <img class="card-icon" src="/css/assets/white-home-icon.png" alt="">
+                            <p class="paragraph">View All Properties</p>
                         </div>
                     </a>
-                @endif
+                @endif   
+              
+                
             </section>
         </div>
     </div>

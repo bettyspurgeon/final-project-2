@@ -112,14 +112,17 @@
                                 src="{{ asset('css/assets/instagram-icon-white.png') }}" alt="Instagram icon" /></a>
                     </li>
 
-                </ul>
+                </ul> 
+                
+                <div class="copy" style="background-color: rgba(56, 136, 25,0.9);">
+            <p>&copy; copyright MatchHome 2022</p>
+        </div>
+
+        
             </div>
         </div>
 
-        <div class="copy">
-            <p>&copy; copyright MatchHome 2022</p>
-
-        </div>
+        <!--  -->
 
     </footer>
 

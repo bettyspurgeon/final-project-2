@@ -14,11 +14,11 @@
                 <h2 class="values-title">Our values</h2>
                 <div class="our-values">
                     <div class="value-card">
-                        <i class="fa-solid fa-handshake fa-5x"></i>
+                         <i class="fa-solid fa-puzzle-piece  fa-5x"></i>
                         <h3 class="value-title">Compatability</h3>
                     </div>
                     <div class="value-card">
-                        <i class="fa-solid fa-handshake fa-5x"></i>
+                    <i class="fa-solid fa-clock-rotate-left  fa-5x"></i>
                         <h3 class="value-title">Time-Saving</h3>
                     </div>
                     <div class="value-card">
@@ -30,7 +30,7 @@
         </div>
         
         <h1 class="our-team">Our Team</h1>
-        <div class="people-cards">
+        <div class="people-cards" > 
 
             <div class="card-inner-container">
                 <p class="person-title">Developer</p>
