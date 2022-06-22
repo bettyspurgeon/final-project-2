@@ -137,8 +137,11 @@ Route::get('/propertymatches/{id}', [MatchhomeController::class, 'display_matche
 
 
 //return properties homepage
-Route::get('/hproperties', [PropertyController::class, 'homer_properties']);
+Route::get('/hrproperties', [PropertyController::class, 'homer_properties']);
 Route::get('/hsproperties', [PropertyController::class, 'homes_properties']);
+
+
+
 
 
 

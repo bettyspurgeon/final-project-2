@@ -65,14 +65,7 @@
         </ul>
     </div>
 
-
-
-
     <main class="main-content">@yield('content')</main>
-
-
-
-
 
 
     <footer class="footer">

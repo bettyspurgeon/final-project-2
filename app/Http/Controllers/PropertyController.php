@@ -244,4 +244,5 @@ class PropertyController extends Controller
         return view('property-views.hsproperties', ['properties' => $properties]);;
         
     }
+    
 }
