@@ -37,14 +37,13 @@
 .btn-opt{
     width: 300px;
     height: 300px;
-    background-color:rgb(14, 143, 5);
+    background-color:rgb(19, 164, 9);
     border-radius:30px;
     transition: all .3s ease-in-out;
     display:flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    text-decoration:none;
     margin: 1cm;
    
 }
@@ -59,6 +58,18 @@
     height:120px;
 }
 
+#person{
+    color: #fff;
+    
+}
+
+.icon {
+    max-width: 100px;
+    max-height: 100px;
+    
+}
+
+
 @media screen and (max-width: 650px) {
     .wrapper-one{
       width: 100%;
@@ -66,7 +77,8 @@
     }
   }
 
-  p {
+ .btn-title{
     text-decoration: none;
-   
+
   }
+
