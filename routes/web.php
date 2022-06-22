@@ -12,6 +12,7 @@ use App\Http\Controllers\CoordinatesController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\MatchhomeController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserProfileController;
 use App\Models\UserProfile;
@@ -132,9 +133,7 @@ Route::get('/landlordpreference/delete/{id}', [LandlordController::class, 'destr
 Routes for Matches
 
 */
-Route::get('/propertymatches', function() {
-    return view('match-pages.matches');
-});
+Route::get('/propertymatches/{id}', [MatchhomeController::class, 'display_matches']);
 
 
 //return properties homepage
