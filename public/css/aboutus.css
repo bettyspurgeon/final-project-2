@@ -110,7 +110,7 @@ body {
 
 
 
-@media screen and (min-width: 400px) and (max-width: 796px) {
+@media screen and (min-width: 200px) and (max-width: 796px) {
   .values-title{
     margin-top:50px;
   }
@@ -139,3 +139,4 @@ body {
   }
 
 }
+
