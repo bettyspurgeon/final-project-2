@@ -12,6 +12,7 @@
             @endif
         </div> 
 
+
         <section class="loginform">
         <div class="main-content">
             <div class="container">
@@ -30,7 +31,7 @@
                             <i class="login_icon fa-solid fa-lock"></i>
                             <input type="password" class="forminput" placeholder="Password">
                         </div>
-                        <input type="submit" id="btn" value="Log-in"><i class="button__icon fas fa-chevron-right"></i>
+                        <input type="submit" id="btn" value="Log-in">
                     </form>
                 </div>
                 <div class="screen_background">
