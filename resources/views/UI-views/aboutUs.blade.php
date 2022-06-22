@@ -11,7 +11,7 @@
                 We believe that real estate research should not be frustrating. If done with the right tools, it can be
                 a pleasant and rewarding experience. We work for this, join us!</p>
             <div class="values-container">
-                <h2 class="">Values</h2>
+                <h2 class="values-title">Our values</h2>
                 <div class="our-values">
                     <div class="value-card">
                         <i class="fa-solid fa-handshake fa-5x"></i>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-
+        
         <h1 class="our-team">Our Team</h1>
         <div class="people-cards">
 
