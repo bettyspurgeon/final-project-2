@@ -141,6 +141,7 @@ Route::get('/hproperties', [PropertyController::class, 'homer_properties']);
 Route::get('/hsproperties', [PropertyController::class, 'homes_properties']);
 
 
+
 //Show Buyers and Renters Matched houses 
 
 

@@ -9,8 +9,11 @@ use App\Models\Properties;
 use App\Models\UserPreference;
 
 
+
 class MatchhomeController extends Controller
 {
+
+
     public function display_matches($id)
     {
         $profile = UserProfile::where('user_id', $id)->get();
@@ -36,4 +39,5 @@ class MatchhomeController extends Controller
         }
         return view('match-pages.matches', ['complete_matches' => $complete_matches]);
     }
+
 }
