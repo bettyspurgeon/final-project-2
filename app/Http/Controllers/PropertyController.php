@@ -216,4 +216,21 @@ class PropertyController extends Controller
         return view('landlord-views.user-properties', ['properties' => $properties]);
         
     }
+    //Return a specific user's properties
+    public function homer_properties() {
+        $properties = Properties::WHERE('purpose', 'like', '%rent')
+        ->limit(3)->get();;
+        dd($properties); 
+        
+        return view('property-views.hproperties', ['properties' => $properties]);;
+        
+    }
+    public function homes_properties() {
+        $properties = Properties::WHERE('purpose', 'like', '%sale')
+        ->limit(3)->get();;
+        dd($properties); 
+        
+        return view('property-views.hsproperties', ['properties' => $properties]);;
+        
+    }
 }
