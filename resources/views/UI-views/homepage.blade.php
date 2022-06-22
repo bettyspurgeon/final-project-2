@@ -25,6 +25,7 @@
         <h2 class="prop-title">These are some of our properties: </h2>
         <div class="rent-props" id="rent-properties">
           Property to rent #1
+          
         </div>
         <div class="rent-props" id="rent-properties">
           Property to rent #2

@@ -138,8 +138,8 @@ Route::get('/propertymatches', function() {
 
 
 //return properties homepage
-Route::get('/hproperties', [PropertyController::class, 'homer_properties']);
-Route::get('/hsproperties', [PropertyController::class, 'homes_properties']);
+Route::get('/hrproperties', [PropertyController::class, 'homepage_frent_properties']);
+Route::get('/hsproperties', [PropertyController::class, 'homepage_fsale_properties']);
 
 
 //Show Buyers and Renters Matched houses 

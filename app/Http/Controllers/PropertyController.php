@@ -225,15 +225,15 @@ class PropertyController extends Controller
         
     }
     //Return homepage properties
-    public function homer_properties() {
+    public function homepage_frent_properties() {
         $properties = Properties::WHERE('purpose', 'like', '%rent')
         ->limit(3)->get();;
         //dd($properties); 
         
-        return view('property-views.hproperties', ['properties' => $properties]);;
+        return view('property-views.hrproperties', ['properties' => $properties]);;
         
     }
-    public function homes_properties() {
+    public function homepage_fsale_properties() {
         $properties = Properties::WHERE('purpose', 'like', '%sale')
         ->limit(3)->get();;
         //dd($properties); 
