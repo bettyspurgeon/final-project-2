@@ -21,7 +21,14 @@ body {
   .our-values{ 
     display:flex; 
     align-items: center;
+    justify-content: space-evenly;
+}
+  .value-card{ 
+    display:flex;
+    flex-direction:column; 
+    align-items: center;
     justify-content: center;
+    width: 100%;
 }
 .people-cards{
   display: flex;
@@ -78,8 +85,7 @@ body {
     background-color: #f2f2f2;
     text-align: center;
     border-radius: 4px;
-  padding-left: 10px;
-  padding-right: 10px;
+    padding: 10px;
     margin: 15px;   
 }
 .who-we-are h2{
@@ -105,9 +111,13 @@ body {
 
 
 @media screen and (min-width: 400px) and (max-width: 796px) {
+  .values-title{
+    margin-top:50px;
+  }
   .our-values{
     width: 100%;
     display: block;
+    margin-top:20px;
    
   }
   .people-cards{
