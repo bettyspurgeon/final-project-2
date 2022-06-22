@@ -7,9 +7,11 @@
 
             <section class="wrapper-one">
                 @if ($user->type == 'buyer' || $user->type == 'renter')
-                    <a class="btn-title" href="/propertymatches">
+
+                    <a href="/propertymatches/{{$user->id}}">
+
                         <div class="btn-opt">
-                        <i class="fa-solid fa-heart fa-7x " style="color:white"></i>
+                        <i class="fa-solid fa-heart fa-7x " style="color:white" ></i>
                             <p class="paragraph">View Matches</p>
                         </div>
                     </a>

@@ -1,8 +1,14 @@
+a {
+    text-decoration: none;
+}
 .main-content{
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(255, 255, 255);
+
+    
 }
 .dashboardBtns{
     display:flex;
@@ -18,6 +24,7 @@
     align-content:center;
     padding:25px;
     padding-bottom:5cm;
+   
 }
 
 .wrapper-two{
@@ -25,16 +32,17 @@
     justify-content: space-between;
     align-content:center;
     padding:25px;
+    
 }
 
 
-.btn-opt p{
+.btn-opt p{ 
     margin-top: 35px;
     text-decoration:none;
     color:#fff;
 }
 
-.btn-opt{
+.btn-opt{  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     width: 300px;
     height: 300px;
     background-color:rgb(19, 164, 9);
@@ -53,6 +61,7 @@
     background-color: rgb(94, 234, 94);
 
 }
+
 .card-icon{
     width:120px;
     height:120px;
@@ -75,6 +84,7 @@
       width: 100%;
       display: block;
     }
+    
   }
 
  .btn-title{

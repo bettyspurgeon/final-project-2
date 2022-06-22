@@ -4,6 +4,7 @@
 @section('title', 'Manage Account')
 
 @section('content')
+
     <section class="contactform">
         <div class="main-content">
             <div class="container">
@@ -69,4 +70,5 @@
             </a>
         </div>
     </div> --}}
+
 @endsection
