@@ -58,7 +58,7 @@
                     <option value="0">No</option>
                 </select><br>
 
-                <strong>Bedrooms:</strong> <input type="text" name="beedrooms" placeholder="Bedrooms"
+                <strong>Bedrooms:</strong> <input type="text" name="bedrooms" placeholder="Bedrooms"
                     value="{{ $property->bedrooms }}"><br>
                 <strong>Bathrooms:</strong> <input type="text" name="bathrooms" placeholder="Bathrooms"
                     value="{{ $property->bathrooms }}"><br>
