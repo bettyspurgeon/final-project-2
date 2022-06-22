@@ -14,18 +14,20 @@
     justify-content: center;
     align-items: center;
 }
-.rent-properties-list{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
+.display-properties{
+    display:flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin:25px;
+    color:rgb(56, 136, 25);
+    font-weight: 600;
 }
-.buy-properties-list{
-    display: none;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
+.separator{
+    width: 1px;
+    height:100vh;
+    background-color: rgb(56, 136, 25);
 }
+
 .main-logo{
     width:33%;
     height: auto;
@@ -87,6 +89,39 @@
     margin:25px;
     color:rgb(56, 136, 25);
 }
+
+
+
+.wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  
+  /* DEMO-SPECIFIC STYLES */
+   .wrapper h1 {
+    color: rgb(56, 136, 25);
+    border-right: .15em solid #fff; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    margin-bottom: 30px;
+    padding-right:00px;
+    letter-spacing: .15em;
+    animation: blink .5s step-end  infinite alternate;
+  }
+  
+  
+  
+  /* The typewriter cursor effect */
+  @keyframes blink {
+    50% { border-color: transparent}
+  }
+
+
+
+
+
 
 
 
