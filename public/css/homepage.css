@@ -1,26 +1,28 @@
 *{
     margin: 0;
 }
-body{
-    /* background-image: url(./assets/lux-3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
-}
 
-.main-content{
-    display:flex;
-    flex-direction:column;
-}
 .search-section{
     background-image: url(./assets/lux-3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height:100vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rent-properties-list{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.buy-properties-list{
+    display: none;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
 }
@@ -29,59 +31,55 @@ body{
     height: auto;
 }
 
-.subtitle {
-    text-align: center;
-    color: #fff;
-}
 
 .title{
     font-size: 3em;
 }
 
-.content-form {
-    width:33%;
+.rent-buy-btns-container{
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+    width:100vw;
 }
 
-.search-bar{
-    width: 100%;
-    max-width: 700px;
-    background-color: rgba(255, 255, 255, 0.2);
+.rent-btn, .buy-btn{
+    width: 150px;
+    height: 50px;
+    border:1px solid #fff;
+    border-radius:4%;
+    background-color:rgb(56, 136, 25);
+    color:#fff;
+    margin: 20px;
+}
+.rent-btn:hover, .buy-btn:hover{
+
+    border:1px solid rgb(56, 136, 25);
+    border-radius:4%;
+    background-color:#fff;
+    color:rgb(56, 136, 25);
+    font-weight: 600px;
+    cursor: pointer;
+}
+.centralize-register-btn{
     display: flex;
     justify-content: center;
-    border-radius: 60px;
-    border: 3px solid #fff;
-
 }
-
-.search-bar input {
-    background: transparent;
-    flex: 1;
-    border: 0;
-    outline: none;
-    font-size: 20px;
-    color: #000;
-    text-align: center;
-
+.register-to-see-all{
+    height: 50px;
+    border:1px solid #fff;
+    border-radius:4%;
+    background-color:rgb(56, 136, 25);
+    color:#fff;
+    width:40vw;
+    font-weight: bolder;
+    margin: 20px;
 }
-
-::placeholder {
-    color: rgba(233, 233, 233, 0.5);
-    backdrop-filter: none;
-    text-align: center;
-    font-style: italic;
-}
-
-.search-bar button img{
-    width: 25px;
-}
-
-.search-bar button {
-    border: 0;
-    border-radius: 100%;
-    width: 60px;
-    height: 60px;
-    background: rgb(56, 136, 25);
-    cursor: pointer;
+.register-to-see-all:hover{
+    background-color:#fff;
+    border: 1px solid rgb(56, 136, 25);
+    color: rgb(56, 136, 25);
+    cursor:pointer;
 }
 
 .prop-title{
@@ -91,28 +89,6 @@ body{
 }
 
 
-.properties-section{
-    width:100vw;
-    height:200px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.avatar{
-    display:flex;
-    flex-direction:column;
-    width:30vw;
-
-}
-.avatar img{
-    width:20vw;
-    height:auto;
-}
-.description{
-    width:50vw;
-    margin-left:40px;
-}
 
 
 
@@ -120,7 +96,7 @@ body{
 
 @media only screen and (max-width: 768px) {
 .main-logo{
-    width:60%;
+    width:50vw;
     height: auto;
 }
 
@@ -131,11 +107,19 @@ body{
 .content-form input {
     width:60%;
 }
+.centralize-register-btn{
+    width:100vw;
+   
+}
+.register-to-see-all{
+    width:80%;
+    margin: 10px;
+}
 }
 
-@media only screen and (max-width: 996px){
+@media only screen and (min-width: 769px)and(max-width: 996px){
 .main-logo{
-    width:50%;
+    width:50vw;
     height: auto;
 }
 
@@ -145,5 +129,25 @@ body{
 }
 .content-form input {
     width:60%;
+}
+
+.rent-buy-btns-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:70vw;
+}
+
+.rent-btn, .buy-btn{
+    margin:10px;
+    width:100%;
+}
+.centralize-register-btn{
+    width:100vw;
+   
+}
+.register-to-see-all{
+    width:80%;
+    margin: 10px;
 }
 }

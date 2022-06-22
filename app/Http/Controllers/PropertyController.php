@@ -21,6 +21,8 @@ class PropertyController extends Controller
         $properties = Properties::JOIN( 'landlord_preferences', 'landlord_preferences.property_id','=','properties.id')->get();
 
         return view('property-views.properties', ['properties' => $properties]);
+        return view('property-show.properties', ['properties' => $properties]);
+
 
     }
 

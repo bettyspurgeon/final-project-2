@@ -52,10 +52,7 @@ class LandlordController extends Controller
         
         $user = User::where('email', session('email'))->first();
         $result->user_id = $user->id;
-
-        $properties = Properties::where('property_id', $id)->first();
-        $result->property_id = $properties->id;
-
+        $result->property_id = $request->id;
         $result->contract = strtolower($request->contract);
         $result->income = $request->income;
 
@@ -107,15 +104,13 @@ class LandlordController extends Controller
         $request->validate([
        
             'contract' => 'required',
-            'income' => 'required|numeric',
+            'income' => 'required',
         ]);
         $landlordpreference = landlordPreference::find($id);
         
         $user = User::where('email', session('email'))->first();
         $landlordpreference->user_id = $user->id;
-
-        $property = Properties::where("property_id", $id)->first();
-        $landlordpreference->property_id = $property->$id;
+        $landlordpreference->property_id = $request->$id;
 
         $landlordpreference->contract = $request->contract;
         $landlordpreference->income = $request->income;
@@ -124,9 +119,9 @@ class LandlordController extends Controller
         $result = $landlordpreference->save();
 
         if ($result) {
-            return redirect("/myproperties/update/$id")->with('message', 'Update properties sussessfully!');
+            return redirect('landlordpreference')->with('message', 'Update landlordpreference sussessfully!');
         } else {
-           redirect("/myproperties/update/$id")->with('error', 'There is some thing wrong for update properties, try again later !');
+            return redirect('landlordpreference')->with('error', 'There is some thing wrong for update landlordpreference, try again later !');
         }
     }
 
