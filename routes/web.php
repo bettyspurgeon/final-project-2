@@ -105,12 +105,11 @@ Route::get('/myproperties/delete/{id}', [PropertyController::class, 'destroy'])-
 /*
     Manage User Documents and Salary Information (User Profile)
 */
-Route::get('/user-profile/{id}', function() {
-});
-    return view('user-pages.renter-file-upload');
+Route::get('/user-profile/{id}', [UserProfileController::class, 
+'index']);
+
 Route::post('/user-profile/{id}', [UserProfileController::class, 'upload_user_file']);
 
-/*
 
 
 //Routes for Landlord perference
@@ -131,10 +130,12 @@ Route::get('/landlordpreference/delete/{id}', [LandlordController::class, 'destr
 
 /* 
 
-//Routes for Matches
+Routes for Matches
 
-
-
+*/
+Route::get('/propertymatches', function() {
+    return view('match-pages.matches');
+});
 /*
 
 Show Buyers and Renters Matched houses 

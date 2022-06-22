@@ -19,7 +19,6 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Properties::JOIN( 'landlord_preferences', 'landlord_preferences.property_id','=','properties.id')->get();
-        //dd($properties);
 
         return view('property-views.properties', ['properties' => $properties]);
 
@@ -49,7 +48,7 @@ class PropertyController extends Controller
             'price' => 'required|numeric',
             'location' => 'required',
             'date_avaliable' => 'required|date',
-            'area' => 'required|integer',
+           
             'bedrooms' => 'required|integer',
             'bathrooms' => 'required|numeric',
             'parking' => 'required',
@@ -70,8 +69,10 @@ class PropertyController extends Controller
         $result->type = strtolower($request->type);
         $result->price = $request->price;
         $result->location = $request->location;
+        $result->house_number = $request->house_number;
+        $result->street_name = $request->street_name;
+        $result->post_code = $request->post_code;
         $result->date_avaliable = $request->date_avaliable;
-        $result->area = $request->area;
         $result->bedrooms = (int)$request->bedrooms;
         $result->bathrooms = (double)$request->bathrooms;
         $result->children = $request->children;
@@ -98,7 +99,8 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-        return view('property-views.properties-details',['property'=> $properties]);
+        dd($properties);
+        // return view('property-views.properties-details',['property'=> $properties]);
     }
 
     /**
@@ -129,7 +131,7 @@ class PropertyController extends Controller
         //     'price' => 'required|numeric',
         //     'location' => 'required',
         //     'date_avaliable' => 'required|date',
-        //     'area' => 'required|numeric',
+        //     
         //     'bedrooms' => 'required|numeric',
         //     'bathrooms' => 'required|numeric',
         //     'parking' => 'required',
@@ -147,7 +149,6 @@ class PropertyController extends Controller
         $property->price = $request->price;
         $property->location = $request->location;
         $property->date_avaliable = $request->date_avaliable;
-        $property->area = $request->area;
         $property->bedrooms = (int)$request->bedrooms;
         $property->bathrooms = (double) $request->bathrooms;
         $property->children = $request->children;

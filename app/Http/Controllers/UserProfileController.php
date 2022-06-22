@@ -8,6 +8,9 @@ use App\Models\User;
 
 class UserProfileController extends Controller
 {
+    public function index() {
+        return view('user-pages.renter-file-upload'); 
+    }
     public function upload_user_file(Request $request, $id)
     {
         $request->validate([

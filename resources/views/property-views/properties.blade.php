@@ -21,7 +21,7 @@
 
     <div class="properties-container">
         <div class="properties-picture">
-            <!-- <strong>Picture: </strong> <br> -->
+          
             <img class="properties-img" src="uploads/{{ $property->pictures }}" alt=""></img><br>
         </div>
         <div class="properties-description">

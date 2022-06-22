@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('property_id'); 
             $table->foreign('property_id')->references('id')->on('properties');
             $table->enum('contract', ['CDI', 'CDD', 'NONE']);
             $table->integer('income');
