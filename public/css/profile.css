@@ -1,46 +1,227 @@
-.main-container{
-    min-height: 100vh;
+.contactform {
+    height: 100vh;
+    margin-top: 80px;
+}
+
+.main-content {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 50px;
-    max-width: 500px;
-    margin: auto;
-}
-
-h2 {
-    margin-bottom: 10px;
-}
-
-input[type=text], [type=email], select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0;
     box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
+    overflow: hidden;
+    z-index: 0;
+        
+}
+    
+.container {		
+    background: linear-gradient(90deg,rgb(49,112,23), rgb(56,136,25));		
+    position: relative;	
+    height: 700px;
+    width: 500px;	
+    box-shadow: 0px 0px 24px rgb(36,104,10);
+}
+    
+.screen_content{
+    z-index: 1;
+    position: relative;
+    height: 100%;
+}
+    
+.header {
+    align-items: center;
+    font-size: larger;
+    padding:50px 1cm 0.8cm 1.75cm;
 }
 
-.submitBtn{
-    background-color: #45a049;
-    color: white;
-    padding: 12px 20px;
+.change-pass{
+    text-decoration:none;
+    color: rgb(56, 136, 25);;
+
+}
+.change-pass-field{
+    display:flex;
+    justify-content: center;
+    margin:5px;
+}
+
+.second-menu{
+    margin:20px;
+    width: 27vw;
+}
+.upload-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom:0;
+}
+
+.upload-text{
+    font-weight: bold;
+}
+
+.manage-btn-container{
+    display:flex;
+    align-items: center;
+    
+}
+
+.manage-btn{
+    background-color:rgb(56, 136, 25);;
+    color:#fff;
+    border-radius: 8px;
+    margin:1px;
+    width: 13.5vw;
+    height: 10vh;
+}
+.manage-btn:hover{
+    background-color:#fff;
+    color:rgb(56, 136, 25);;
+    border: 1px solid rgb(56, 136, 25);;
+    cursor:pointer;
+}
+    
+.screen_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    clip-path: (0 0 0 0);
+}
+    
+.screen_bg_shape {
+    transform: rotate(55deg); 
+    position: absolute;
+}
+    
+.screen_bg_shape4 {
+    height: 400px;
+    width: 200px;
+    background: rgb(49,112,23);
+    top: 500px;
+    right: 50px;
+    border-radius: 60px;
+}
+    
+.screen_bg_shape3 {
+    height: 540px;
+    width: 190px;
+    background: linear-gradient(270deg, rgb(56,136,25), rgb(36,104,10));
+    top: -24px;
+    right: 0px;
+    border-radius: 32px;
+}
+    
+.screen_bg_shape2 {
+    height: 220px;
+    width: 220px;
+    background: rgb(56,136,25);
+    top: -172px;
+    right: 40px;
+    border-radius: 32px;
+}
+    
+.screen_bg_shape1 {
+    height: 700px;
+    width: 800px;
+    background: #fff;
+    top: -100px;
+    right: 145px;
+    border-radius: 0 72px 0 0;
+}
+    
+.form {
+    width: 320px;
+    padding: 30px;
+    padding-top: 30px;
+    
+}
+    
+.login_field {
+    padding: 20px 0;
+    position: relative;
+}
+    
+.login_icon {
+    position: absolute;
+    top: 30px;
+    color: rgb(49,112,23);
+}
+    
+.forminput {
     border: none;
-    border-radius: 4px;
+    border-bottom: 2px solid rgb(49,112,23);
+    background: none;
+    padding: 15px;
+    padding-left: 24px;
+    width: 100%;
+    transition: .2s; 
+}
+
+#textarea {
+    box-shadow: 0px 0px 24px rgb(36,104,10);
+    margin-top: 30px;
+    border-bottom: 0;
+    
+}
+
+#type-opt {     
+    width: 90%;
+
+}
+    
+#btn {
+    background-color: #fff;
+    font-size: 14px;
+    margin-top: 30px;
+    padding: 16px 20px;
+    border-radius: 26px;
+    border: 1px solid rgb(56,136,25);
+    text-transform: uppercase; 
+    font: 700;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    color: rgb(49,112,23);
+    box-shadow: 0 2px 2px rgb(36,104,10);
     cursor: pointer;
+    transition: 0.2s;
+}
+#btn:hover {
+    background-color: rgb(56,136,25);
+    color: #fff;
+    border: 1px solid #fff;
 }
 
-.submitBtn:hover{
-    background-color: lightgreen;
+
+@media screen and (min-width: 200px) and (max-width: 796px) {
+
+
+    .contactform {
+        height: 80vh;
+        margin-top: 80px;
+    }
+
+    .container {		
+        background: linear-gradient(90deg,rgb(49,112,23), rgb(56,136,25));		
+        position: relative;	
+        height: 120vh;
+        width: 80vw;	
+        box-shadow: 0px 0px 24px rgb(36,104,10);
+    }
+
+    .upload-container{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin-top: 15px;
+    }
+    
 }
 
-a {
-    margin-top: 20px;
-    text-align: center;
-}

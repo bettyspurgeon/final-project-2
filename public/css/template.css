@@ -16,7 +16,7 @@ body {
 
 .main-content{
     display:flex;
-    position:relative;
+
     flex-direction: column;
 }
 
