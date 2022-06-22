@@ -138,8 +138,8 @@ Route::get('/propertymatches', function() {
 
 
 //return properties homepage
-Route::get('/property-views.hproperties', [PropertyController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
-Route::get('/property-views.hsproperties', [PropertyController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
+Route::get('/hproperties', [PropertyController::class, 'homer_properties']);
+Route::get('/hsproperties', [PropertyController::class, 'homes_properties']);
 
 
 //Show Buyers and Renters Matched houses 
