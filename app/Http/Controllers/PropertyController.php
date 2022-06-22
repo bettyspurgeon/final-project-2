@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\LandlordPreference;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\File;
 
 class PropertyController extends Controller
 {
@@ -174,9 +175,11 @@ class PropertyController extends Controller
    
              //code to remove an old file
              if($request->pictures != ''  && $request->pictures != null){
-                  $file_old =  $_POST['pictures'];
+                $file_old = $property->pictures;
+                File::delete($file_old);
+                //   $file_old =  $_POST['pictures'];
                  
-                  $file_old->delete();
+                //   $file_old->delete();
              }
    
              //upload new file
