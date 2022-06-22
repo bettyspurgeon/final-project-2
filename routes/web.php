@@ -8,6 +8,7 @@ use App\HTTP\Controllers\ContactController;
 use App\HTTP\Controllers\LandlordController;
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\CoordinatesController;
 use App\Http\Middleware\EnsureIsLoggedIn;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\ForgotPasswordController;

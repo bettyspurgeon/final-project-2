@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\LandlordPreference;
+use Illuminate\Support\Facades\Http;
 
 class PropertyController extends Controller
 {
@@ -21,7 +22,6 @@ class PropertyController extends Controller
         $properties = Properties::JOIN( 'landlord_preferences', 'landlord_preferences.property_id','=','properties.id')->get();
 
         return view('property-views.properties', ['properties' => $properties]);
-        return view('property-show.properties', ['properties' => $properties]);
 
 
     }
@@ -65,6 +65,12 @@ class PropertyController extends Controller
         $publicPath = public_path('uploads');
         $request->pictures->move($publicPath, $fileName);
 
+        $coordinates = Http::get("http://apiv3.geoportail.lu/geocode/search?queryString=$request->house_number, $request->street_name $request->location, $request->post_code Luxembourg")->object()->results['0']->geomlonlat;
+        $longitude = $coordinates->coordinates[0];
+        $latitude = $coordinates->coordinates[1];
+
+       
+
         $user = User::where('email', session('email'))->first();
         $result->user_id = $user->id;
 
@@ -81,7 +87,9 @@ class PropertyController extends Controller
         $result->pets = $request->pets;
         $result->parking = true;
         $result->description = (string)$request->description;
-        $result->pictures = $fileName;;
+        $result->pictures = $fileName;
+        $result->longitude = $longitude;
+        $result->latitude = $latitude; 
 
         $result->save();
 
@@ -101,8 +109,8 @@ class PropertyController extends Controller
     public function show($id)
     {
         $properties = Properties::find($id);
-        dd($properties);
-        // return view('property-views.properties-details',['property'=> $properties]);
+        
+        return view('property-views.properties-details',['property'=> $properties]);
     }
 
     /**
