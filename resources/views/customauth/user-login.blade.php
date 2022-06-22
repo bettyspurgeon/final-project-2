@@ -28,7 +28,7 @@
                         </div>
                         <div class="login_field">
                             <i class="login_icon fa-solid fa-lock"></i>
-                            <input type="password" class="forminput" placeholder="Password">
+                            <input type="password" class="forminput" name="password" placeholder="Password">
                         </div>
                         <input type="submit" id="btn" value="Log-in"><i class="button__icon fas fa-chevron-right"></i>
                     </form>

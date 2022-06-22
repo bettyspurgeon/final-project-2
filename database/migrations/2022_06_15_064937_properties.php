@@ -32,6 +32,8 @@ return new class extends Migration
             $table->boolean('pets');
             $table->text('description');
             $table->string('pictures', 255);
+            $table->decimal('longitude', 11, 8); 
+            $table->decimal('latitude',10, 8);
         });
     }
 
