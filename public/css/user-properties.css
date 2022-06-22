@@ -1,0 +1,51 @@
+section.manage-properties-content {
+    min-height: 90vh;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+.properties-header {
+    text-align: center;
+    padding: 2rem 0;
+}
+.properties-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+.property-card {
+    height: 25rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid green;
+}
+
+.property-image {
+    height: 15rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.property-description {
+    padding-top: 1rem;
+    margin-left: 1rem;
+}
+.property-links {
+    padding: 1rem;
+}
+.property-link {
+    padding: 0 0.5rem;
+}
+
+@media only screen and (min-width: 600px) {
+    .properties-container {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
