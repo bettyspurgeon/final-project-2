@@ -129,6 +129,7 @@ class UserController extends Controller
 
         $user = UserPreference::where("user_id", $id)->first();
         if (!$user) {
+            $user = new UserPreference;
             $user->user_id = $id;
         }
 

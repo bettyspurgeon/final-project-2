@@ -56,7 +56,7 @@ Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware
 
 //user preference management route
 Route::get('/preferences/{id}', [UserController::class, 'preferences'])->middleware([EnsureIsLoggedIn::class]);
-Route::post('/preferences/{id}', [UserController::class, 'update_preferences'])->middleware([EsnureIsLoggedIn::class]);
+Route::post('/preferences/{id}', [UserController::class, 'update_preferences']);
 
 Route::get('/renter-profile/{id}', [UserProfileController::class, 'save']); 
 
