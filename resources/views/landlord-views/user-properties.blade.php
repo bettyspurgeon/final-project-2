@@ -17,19 +17,21 @@
                         </p>
                         <p>Type: {{ ucfirst($property->type) }}</p>
                         <div class="property-links">
-                            <a href="{{ route('properties.edit', [$property->id]) }}" class="property-link">Edit Information</a>
-                            <a href="{{ route('properties.delete', [$property->id]) }}" class="property-link">Delete This Property</a>
+                            <a href="{{ route('properties.edit', [$property->id]) }}" class="property-link">Edit
+                                Information</a>
+                            <a href="{{ route('properties.delete', [$property->id]) }}" class="property-link">Delete This
+                                Property</a>
                         </div>
                     </div>
                 </div>
             @endforeach
-
         </div>
-        <div class="add-property-prompt" style=" display:flex; flex-direction: column; gap: 1.5rem; text-align:center">
-            <h3>You have {{ count($properties) }} properties! Would you like to add another?</h3>
-            <a href="/properties/create"><button
-                    style="border: none; background-color:green; padding: 1rem 1.5rem; color: white; font-size: 1rem; border-radius: 1.5rem; cursor: pointer;">Add
-                    New Property</button></a>
+        <div class="add-property-prompt">
+            <h3>You have {{ count($properties) > 1 ? count($properties) . ' Properties!' : '1 Properties!' }} properties!
+                Would you like to add another?</h3>
+            <a class="change-prompt"href="/properties/create">
+                Add New Property
+            </a>
         </div>
     </section>
 @endsection
