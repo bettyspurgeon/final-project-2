@@ -28,7 +28,7 @@ body {
     height: 80px;
     background-color: #fff;
     position:fixed;
-    border: 1px solid rgb(56, 136, 25);
+    border-bottom: 1px solid rgb(56, 136, 25);
     z-index: 999999;
 }
 
@@ -297,14 +297,16 @@ footer{
         -webkit-transform: rotate(45deg) translate(-8px, -8px);
         transform: rotate(45deg) translate(-8px, -8px);
       }
-
+      ul {
+        padding: 0; 
+      }
     .menu-box{
         display:none;
         flex-direction:column;
         align-items: center;
         justify-content: space-around;
         list-style: none;
-        height: 15vh;
+        height: 15vh; 
     }
 
     .menu-box li a{
@@ -317,7 +319,7 @@ footer{
     display:flex;
     flex-direction:column;
     overflow: hidden;
-    background-color: rgba(56, 136, 25,0.9);
+    background-color: #388819e6;
     border: 1px solid #fff;
     position: relative;
     color: #fff;
