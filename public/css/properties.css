@@ -1,8 +1,6 @@
 .big-container{
     display: flex;
     justify-content: space-around;
-    
-    
 }
 
 .properties-container {

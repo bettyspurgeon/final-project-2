@@ -152,7 +152,7 @@ footer{
     color: darkgray;
 }
 .subs-submit-btn{
-    background-color: rgb(56, 136, 25);
+    background-color: #388819;
     color: #fff;
     padding:12px;
     border: 1px solid #fff;
@@ -162,7 +162,7 @@ footer{
     
 }
 .subs-submit-btn:hover{
-    background-color:rgb(49, 112, 23);
+    background-color:#317017;
     color: #fff;
     border: 1px solid #fff;
     transform: scale(1.01);
