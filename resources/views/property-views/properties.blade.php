@@ -3,25 +3,11 @@
 @section('title', 'Properties List')
 
 @section('content')
-    @if (session('success'))
-        <div class="alert alert-success" style="color: green">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    @if (session('error'))
-        <div class="alert alert-success" style="color: red">
-            {{ session('error') }}
-        </div>
-    @endif
-
     @foreach ($properties as $property)
         <div class="big-container">
 
             <div class="properties-container">
-                <div class="properties-picture">
-                    <img class="properties-img" src="uploads/{{ $property->pictures }}" alt=""></img><br>
-
+                <div class="properties-picture" style="background-image: url('uploads/{{ $property->pictures }}')">
                 </div>
                 <div class="properties-description">
                     <div class="wrapper-1">
