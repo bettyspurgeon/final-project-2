@@ -13,28 +13,29 @@
 
         <div class="property-description">
             <h3 class="information-header">Here are the Important Details!</h3>
-            <strong>Type : </strong> {{ $property->type }}<br>
-            <strong>Price : </strong>
-            {{ $property->purpose == 'rent' ? $property->price . '€/Per Month' : $property->price . '€' }}<br>
-            <strong>Location : </strong> {{ $property->location }}<br>
-            <strong>Date_available: </strong> {{ $property->date_avaliable }}<br>
+            <div class="property-info-container">
+                <div class="property-info">
+                    <strong>Type : </strong> {{ ucfirst($property->type) }}<br>
+                    <strong>Price : </strong>
+                    {{ $property->purpose == 'rent' ? $property->price . '€/Per Month' : $property->price . '€' }}<br>
+                    <strong>Location : </strong> {{ $property->location }}<br>
+                    <strong>Date_available: </strong> {{ $property->date_avaliable }}<br>
 
-            <strong>Parking : </strong> {{ $property->parking = 1 ? 'Yes' : 'No' }}<br>
-            <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
-            <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
-            <strong>Children: </strong> {{ $property->children = 1 ? 'Yes' : 'No' }}<br>
-            <strong>Pets: </strong> {{ $property->pets = 1 ? 'Yes' : 'No' }}<br>
-            <strong>Description : </strong> {{ $property->description }}<br>
+                    <strong>Parking : </strong> {{ $property->parking = 1 ? 'Yes' : 'No' }}<br>
+                    <strong>Bedrooms : </strong> {{ $property->bedrooms }}<br>
+                    <strong>Bathrooms : </strong> {{ $property->bathrooms }}<br>
+                    <strong>Children: </strong> {{ $property->children = 1 ? 'Yes' : 'No' }}<br>
+                    <strong>Pets: </strong> {{ $property->pets = 1 ? 'Yes' : 'No' }}<br>
+                    <strong>Description : </strong> {{ $property->description }}<br>
+                </div>
 
-
-            <div class="properties-link">
-
-                <a href="/properties">Back to Properties</a>
-
+                <div class="landlord-preferences">
+                    <h4>Landlord Request</h4>
+                <p>Contract : {{ $property->contract }} </p>
+                    <p>Income :  {{ $property->income }}</p>
+                </div>
 
             </div>
-
-
         </div>
         <div class="map-container">
             <h3>The Neighbourhood:</h3>
@@ -42,6 +43,9 @@
                 src="https://www.google.com/maps/embed/v1/view?key=AIzaSyA0MAOg9gkDSlSBTc11ZLa2-TZupNytSxc&center={{ $property->latitude }},{{ $property->longitude }}&zoom=15">
             </iframe>
         </div>
+          <div class="properties-link">
+                <a href="/properties">Back to Properties</a>
+            </div>
     </div>
 
 
