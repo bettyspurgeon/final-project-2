@@ -37,7 +37,7 @@ class MatchhomeController extends Controller
                 }
             }
         }
+
         return view('match-pages.matches', ['complete_matches' => $complete_matches]);
     }
-
 }

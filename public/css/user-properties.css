@@ -1,6 +1,7 @@
 section.manage-properties-content {
+    margin: auto;
     min-height: 90vh;
-    width: 100%;
+    width: 85%;
     padding-bottom: 1rem;
 }
 
@@ -18,7 +19,7 @@ section.manage-properties-content {
     padding-bottom: 2rem;
 }
 .property-card {
-    height: 25rem;
+    width: 90%;
     border-radius: 1rem;
     overflow: hidden;
     border: 1px solid green;
@@ -30,14 +31,45 @@ section.manage-properties-content {
     background-size: cover;
 }
 .property-description {
-    padding-top: 1rem;
-    margin-left: 1rem;
+    padding: 1rem 0;
+    width: 95%;
+    margin: auto;
 }
 .property-links {
-    padding: 1rem;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    margin: auto;
+
+    flex-direction: column;
+
+    justify-content: center;
 }
-.property-link {
-    padding: 0 0.5rem;
+.property-link, .change-prompt {
+    background-color: #45a049;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    transition: 200ms;
+    width: 50%;
+}
+.add-property-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+h3 {
+    text-align: center;
+}
+.change-prompt {
+    max-width: 33%;
+
 }
 
 @media only screen and (min-width: 600px) {
@@ -48,4 +80,14 @@ section.manage-properties-content {
         flex-wrap: wrap;
         gap: 2rem;
     }
+    .property-card {
+        width: 30%;
+    }
+    .change-prompt {
+        max-width: 20%;
+    }
+    .details-link:hover, .change-prompt:hover, .property-link:hover {
+        background-color: #317017;
+    }
+
 }

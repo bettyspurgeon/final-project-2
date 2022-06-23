@@ -15,7 +15,7 @@
 
                     <p>Location: {{ $property->location }}</p>
 
-                    <p> Date Avaliable: {{ $property->date_avaliable }}</p><br>
+                    <p> Date Avaliable: {{ $property->date_avaliable }}</p>
                     
                         <a class="details-link" href="{{ route('properties.details', [$property->id]) }}">Details</a>
                   
