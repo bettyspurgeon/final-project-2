@@ -109,9 +109,9 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $properties = Properties::find($id);
-        
-        return view('property-views.properties-details',['property'=> $properties]);
+        $property = Properties::join('landlord_preferences', 'landlord_preferences.property_id', '=', 'properties.id')->where('properties.id', $id)->first();
+    
+        return view('property-views.properties-details',['property'=> $property]);
     }
 
     /**
