@@ -233,7 +233,7 @@ class PropertyController extends Controller
         ->limit(3)->get();;
         //dd($properties); 
         
-        return view('property-views.hrproperties', ['properties' => $properties]);;
+        return view('UI-views.hrproperties', ['properties' => $properties]);;
         
     }
     public function homes_properties() {
@@ -241,7 +241,7 @@ class PropertyController extends Controller
         ->limit(3)->get();;
         //dd($properties); 
         
-        return view('property-views.hsproperties', ['properties' => $properties]);;
+        return view('UI-views.hsproperties', ['properties' => $properties]);;
         
     }
     

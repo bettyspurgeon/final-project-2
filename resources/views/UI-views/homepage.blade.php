@@ -17,43 +17,29 @@
 </div>
 
 
-@foreach ($properties as $property)
 <h2 class="prop-title">These are some of our properties: </h2>
-<div class="display-properties">
+ <div class="display-properties">
+  <h4>RENT</h4>
 
   <div class="rent-properties-list" id="rent-properties-list">
-    RENT
-
-    <div><strong>Type : </strong>
-      <p class="p-description"> {{ $property->type }}</p><br>
-      <strong>Price : </strong>
-      <p class="p-description"> {{ $property->price }}</p><br>
-      <strong>Location : </strong>
-      <p class="p-description"> {{$property->location}}</p><br>
-      <strong>Date_avaliable: </strong>
-      <p class="p-description"> {{ $property->date_avaliable}}</p><br>
-    </div>
 
 
-    
+  @section('zoneA')
+
+  @show
+
+
   </div>
 
 
   <div class="separator"></div>
 
+  <h4>BUY</h4>
+  <div class="buy-properties-list" id="buy-properties-list">
 
-  <div class="buy-properties-list" id="buy-properties-list">BUY
+  @section('zoneB')
 
-    <div><div><strong>Type : </strong>
-      <p class="p-description"> {{ $property->type }}</p><br>
-      <strong>Price : </strong>
-      <p class="p-description"> {{ $property->price }}</p><br>
-      <strong>Location : </strong>
-      <p class="p-description"> {{$property->location}}</p><br>
-      <strong>Date_avaliable: </strong>
-      <p class="p-description"> {{ $property->date_avaliable}}</p><br>
-    </div></div>
-   
+  @show
 
   </div>
 
@@ -66,5 +52,5 @@
 </div>
 
 <script type="text/javascript" src="{{ asset('js/homepage.js') }}"></script>
-@endforeach
+
 @endsection

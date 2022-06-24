@@ -1,6 +1,8 @@
-@extends('templates.layoutTemplate')
+@extends('UI-views.homepage')
 
-@section('content')
+@section('zoneA')
+@parent
+
 @if (session('success'))
 <div class="alert alert-success" style="color: green">
     {{ session('success') }}
@@ -39,3 +41,5 @@
 
 @endforeach
 @endsection
+
+
