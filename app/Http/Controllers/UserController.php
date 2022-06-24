@@ -34,6 +34,9 @@ class UserController extends Controller
         if ($validated) {
             $returnedUser =
                 User::where('email', $request->email)->first();
+                if(!$returnedUser) {
+                    return redirect()->back()->withErrors("User could not be found!")->withInput();
+                }
 
             if (Hash::check($request->password, $returnedUser->password)) {
                 session(['email' => $request->email]);

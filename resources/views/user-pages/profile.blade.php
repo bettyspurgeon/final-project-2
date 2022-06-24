@@ -43,10 +43,11 @@
                         </form>
                         <button type="submit" id="btn">Update Info</button>
                         
-                        <div class="upload-container">
+                        {{-- CAN'T DO THIS OR THE FORM DOES NOT WORK. --}}
+                        {{-- <div class="upload-container">
                             <p class="upload-text">Upload your contract or proof of employment with salary:</p>
                             <input class="upload-file-btn"type="file" name="user-documents"value="upload"><br>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="screen_background">
@@ -59,7 +60,7 @@
         </div>
     </section>
 
-    {{-- <div class="second-menu">
+    <div class="second-menu">
 
         <div class="manage-btn-container">
             <a href="/preferences/{{ $user->id }}">
@@ -69,6 +70,6 @@
                 <button class="manage-btn">Click to Manage My Documents and Information</button>
             </a>
         </div>
-    </div> --}}
+    </div>
 
 @endsection

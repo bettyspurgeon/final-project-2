@@ -12,6 +12,11 @@
     z-index: 0;
         
 }
+
+.error-container {
+    height: 7rem;
+    padding-left: 2rem;
+}
     
 .container {		
     background: linear-gradient(90deg,rgb(49,112,23), rgb(56,136,25));		
@@ -30,7 +35,7 @@
 .header {
     align-items: center;
     font-size: larger;
-    padding:50px 1cm 0.8cm 1.75cm;
+    padding:1.5rem ;
 }
     
 .screen_background {
