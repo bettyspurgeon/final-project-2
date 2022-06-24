@@ -14,7 +14,10 @@
     z-index: 0;
     
 }
-
+.error-container {
+    height: 3rem;
+    padding-left: 2rem;
+} 
 .container {		
 	background: linear-gradient(90deg,rgb(49,112,23), rgb(56,136,25));		
 	position: relative;	
@@ -86,6 +89,7 @@
     right: 120px;
     border-radius: 0 72px 0 0;
 }
+
 
 .login {
     width: 320px;
