@@ -112,20 +112,13 @@ Route::get('/user-profile/{id}', [UserProfileController::class, 'index']);
 Route::post('/user-profile/{id}', [UserProfileController::class, 'upload_user_file']);
 
 
-//Routes for Landlord perference
-Route::get('/landlordpreference', [LandlordController::class, 'index'])->middleware([EnsureIsLoggedIn::class]);
-Route::get('/landlordpreference/create', [LandlordController::class, 'create'])->middleware(EnsureIsLoggedIn::class);
-
-Route::post('/landlordpreference/create', [LandlordController::class, 'store']);
+//Create a New Landlord Preference
+Route::get('/landlordpreference/create/{property_id}', [LandlordController::class, 'create'])->middleware([EnsureIsLoggedIn::class]);
+Route::post('/landlordpreference/create/{property_id}', [LandlordController::class, 'store'])->middleware(EnsureIsLoggedIn::class);
 
 //Interact with singular LandlordController details
-Route::get('/landlordpreference/{id}', [LandlordController::class, 'show'])->middleware([EnsureIsLoggedIn::class])->name('landlordpreference.details');
 Route::get('/landlordpreference/update/{id}', [LandlordController::class, 'edit'])->middleware([EnsureIsLoggedIn::class])->name('landlordpreference.edit')->middleware(EnsureIsLoggedIn::class);
-Route::put('/landlordpreference/update/{id}', [LandlordController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
-Route::get('/landlordpreference/delete/{id}', [LandlordController::class, 'destroy'])->name('landlordpreference.delete')->middleware(EnsureIsLoggedIn::class);
-
-
-
+Route::post('/landlordpreference/update/{id}', [LandlordController::class, 'update'])->middleware([EnsureIsLoggedIn::class]);
 
 
 /* 
@@ -135,27 +128,15 @@ Routes for Matches
 */
 Route::get('/propertymatches/{id}', [MatchhomeController::class, 'display_matches']);
 
-
 //return properties homepage
 Route::get('/hrproperties', [PropertyController::class, 'homer_properties']);
 Route::get('/hsproperties', [PropertyController::class, 'homes_properties']);
-
-
-
-
-
-
-//Show Buyers and Renters Matched houses 
-
-
-
 
 /*
 
 Show Landlords and Sellers matched buyers/renters on each house
 
 */
-
 
 //Show Landlords and Sellers matched buyers/renters on each house
 

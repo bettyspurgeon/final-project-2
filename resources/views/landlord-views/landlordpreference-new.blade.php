@@ -3,39 +3,49 @@
 @section('title', 'Insert new landlordpreference')
 
 @section('content')
-@if ($errors->any())
-<div class="alert alert-danger">
-    <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
-
-<h1 class="contract">Create new landlordpreference</h1>
-<form action="" method="POST" id="myForm" enctype="multipart/form-data">
-    @csrf
-    <div class="properties_create_container" style="display: flex; display: flex;
-    flex-direction: clomn; justify-content: space-around; align-items: center; margin:80px">
-        <div>
-            <strong>Type:</strong> <select id="" name="contract">
-                <option value="contract"> --Please choose an option--</option>
-                <option value="CDI">CDI</option>
-                <option value="CDD">CDD</option>
-                <option value="None">None</option>
-            </select>
-            <br>
-                <strong>Income:</strong><input type="int" name="income" placeholder="Income"><br>
-            
-                </div>
-                <strong>Ready ?</strong> <input type="submit" value="Insert">
-                <div>
-                    <a href="/landlordpreference">Go Back</a>
-                    <hr>
-                </div>
+    <h1 class="contract">Create Tenant Preferences for
+        {{ $property->house_number . ' ' . $property->street_name }}</h1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-    </div>
-</form>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success" style="color: green">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-success" style="color: red">
+            {{ session('error') }}
+        </div>
+    @endif
+    <form action="" method="POST" id="myForm" enctype="multipart/form-data">
+        @csrf
+
+        <label for="contract">Contract Type:</label>
+        <select id="" name="contract">
+            <option disabled selected value> --Please choose an option--</option>
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+            <option value="None">None</option>
+        </select>
+        <br>
+        <label for="income">Income Per Month:</label><input type="number" name="income" placeholder="Income"><br>
+
+        <p>Please carefully review your selections before submitting!</p>
+        <input type="submit" value="Submit My Preferences"><br>
+
+        <a href='{{ "/myproperties/$property->user_id" }}'>Return to My Properties</a>
+        <hr>
+
+        </div>
+        </div>
+    </form>
 
 @endsection

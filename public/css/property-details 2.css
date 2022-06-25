@@ -1,0 +1,83 @@
+.property-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    gap: 1rem;
+    min-height: 100vh;
+}
+.property-picture {
+    border-radius: 1rem;
+    height: 15rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.information-header {
+    margin-bottom: 0.5rem;
+}
+.property-info-container { 
+    display:flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+.landlord-preferences {
+    border: 1px solid #388819;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.properties-link {
+    background-color: #388819;
+    cursor: pointer;
+    margin: 2rem 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: 10rem;
+    border-radius: 1.25rem;
+    transition: 200ms;
+
+}
+.properties-link > a {
+    text-decoration: none;
+    color: #fff;
+    align-self: center;
+    
+    
+}
+.properties-link:hover {
+    background-color: #317017;
+    transform: scale(1.01);
+}
+iframe {
+    height: 30rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+    .property-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 150vh;
+    }
+    .property-picture {
+        width: 45%;
+        height: 30%;
+    }
+    .property-description {
+        width: 45%;
+    }
+    .map-container {
+        flex-basis: 100%;
+        margin-bottom: 3rem;
+    }
+    iframe {
+        width: 100%;
+    }
+    .properties-link {
+        align-self: center;
+    }
+}

@@ -1,5 +1,6 @@
 @extends('templates.layoutTemplate')
 <link rel="stylesheet" href="{{ asset('css/updateproperties.css') }}">
+<link rel="stylesheet" href="{{ asset('css/modal-box.css') }}">
 @section('title', 'Insert new property')
 
 @section('content')
@@ -79,8 +80,34 @@
             </div>
         </form>
         <div class="properties-links">
-            <a href="{{ "/myproperties/$property->user_id" }}">Back to Properties</a>
+            <p>Don't Forget to tell us about the tenant you're looking for <button id="modal-btn" class="modal-btn"><i
+                        class="fa-regular fa-circle-question fa-lg"></i></button></p>
+
+
+            <!-- The Modal -->
+            <div id="modal-box" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <div class="modal-text">
+                        <h3>We Require Specific Information Because...</h3>
+                        <p>At MatchHome we are trying to create the best quality matches and save everyone time in the
+                            property rental process.</p>
+                        <p>That means knowing what you're looking for in a tenant so we can find them for you!</p>
+                        <p>We only need to know the minimum salary (per month) and the contract type you're looking for!</p>
+                        <p>Without this information, your property will not appear in the system so please let us know as
+                            soon as you can!</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href='{{ $preference ? "/landlordpreference/update/$property->id" : "/landlordpreference/create/$property->id" }}' class="update-preferences-btn">Update Tenant
+                Preferences</a>
+            <a href="{{ "/myproperties/$property->user_id" }}" class="return-btn">Back to Properties</a>
 
         </div>
     </section>
+    <script src="{{ asset('js/modal-box.js') }}"></script>
 @endsection

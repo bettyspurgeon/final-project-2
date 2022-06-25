@@ -20,11 +20,9 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Properties::JOIN( 'landlord_preferences', 'landlord_preferences.property_id','=','properties.id')->get();
-
+        $properties = Properties::JOIN('landlord_preferences', 'landlord_preferences.property_id', '=', 'properties.id')->get();
+        
         return view('property-views.properties', ['properties' => $properties]);
-
-
     }
 
     /**
@@ -51,7 +49,7 @@ class PropertyController extends Controller
             'price' => 'required|numeric',
             'location' => 'required',
             'date_avaliable' => 'required|date',
-           
+
             'bedrooms' => 'required|integer',
             'bathrooms' => 'required|numeric',
             'parking' => 'required',
@@ -70,7 +68,7 @@ class PropertyController extends Controller
         $longitude = $coordinates->coordinates[0];
         $latitude = $coordinates->coordinates[1];
 
-       
+
 
         $user = User::where('email', session('email'))->first();
         $result->user_id = $user->id;
@@ -83,14 +81,14 @@ class PropertyController extends Controller
         $result->post_code = $request->post_code;
         $result->date_avaliable = $request->date_avaliable;
         $result->bedrooms = (int)$request->bedrooms;
-        $result->bathrooms = (double)$request->bathrooms;
+        $result->bathrooms = (float)$request->bathrooms;
         $result->children = $request->children;
         $result->pets = $request->pets;
         $result->parking = true;
         $result->description = (string)$request->description;
         $result->pictures = $fileName;
         $result->longitude = $longitude;
-        $result->latitude = $latitude; 
+        $result->latitude = $latitude;
 
         $result->save();
 
@@ -109,9 +107,10 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $property = Properties::join('landlord_preferences', 'landlord_preferences.property_id', '=', 'properties.id')->where('properties.id', $id)->first();
-    
-        return view('property-views.properties-details',['property'=> $property]);
+        $property = LandlordPreference::join('properties', 'properties.id', '=' , 'landlord_preferences.property_id')->where('landlord_preferences.id', $id)->first();  
+
+       
+        return view('property-views.properties-details', ['property' => $property]);
     }
 
     /**
@@ -123,9 +122,10 @@ class PropertyController extends Controller
     public function edit($id)
     {
 
-        $properties = Properties::where('id', $id)->get();
-        return view('property-views.update-properties', ['property' => $properties[0]]);
-
+        $properties = Properties::where('id', $id)->first();
+        $preference = LandlordPreference::where('property_id', $id)->first();
+     
+        return view('property-views.update-properties', ['property' => $properties, 'preference' => $preference]);
     }
 
     /**
@@ -153,7 +153,7 @@ class PropertyController extends Controller
 
         // ]);
         $property = Properties::find($id);
-        
+
         $user = User::where('email', session('email'))->first();
         $property->user_id = $user->id;
         $property->type = strtolower($request->type);
@@ -161,43 +161,43 @@ class PropertyController extends Controller
         $property->location = $request->location;
         $property->date_avaliable = $request->date_avaliable;
         $property->bedrooms = (int)$request->bedrooms;
-        $property->bathrooms = (double) $request->bathrooms;
+        $property->bathrooms = (float) $request->bathrooms;
         $property->children = $request->children;
         $property->pets = $request->pets;
         $property->parking = true;
         $property->description = (string)$request->description;
-       
 
-   
 
-        if($request->pictures != ''){        
+
+
+        if ($request->pictures != '') {
             $publicPath = public_path('uploads');
-   
-             //code to remove an old file
-             if($request->pictures != ''  && $request->pictures != null){
+
+            //code to remove an old file
+            if ($request->pictures != ''  && $request->pictures != null) {
                 $file_old = $property->pictures;
                 File::delete($file_old);
                 //   $file_old =  $_POST['pictures'];
-                 
+
                 //   $file_old->delete();
-             }
-   
-             //upload new file
-             $file = $property->pictures = $request->pictures;
-             $fileName = $file->getClientOriginalName();
-             $file->move($publicPath, $fileName);
-   
-             //for update in table
-             $property->update(['pictures' => $fileName]);
+            }
+
+            //upload new file
+            $file = $property->pictures = $request->pictures;
+            $fileName = $file->getClientOriginalName();
+            $file->move($publicPath, $fileName);
+
+            //for update in table
+            $property->update(['pictures' => $fileName]);
         }
-      
+
 
         $result = $property->save();
 
         if ($result) {
             return redirect("/myproperties/update/$id")->with('message', 'Update properties sussessfully!');
         } else {
-           redirect("/myproperties/update/$id")->with('error', 'There is some thing wrong for update properties, try again later !');
+            redirect("/myproperties/update/$id")->with('error', 'There is some thing wrong for update properties, try again later !');
         }
     }
 
@@ -221,28 +221,27 @@ class PropertyController extends Controller
     }
 
     //Return a specific user's properties
-    public function user_properties($id) {
+    public function user_properties($id)
+    {
         $properties = Properties::where('user_id', $id)->get();
-        
+
         return view('landlord-views.user-properties', ['properties' => $properties]);
-        
     }
     //Return homepage properties
-    public function homer_properties() {
+    public function homer_properties()
+    {
         $properties = Properties::WHERE('purpose', 'like', '%rent')
-        ->limit(3)->get();;
+            ->limit(3)->get();;
         //dd($properties); 
-        
+
         return view('UI-views.hrproperties', ['properties' => $properties]);;
-        
     }
-    public function homes_properties() {
+    public function homes_properties()
+    {
         $properties = Properties::WHERE('purpose', 'like', '%sale')
-        ->limit(3)->get();;
+            ->limit(3)->get();;
         //dd($properties); 
-        
+
         return view('UI-views.hsproperties', ['properties' => $properties]);;
-        
     }
-    
 }
