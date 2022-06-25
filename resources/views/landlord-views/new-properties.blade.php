@@ -20,10 +20,10 @@
             <div>
                 <h1 class="contactus">Create new property</h1>
                 <strong>Type:</strong> <select id="" name="type">
-                    <option value="type"> Please choose a type</option>
+                    <option disabled selected value>Please choose a type</option>
                     <option value="apartment">Apartment</option>
                     <option value="house">House</option>
-                    <option value="share_flat">Share flat</option>
+                    <option value="flat share">Flat Share</option>
                 </select>
                 <br>
                 <strong>Price:</strong> <input type="text" name="price" placeholder="Price"><br>
