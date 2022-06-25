@@ -20,7 +20,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        $properties = Properties::JOIN('landlord_preferences', 'landlord_preferences.property_id', '=', 'properties.id')->get();
+        $properties = Properties::all();
         
         return view('property-views.properties', ['properties' => $properties]);
     }
@@ -107,9 +107,9 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $property = LandlordPreference::join('properties', 'properties.id', '=' , 'landlord_preferences.property_id')->where('landlord_preferences.id', $id)->first();  
+        $property = properties::rightjoin('landlord_preferences', "properties.id", '=', 'landlord_preferences.property_id')->where('properties.id', $id)->first();  
 
-       
+   
         return view('property-views.properties-details', ['property' => $property]);
     }
 

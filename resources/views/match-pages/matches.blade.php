@@ -18,12 +18,12 @@
 
                         <p> Date Avaliable: {{ $match->date_avaliable }}</p>
                         <div class="property-links">
-                            <a class="property-link" href="{{ route('properties.details', [$match->id]) }}">Details</a>
+                            <a class="property-link" href="{{ "/properties/$match->id" }}">Details</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
-        <h3>You have {{ count($complete_matches) > 1 ? count($complete_matches) . 'Matches!' : '1 Match!' }}</h3>
+        <h3>You have {{ count($complete_matches) >= 1 ? count($complete_matches) . 'Matches!' : ' 0 Matches - but you can try some new preferences.' }}</h3>
     </section>
 @endsection
