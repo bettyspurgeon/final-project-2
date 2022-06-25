@@ -23,7 +23,8 @@
 
 
 <h2 class="prop-title">These are some of our properties: </h2>
-<div class="display-properties">
+ <div class="display-properties">
+  <h4>RENT</h4>
 
   <div class="rent-properties-list" id="rent-properties-list">
    <h4>RENT</h4> 
@@ -70,6 +71,8 @@
 
   <div class="separator"></div>
 
+  <h4>BUY</h4>
+  <div class="buy-properties-list" id="buy-properties-list">
 
   <div class="buy-properties-list" id="buy-properties-list">
     <H4>BUY</H4>

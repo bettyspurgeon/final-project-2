@@ -109,9 +109,9 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $properties = Properties::find($id);
-        
-        return view('property-views.properties-details',['property'=> $properties]);
+        $property = Properties::join('landlord_preferences', 'landlord_preferences.property_id', '=', 'properties.id')->where('properties.id', $id)->first();
+    
+        return view('property-views.properties-details',['property'=> $property]);
     }
 
     /**
@@ -233,7 +233,7 @@ class PropertyController extends Controller
         ->limit(3)->get();;
         //dd($properties); 
         
-        return view('property-views.hrproperties', ['properties' => $properties]);;
+        return view('UI-views.hrproperties', ['properties' => $properties]);;
         
     }
     public function homes_properties() {
@@ -241,7 +241,7 @@ class PropertyController extends Controller
         ->limit(3)->get();;
         //dd($properties); 
         
-        return view('property-views.hsproperties', ['properties' => $properties]);;
+        return view('UI-views.hsproperties', ['properties' => $properties]);;
         
     }
     

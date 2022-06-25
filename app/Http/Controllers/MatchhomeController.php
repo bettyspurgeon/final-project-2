@@ -31,13 +31,15 @@ class MatchhomeController extends Controller
         foreach ($matched_properties as $matched_property) {
             $property = Properties::find($matched_property->id);
             $renter_preference = UserPreference::where('user_id', $id)->get();
-            if ($property->price <= $renter_preference[0]->price_highest) {
-                if ($property->bedrooms <= $renter_preference[0]->bedrooms &&  $property->bathrooms <= $renter_preference[0]->bathrooms) {
-                    $complete_matches[] = $property;
+            if ($property->purpose == 'rent') {
+                if ($property->price <= $renter_preference[0]->price_highest) {
+                    if ($property->bedrooms <= $renter_preference[0]->bedrooms &&  $property->bathrooms <= $renter_preference[0]->bathrooms) {
+                        $complete_matches[] = $property;
+                    }
                 }
             }
         }
+
         return view('match-pages.matches', ['complete_matches' => $complete_matches]);
     }
-
 }

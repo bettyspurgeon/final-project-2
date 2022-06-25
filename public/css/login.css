@@ -14,7 +14,10 @@
     z-index: 0;
     
 }
-
+.error-container {
+    height: 3rem;
+    padding-left: 2rem;
+} 
 .container {		
 	background: linear-gradient(90deg,rgb(49,112,23), rgb(56,136,25));		
 	position: relative;	
@@ -87,6 +90,7 @@
     border-radius: 0 72px 0 0;
 }
 
+
 .login {
     width: 320px;
     padding: 30px;
@@ -117,7 +121,7 @@
 
 #btn {
     background-color: #fff;
-    font-size: 20px;
+    font-size: 14px;
     margin-top: 30px;
     padding: 16px 20px;
     border-radius: 26px;
