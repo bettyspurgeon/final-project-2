@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Matchhome extends Model
 {
     use HasFactory;
+    public function properties()
+    
 }
