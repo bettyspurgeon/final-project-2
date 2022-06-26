@@ -9,14 +9,10 @@
 
     <div class="search-section">
 
-        <img class="main-logo" src="{{ asset('css/assets/logo-white-green.png') }}" alt="">
-        <div class="rent-buy-btns-container">
-            <button type="button" class="rent-btn" onclick="location.href='/hrproperties'">I want to rent!</button>
-            <button type="button" class="buy-btn" onclick="location.href='/hsproperties'">I want to buy!</button>
-        </div>
+        <img class="main-logo" src="{{ asset('css/assets/logo-match-home-without-get.png') }}" alt="">
         <div class="wrapper">
 
-            <h1>Set preferences. Get matches</h1>
+            <h1>Set preferences. Get matches.</h1>
         </div>
 
     </div>

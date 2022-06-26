@@ -33,31 +33,7 @@
 .title {
     font-size: 3em;
 }
-.rent-buy-btns-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    width: 100vw;
-}
-.rent-btn,
-.buy-btn {
-    width: 150px;
-    height: 50px;
-    border: 1px solid #fff;
-    border-radius: 4%;
-    background-color: rgb(56, 136, 25);
-    color: #fff;
-    margin: 20px;
-}
-.rent-btn:hover,
-.buy-btn:hover {
-    border: 1px solid rgb(56, 136, 25);
-    border-radius: 4%;
-    background-color: #fff;
-    color: rgb(56, 136, 25);
-    font-weight: 600px;
-    cursor: pointer;
-}
+
 .centralize-register-btn {
     display: flex;
     justify-content: center;
@@ -94,12 +70,15 @@
 .wrapper h1 {
     color: rgb(56, 136, 25);
     border-right: 0.15em solid #fff;
+    height: 52px;
     white-space: nowrap;
     margin: 0 auto;
     margin-bottom: 30px;
     padding-right: 00px;
     letter-spacing: 0.15em;
     animation: blink 0.5s step-end infinite alternate;
+    font-family: 'News Cycle', sans-serif;
+    font-style: italic;
 }
 
 /* The typewriter cursor effect */
