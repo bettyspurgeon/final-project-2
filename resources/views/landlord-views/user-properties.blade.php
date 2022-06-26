@@ -27,7 +27,7 @@
             @endforeach
         </div>
         <div class="add-property-prompt">
-            <h3>You have {{ count($properties) > 1 ? count($properties) . ' Properties!' : '1 Properties!' }} properties!
+            <h3>You have {{ count($properties) > 0 ? count($properties) . ' Properties!' : '0 Properties!' }}
                 Would you like to add another?</h3>
             <a class="change-prompt"href="/properties/create">
                 Add New Property
