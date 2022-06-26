@@ -170,7 +170,7 @@ class UserController extends Controller
             });
             $user->session()->flush();
             $user->delete();
-            return redirect("/profile/$user->id")->with('success', 'Your account has been sussessfully deleted');
+            return view('customauth.account-deleted')->with('success', 'Your account has been sussessfully deleted');
 
         } else {
             return redirect("/profile/$user->id")->with('error', 'There was a problem deleting your account. You may try again later or use our contact form for more assistance.');

@@ -19,6 +19,7 @@
                         <p> Date Avaliable: {{ $match->date_avaliable }}</p>
                         <div class="property-links">
                             <a class="property-link" href="{{ "/properties/$match->id" }}">Details</a>
+                            <a href="" class="property-link">I'm Interested</a>
                         </div>
                     </div>
                 </div>
