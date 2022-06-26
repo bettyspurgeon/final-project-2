@@ -1,5 +1,6 @@
 @extends('templates.layoutTemplate')
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+<link rel="stylesheet" href="{{ asset('css/modal-box.css') }}">
 
 @section('title', 'Manage Account')
 
@@ -13,7 +14,7 @@
                         <h1>Manage Account</h1>
                     </div>
                     @if (session('success'))
-                        <div class="alert alert-success" style="color: green">
+                        <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
@@ -39,15 +40,9 @@
                                 <option value="landlord">Landlord</option>
                             </select><br>
                             <p class="change-pass-field"><a class="change-pass"href="/forget-password">Change Password</a>
-                            </p>
+                            </p><input type="submit" id="btn" value="Update Information">
                         </form>
-                        <button type="submit" id="btn">Update Info</button>
-                        
-                        {{-- CAN'T DO THIS OR THE FORM DOES NOT WORK. --}}
-                        {{-- <div class="upload-container">
-                            <p class="upload-text">Upload your contract or proof of employment with salary:</p>
-                            <input class="upload-file-btn"type="file" name="user-documents"value="upload"><br>
-                        </div> --}}
+
                     </div>
                 </div>
                 <div class="screen_background">
@@ -61,6 +56,24 @@
     </section>
 
     <div class="second-menu">
+        <button id="modal-btn" class="modal-btn">Delete My Account!</button>
+        <!-- The Modal -->
+        <div id="modal-box" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content delete-account">
+                <span class="close-btn">&times;</span>
+                <div class="modal-text">
+                    <h3>Hey - Just Checking in to make sure you really want to delete your account!</h3>
+                    <p>If you continue this action, all your account data will be lost! This includes information and any
+                        matches you have!</p>
+                    <div class="delete-act-btns">
+                        <a href="{{ "/deleteaccount/$user->id" }}"><button>Yes! Delete My Account</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
         <div class="manage-btn-container">
             <a href="/preferences/{{ $user->id }}">
@@ -71,5 +84,5 @@
             </a>
         </div>
     </div>
-
+    <script src="{{ asset('js/modal-box.js') }}"></script>
 @endsection

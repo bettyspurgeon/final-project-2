@@ -154,10 +154,11 @@ footer{
     
 }
 .subs-submit-btn:hover{
-    background-color:#317017;
-    color: #fff;
+    background-color:#fff;
+    color: rgb(56, 136, 25);
     border: 1px solid #fff;
     transform: scale(1.01);
+    font-weight: bold;
 }
 .social-media{
     width:33%;
@@ -241,6 +242,9 @@ footer{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .footer-headers {
+        width: 100vw;
     }
 
     .actions{
@@ -338,6 +342,9 @@ footer{
     }
     .navlist li a {
         display: none;
+    }
+    .footer-headers {
+        width: 100vw;
     }
 
   }

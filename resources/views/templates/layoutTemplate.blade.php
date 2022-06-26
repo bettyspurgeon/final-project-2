@@ -97,7 +97,7 @@
                 <h1 class="footer-headers">Subscribe for our newsletter</h1>
                 <form class="form-container"action="">
                     <input class="subs-email"type="text" name="email-subs" placeholder="Email">
-                    <input class="subs-submit-btn"type="submit" name="subsBtn" value=subscribe>
+                    <input class="subs-submit-btn"type="submit" name="subsBtn" value=Subscribe!>
                 </form>
             </div>
 
@@ -117,17 +117,17 @@
 
                 </ul> 
                 
-                <div class="copy" style="background-color: rgba(56, 136, 25,0.9);">
-            <p>&copy; copyright MatchHome 2022</p>
-        </div>
-
-        
+                
+                
             </div>
         </div>
-
+        
         <!--  -->
-
+        
     </footer>
+    <div class="copy">
+        <p>&copy; copyright MatchHome 2022</p>
+    </div>
 
     <script type="text/javascript" src="{{ asset('js/template.js') }}"></script>
     
