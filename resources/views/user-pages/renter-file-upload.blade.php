@@ -1,4 +1,5 @@
 @extends('templates.layoutTemplate')
+<link rel="stylesheet" href="{{ asset('css/file-upload.css') }}">
 
 @section('title', 'Upload Documents')
 
@@ -29,7 +30,7 @@
         </div>
     @endif
 
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form class="form" action="" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="contract-type">Select your contract type:</label>
         <select name="contract_type" id="contract-type">
@@ -39,11 +40,11 @@
             <option value="none">No Contract</option>
         </select><br>
         <label for="income">Provide your monthly income</label>
-        <input type="number" name="income" id="income">
+        <input class="forminput" type="number" name="income" id="income">
         <p>Please Provide a Document that confirms your contract type and Income.</p>
         <input type="file" name="renter_document"><br>
 
-        <input type="submit" name="submitBtn" value="Send the file">
+        <input class="forminput" type="submit" name="submitBtn" value="Send the file">
     </form>
 
 @endsection
