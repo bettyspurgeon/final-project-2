@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\UserPreference;
 use Error;
 use Illuminate\Support\Facades\Hash;
+use Mail;
 
 class UserController extends Controller
 {
@@ -34,9 +35,9 @@ class UserController extends Controller
         if ($validated) {
             $returnedUser =
                 User::where('email', $request->email)->first();
-                if(!$returnedUser) {
-                    return redirect()->back()->withErrors("User could not be found!")->withInput();
-                }
+            if (!$returnedUser) {
+                return redirect()->back()->withErrors("User could not be found!")->withInput();
+            }
 
             if (Hash::check($request->password, $returnedUser->password)) {
                 session(['email' => $request->email]);
@@ -152,6 +153,27 @@ class UserController extends Controller
             return redirect("/preferences/$id")->with('success', 'Updated successfully');
         } else {
             return redirect("/preferences/$id")->with('error', 'Problem inserting. Try later.');
+        }
+    }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+
+        if ($user) {
+            $data = array('name' => $user->name, 'email' => $user->email);
+
+            Mail::send('contact.delete-account-email', $data, function ($message) use ($user) {
+                $message->to($user->email)->subject('MatchHome Account Deleted');
+                $message->from('admin@matchhome.com', 'MatchHome Admin');
+            });
+            $user->session()->flush();
+            $user->delete();
+            return redirect("/profile/$user->id")->with('success', 'Your account has been sussessfully deleted');
+
+        } else {
+            return redirect("/profile/$user->id")->with('error', 'There was a problem deleting your account. You may try again later or use our contact form for more assistance.');
         }
     }
 }

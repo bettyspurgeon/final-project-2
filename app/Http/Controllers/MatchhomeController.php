@@ -8,8 +8,6 @@ use App\Models\UserProfile;
 use App\Models\Properties;
 use App\Models\UserPreference;
 
-
-
 class MatchhomeController extends Controller
 {
 
