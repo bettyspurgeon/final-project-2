@@ -15,6 +15,7 @@ use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\MatchhomeController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\UserProfileController;
+use App\Models\Contact;
 use App\Models\UserProfile;
 
 //Routes return homepage.
@@ -58,8 +59,6 @@ Route::post('/profile/{id}', [UserController::class, 'user_update'])->middleware
 //user preference management route
 Route::get('/preferences/{id}', [UserController::class, 'preferences'])->middleware([EnsureIsLoggedIn::class]);
 Route::post('/preferences/{id}', [UserController::class, 'update_preferences']);
-
-Route::get('/renter-profile/{id}', [UserProfileController::class, 'save']); 
 
 //forgotten password routes
 Route::get('/forget-password', [ForgotPasswordController::class, 'getEmail']);
@@ -132,11 +131,6 @@ Route::get('/propertymatches/{id}', [MatchhomeController::class, 'display_matche
 Route::get('/hrproperties', [PropertyController::class, 'homer_properties']);
 Route::get('/hsproperties', [PropertyController::class, 'homes_properties']);
 
-/*
-
-Show Landlords and Sellers matched buyers/renters on each house
-
-*/
-
-//Show Landlords and Sellers matched buyers/renters on each house
+//express interest in a property and send email to property owner
+Route::get('/interested-{owner_id}-{tenant_id}', [ContactController::class, 'interested_email']);
 

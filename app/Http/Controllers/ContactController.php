@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\User;
 use Mail;
 
 class ContactController extends Controller
@@ -49,5 +50,26 @@ class ContactController extends Controller
         return back()->with('error', 'Could not send email.');
        }
         
+    }
+    public function interested_email($owner_id, $tenant_id) {
+        $tenant = User::find($tenant_id);
+        $owner = User::find($owner_id);
+        $result = Mail::send(
+            'contact.interested-owner',
+            array(
+                'owner_name' => $owner->first_name,
+                'tenant_name' => $tenant->username,
+                'email' => $tenant->email,
+            ),
+            function ($message) use ($owner) {
+                $message->from('admin@matchhome.com', 'MatchHome Admin');
+                $message->to($owner->email);
+            }
+        );
+        if ($result) {
+            return back()->with('success', 'We have sent an email to the property owner! Hopefully it will be a match!');
+        } else {
+            return back()->with('error', 'Could not send email.');
+        }
     }
 }
