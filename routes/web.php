@@ -69,11 +69,11 @@ Route::post('/forget-password', [ForgotPasswordController::class, 'postEmail']);
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'getPassword']);
 Route::post('/reset-password', [ResetPasswordController::class, 'updatePassword']);
 
-
 //User Logout Route
 Route::get('/logout', [UserController::class, 'logout']);
 
-
+//delete user account 
+Route::get('/deleteaccount/{id}', [UserController::class, 'destroy']); 
 /*
 
 Routes for Property actions 

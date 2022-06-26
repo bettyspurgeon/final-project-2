@@ -74,6 +74,7 @@ class PropertyController extends Controller
         $result->user_id = $user->id;
 
         $result->type = strtolower($request->type);
+        $result->purpose = $user->type == 'landlord' ? "rent" : "sale"; 
         $result->price = $request->price;
         $result->location = $request->location;
         $result->house_number = $request->house_number;

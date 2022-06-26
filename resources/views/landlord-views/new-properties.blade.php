@@ -36,9 +36,9 @@
                 <select id="" name="location">
                     
                     <option disabled selected value> Please choose a location</option>
-                    <option value="Balair">Belair</option>
+                    <option value="Belair">Belair</option>
                     <option value="Hollerich">Hollerich</option>
-                    <option value="Gasperich">Gasperich</option>
+                    <option value="Strassen">Strassen</option>
                     <option value="Kirchberg">Kirchberg</option>
                     <option value="Gare">Gare</option>
                 </select><br>
