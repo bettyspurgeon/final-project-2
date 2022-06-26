@@ -39,7 +39,7 @@ class MatchhomeController extends Controller
                 //ensure the pricing aligns with the renter's prices.
                 if ($property->price <= $renter_preference[0]->price_highest && $property->price >= $renter_preference[0]->price_lowest) {
                     //ensure the amount of bedrooms and bathrooms matches or is better
-                    if ($property->bedrooms <= $renter_preference[0]->bedrooms &&  $property->bathrooms <= $renter_preference[0]->bathrooms) {
+                    if ($property->bedrooms >= $renter_preference[0]->bedrooms &&  $property->bathrooms >= $renter_preference[0]->bathrooms) {
                         //ensure the parking, children, and pets categories match - can also be better
                         if (
                             (($property->pets == 1) || ($property->pets == 0 && $renter_preference[0]->pets == 0))
