@@ -1,4 +1,4 @@
-.loginform {
+.preferenceform {
     height: 100vh;
     margin-top: 80px;
     margin-bottom: 70px;
@@ -15,7 +15,7 @@
 }
 
 .error-container {
-    height: 3rem;
+    height: 7rem;
     padding-left: 2rem;
 }
     
@@ -59,7 +59,7 @@
     width: 200px;
     background: rgb(49,112,23);
     top: 420px;
-    right: 50px;
+    right: 0px;
     border-radius: 60px;
 }
     
@@ -76,8 +76,8 @@
     height: 220px;
     width: 220px;
     background: rgb(56,136,25);
-    top: -172px;
-    right: 0px;
+    top: -142px;
+    right: 40px;
     border-radius: 32px;
 }
     
@@ -117,6 +117,14 @@
     transition: .2s; 
 }
 
+.ratios-container {
+    background: none;
+    padding: 15px;
+    padding-left: 24px;
+    width: 100%;
+
+}
+
 #type-opt {     
     width: 90%;
 }
@@ -124,7 +132,6 @@
 #btn {
     background-color: #fff;
     font-size: 14px;
-    margin-top: 30px;
     padding: 16px 20px;
     border-radius: 26px;
     border: 1px solid rgb(56,136,25);
@@ -143,10 +150,3 @@
     color: #fff;
     border: 1px solid #fff;
 }
-
-
-
-
-
-
-

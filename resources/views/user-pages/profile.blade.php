@@ -24,7 +24,7 @@
                             {{ session('error') }}
                         </div>
                     @endif
-                    <div class="screen-content">
+                    <div>
                         <form class="form"action="" method="POST">
                             @csrf
                             <input class="forminput"type="text" name="first_name" value="{{ $user->first_name }}"><br>
