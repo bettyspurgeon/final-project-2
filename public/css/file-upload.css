@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .uploadform {
+=======
+.loginform {
+>>>>>>> main
     height: 100vh;
     margin-top: 80px;
     margin-bottom: 70px;
@@ -14,7 +18,10 @@
         
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 .error-container {
     height: 3rem;
     padding-left: 2rem;
@@ -33,6 +40,7 @@
     position: relative;
     height: 100%;
 }
+<<<<<<< HEAD
 
 /* strong {
     text-align: center;
@@ -47,12 +55,15 @@
     padding: 20px;
 }
 
+=======
+>>>>>>> main
     
 .header {
     align-items: center;
     font-size: larger;
     padding:1.5rem ;
 }
+<<<<<<< HEAD
 
 label {
     width: 240px;
@@ -120,6 +131,9 @@ input[type="file"] {
     border: 1px solid #fff;
 }
 
+=======
+    
+>>>>>>> main
 .screen_background {
     position: absolute;
     top: 0;
@@ -169,4 +183,61 @@ input[type="file"] {
     top: -70px;
     right: 110px;
     border-radius: 0 72px 0 0;
+<<<<<<< HEAD
+=======
+}
+    
+.form {
+    width: 320px;
+    padding: 30px;
+    padding-top: 0px;
+}
+    
+.login_field {
+    padding: 20px 0;
+    position: relative;
+}
+    
+.login_icon {
+    position: absolute;
+    top: 30px;
+    color: rgb(49,112,23);
+}
+    
+.forminput {
+    border: none;
+    border-bottom: 2px solid rgb(49,112,23);
+    background: none;
+    padding: 15px;
+    padding-left: 24px;
+    width: 100%;
+    transition: .2s; 
+}
+
+#type-opt {     
+    width: 90%;
+}
+    
+#btn {
+    background-color: #fff;
+    font-size: 14px;
+    margin-top: 30px;
+    padding: 16px 20px;
+    border-radius: 26px;
+    border: 1px solid rgb(56,136,25);
+    text-transform: uppercase; 
+    font: 700;
+    display: flex;
+    align-items: center;
+    width: 120%;
+    color: rgb(49,112,23);
+    box-shadow: 0 2px 2px rgb(36,104,10);
+    cursor: pointer;
+    transition: 0.2s;
+}
+#btn:hover {
+    background-color: rgb(56,136,25);
+    color: #fff;
+    border: 1px solid #fff;
+>>>>>>> main
 }
