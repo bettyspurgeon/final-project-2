@@ -13,20 +13,62 @@
     justify-content: center;
     align-items: center;
 }
-.display-properties {
+.properties-display {
     display: flex;
     justify-content: space-evenly;
-    text-align: center;
+
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 2rem 0;
     margin: 25px;
-    color: rgb(56, 136, 25);
-    font-weight: 600;
+    gap: 2.5rem;
 }
 .separator {
     width: 1px;
-    height: 100vh;
+    height: 100%;
     background-color: rgb(56, 136, 25);
 }
+.rent-properties-list h2, .buy-properties-list h2{
+    color:rgb(56, 136, 25);
+    text-align: center;
+}
+.rent-properties-list, .buy-properties-list{
+    color:rgb(56, 136, 25);
+}
+
+.rent-props, .buy-props{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #45a049;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.prop-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20rem;
+    width: auto;
+}
+.prop-desc{
+    width: 100%;
+    text-align:center;
+    background-color: rgb(56, 136, 25);
+    color: #fff;
+}
+
+
+
 .main-logo {
+    width: 33%;
+    height: auto;
+}
+.main-logo-2 {
+    display: none;
     width: 33%;
     height: auto;
 }
@@ -66,9 +108,9 @@
     text-align: center;
 }
 
-/* DEMO-SPECIFIC STYLES */
+
 .wrapper h1 {
-    color: rgb(56, 136, 25);
+    color: rgb(129, 204, 99);
     border-right: 0.15em solid #fff;
     height: 52px;
     white-space: nowrap;
@@ -89,11 +131,19 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+    .search-section {
+        height: 50vh;
+    }
     .main-logo {
+        display: none;
+    }
+    .main-logo-2{
+        display:flex;
         width: 50vw;
         height: auto;
     }
-
+    
     .content-form {
         padding: 30px;
         width: 80%;
@@ -108,10 +158,69 @@
         width: 80%;
         margin: 10px;
     }
+    .wrapper h1 {
+        display: none;
+    }
+    .properties-display {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .rent-props, .buy-props{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 50vw;
+        
+    }
+    .prop-desc{
+        width:100%;
+        margin-top:30px;
+    }
+    .prop-img{
+        width:100%;
+        height:auto;
+    }
+    .separator-mobile{
+        width:80vw;
+        height: 1px;
+        margin-top: 50px;
+        margin-bottom:50px;
+        background-color: rgb(56, 136, 25);
+    }
+    .rent-properties-list h2, .buy-properties-list h2{
+        background-color:rgb(56, 136, 25);
+        color:#fff;
+        text-align: center;
+        width:100vw;
+        margin-bottom: 50px;
+    }
+    .rent-properties-list, .buy-properties-list{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:100vw;
+    }
+    .register-to-see-all {
+        width: 80%;
+        margin: 30px;
+    }
+
 }
 
-@media only screen and (min-width: 769px) and(max-width: 996px) {
+@media only screen and (min-width: 769px) and (max-width: 996px) {
+    .search-section {
+        height: 50vh;
+    }
     .main-logo {
+        display: none;
+    }
+    .main-logo-2{
+        display:flex;
         width: 50vw;
         height: auto;
     }
@@ -143,4 +252,56 @@
         width: 80%;
         margin: 10px;
     }
+    .wrapper h1 {
+        display: none;
+    }
+    .properties-display {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .rent-props, .buy-props{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        width: 50vw;
+        
+    }
+    .prop-desc{
+        width:100%;
+        margin-top:30px;
+    }
+    .prop-img{
+        width:100%;
+        height:auto;
+    }
+    .separator-mobile{
+        width:80vw;
+        height: 1px;
+        margin-top: 50px;
+        margin-bottom:50px;
+        background-color: rgb(56, 136, 25);
+    }
+    .rent-properties-list h2, .buy-properties-list h2{
+        background-color:rgb(56, 136, 25);
+        color:#fff;
+        text-align: center;
+        width:100vw;
+        margin-bottom: 50px;
+    }
+    .rent-properties-list, .buy-properties-list{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:100vw;
+    }
+    .register-to-see-all {
+        width: 80%;
+        margin: 30px;
+    }
+
 }
