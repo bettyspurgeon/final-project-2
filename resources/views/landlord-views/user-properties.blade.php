@@ -1,5 +1,6 @@
 @extends('templates.layoutTemplate')
 <link rel="stylesheet" href="{{ asset('css/user-properties.css') }}">
+<link rel="stylesheet" href="{{ asset('css/modal-box.css') }}">
 @section('title', 'Manage Properties')
 
 @section('content')
@@ -19,13 +20,33 @@
                         <div class="property-links">
                             <a href="{{ route('properties.edit', [$property->id]) }}" class="property-link">Edit
                                 Information</a>
-                            <a href="{{ route('properties.delete', [$property->id]) }}" class="property-link">Delete This
-                                Property</a>
+                            <button id="modal-btn" class="modal-btn">Delete This Property</button>
+
+
+                            <!-- The Modal -->
+                            <div id="modal-box" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close-btn">&times;</span>
+                                    <div class="modal-text">
+                                        <h3>Are you sure you want to delete this property?</h3>
+                                        <p>If you delete this property, all information associated with it will be lost.
+                                            This includes any matches!</p>
+                                        <a href="{{ route('properties.delete', [$property->id]) }}" class="">Delete
+                                            This
+                                            Property</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+
         <div class="add-property-prompt">
             <h3>You have {{ count($properties) > 0 ? count($properties) . ' Properties!' : '0 Properties!' }}
                 Would you like to add another?</h3>
@@ -34,4 +55,5 @@
             </a>
         </div>
     </section>
+    <script src="{{ asset('js/modal-box.js') }}"></script>
 @endsection

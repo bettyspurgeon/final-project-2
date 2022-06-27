@@ -85,7 +85,7 @@ class PropertyController extends Controller
         $result->bathrooms = (float)$request->bathrooms;
         $result->children = $request->children;
         $result->pets = $request->pets;
-        $result->parking = true;
+        $result->parking = $request->parking;
         $result->description = (string)$request->description;
         $result->pictures = $fileName;
         $result->longitude = $longitude;
@@ -93,8 +93,9 @@ class PropertyController extends Controller
 
         $result->save();
 
+
         if ($result) {
-            return redirect('properties')->with('message', 'Inserted new properties sussessfully!');
+            return redirect("/landlordpreference/create/$result->id")->with('message', 'Inserted new properties sussessfully!');
         } else {
             return redirect('properties')->with('error', 'There is some thing wrong for inserted new properties, try again later !');
         }
@@ -178,9 +179,7 @@ class PropertyController extends Controller
             if ($request->pictures != ''  && $request->pictures != null) {
                 $file_old = $property->pictures;
                 File::delete($file_old);
-                //   $file_old =  $_POST['pictures'];
-
-                //   $file_old->delete();
+               
             }
 
             //upload new file
@@ -215,9 +214,9 @@ class PropertyController extends Controller
         $properties = Properties::where('id', $id)->delete();
 
         if ($properties) {
-            return redirect('properties')->with('message', 'Delete properties sussessfully!');
+            return back()->with('success', 'Delete properties sussessfully!');
         } else {
-            return redirect('properties')->with('error', 'There is some thing wrong for delete properties, try again later !');
+            return back()->with('error', 'There is some thing wrong for delete properties, try again later !');
         }
     }
 
