@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 .uploadform {
-=======
-.loginform {
->>>>>>> main
     height: 100vh;
     margin-top: 80px;
     margin-bottom: 70px;
@@ -18,10 +15,6 @@
         
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 .error-container {
     height: 3rem;
     padding-left: 2rem;
@@ -40,11 +33,7 @@
     position: relative;
     height: 100%;
 }
-<<<<<<< HEAD
 
-/* strong {
-    text-align: center;
-} */
 
 .p-info {
     text-align: justify;
@@ -54,16 +43,12 @@
 .text {
     padding: 20px;
 }
-
-=======
->>>>>>> main
     
 .header {
     align-items: center;
     font-size: larger;
     padding:1.5rem ;
 }
-<<<<<<< HEAD
 
 label {
     width: 240px;
@@ -104,9 +89,6 @@ input[type="file"] {
     transition: .2s; 
 }
 
-/* #type-opt {     
-    width: 90%;
-} */
     
 #btn {
     background-color: #fff;
@@ -131,9 +113,6 @@ input[type="file"] {
     border: 1px solid #fff;
 }
 
-=======
-    
->>>>>>> main
 .screen_background {
     position: absolute;
     top: 0;
@@ -183,8 +162,6 @@ input[type="file"] {
     top: -70px;
     right: 110px;
     border-radius: 0 72px 0 0;
-<<<<<<< HEAD
-=======
 }
     
 .form {
@@ -239,5 +216,4 @@ input[type="file"] {
     background-color: rgb(56,136,25);
     color: #fff;
     border: 1px solid #fff;
->>>>>>> main
 }
