@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -68,10 +70,25 @@
 
     <div class="hidden-menu">
         <ul class="menu-box" id="menu-box">
-            <li><a href="/aboutus">ABOUT US</a></li>
-            <li><a href="/contact">CONTACT</a></li>
-            <li><a href="/login">LOGIN</a></li>
-            <li><a href="/register">REGISTER</a></li>
+            @if (session()->has('email'))
+                <li>
+                    <a href="/contact">Help</a>
+                </li>
+                <li>
+                    <a href="/dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/logout">Logout</a>
+
+                </li>
+            @else
+                <li><a href="/aboutus">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                <li><a href="/register">Register</a></li>
+            @endif
         </ul>
     </div>
 
@@ -115,22 +132,22 @@
                                 src="{{ asset('css/assets/instagram-icon-white.png') }}" alt="Instagram icon" /></a>
                     </li>
 
-                </ul> 
-                
-                
-                
+                </ul>
+
+
+
             </div>
         </div>
-        
+
         <!--  -->
-        
+
     </footer>
     <div class="copy">
         <p>&copy; copyright MatchHome 2022</p>
     </div>
 
     <script type="text/javascript" src="{{ asset('js/template.js') }}"></script>
-    
+
 </body>
 
 </html>
