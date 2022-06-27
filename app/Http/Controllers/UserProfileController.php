@@ -43,7 +43,7 @@ class UserProfileController extends Controller
             $newProfile->contract = $request->contract_type;
             $newProfile->save();
             if ($newProfile) {
-                return redirect("/user-profile/$id")->with('message', 'Updated your profile information Successfully!!');
+                return redirect("/user-profile/$id")->with('success', 'Updated your profile information Successfully!!');
             } else {
                 return redirect("/user-profile/$id")->with('error', 'There was a problem updating your profile information.');
             }

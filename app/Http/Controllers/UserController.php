@@ -83,8 +83,11 @@ class UserController extends Controller
         $newUser->save();
 
         session(['email' => $request->email]);
-
-        return redirect('/dashboard')->with('success', 'Registered successfully');
+        if ($newUser->type == 'renter') {
+            return redirect("/user-profile/$newUser->id");
+        } else {
+            return redirect('/dashboard')->with('success', 'Registered successfully');
+        }
     }
     //functions for getting and update a single user's information
     public function get_user_info(Request $request, $id)
@@ -101,7 +104,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->username = $request->username;
         $user->type = $request->type;
-       
+
         $result = $user->save();
 
         if ($result) {
@@ -171,7 +174,6 @@ class UserController extends Controller
             $user->session()->flush();
             $user->delete();
             return redirect("/profile/$user->id")->with('success', 'Your account has been sussessfully deleted');
-
         } else {
             return redirect("/profile/$user->id")->with('error', 'There was a problem deleting your account. You may try again later or use our contact form for more assistance.');
         }
