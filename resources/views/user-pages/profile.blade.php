@@ -6,53 +6,12 @@
 
 @section('content')
 
-<<<<<<< Updated upstream
-    <section class="contactform">
-        <div class="main-content">
-            <div class="container">
-                <div class="screen_content">
-                    <div class="header">
-                        <h1>Manage Account</h1>
-                    </div>
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-
-                    @if (session('error'))
-                        <div class="alert alert-success" style="color: red">
-                            {{ session('error') }}
-                        </div>
-                    @endif
-                    <div>
-                        <form class="form"action="" method="POST">
-                            @csrf
-                            <input class="forminput"type="text" name="first_name" value="{{ $user->first_name }}"><br>
-                            <input class="forminput"type="text" name="last_name" value="{{ $user->last_name }}"><br>
-                            <input class="forminput"type="email" name="email" value="{{ $user->email }}">
-                            <input class="forminput"type="text" name="username" value="{{ $user->username }}"><br>
-
-                            <select class="forminput" name="type" id="">
-                                <option selected value={{ $user->type }}> {{ $user->type }} </option>
-                                <option value="seller">Seller</option>
-                                <option value="buyer">Buyer</option>
-                                <option value="renter">Renter</option>
-                                <option value="landlord">Landlord</option>
-                            </select><br>
-                            <p class="change-pass-field"><a class="change-pass"href="/forget-password">Change Password</a>
-                            </p><input type="submit" id="btn" value="Update Information">
-                        </form>
-
-                    </div>
-=======
 <section class="contactform">
     <div class="main-content">
         <div class="container">
             <div class="screen_content">
                 <div class="header">
                     <h1>Manage Account</h1>
->>>>>>> Stashed changes
                 </div>
                 @if (session('success'))
                 <div class="alert alert-success">
@@ -114,9 +73,20 @@
                 </div>
             </div>
         </div>
+        @if ($user->type == 'renter')
+            <div class="manage-btn-container">
 
+                <a href="/preferences/{{ $user->id }}">
+                    <button class="manage-btn">Click to Manage Preferences</button>
+                </a>
+                <a href="/user-profile/{{ $user->id }}">
+                    <button class="manage-btn">Click to Manage My Documents and Information</button>
+                </a>
+
+            </div>
+        @endif
     </div>
-    <div class="manage-btn-container">
+    <!-- <div class="manage-btn-container">
 
 
 
@@ -132,6 +102,6 @@
 
     </div>
 
-</div>
+</div> -->
 <script src="{{asset('js/modal-box.js')}}"></script>
 @endsection
