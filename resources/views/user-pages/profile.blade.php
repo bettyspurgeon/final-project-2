@@ -74,15 +74,18 @@
             </div>
 
         </div>
+        @if ($user->type == 'renter')
+            <div class="manage-btn-container">
 
-        <div class="manage-btn-container">
-            <a href="/preferences/{{ $user->id }}">
-                <button class="manage-btn">Click to Manage Preferences</button>
-            </a>
-            <a href="/user-profile/{{ $user->id }}">
-                <button class="manage-btn">Click to Manage My Documents and Information</button>
-            </a>
-        </div>
+                <a href="/preferences/{{ $user->id }}">
+                    <button class="manage-btn">Click to Manage Preferences</button>
+                </a>
+                <a href="/user-profile/{{ $user->id }}">
+                    <button class="manage-btn">Click to Manage My Documents and Information</button>
+                </a>
+
+            </div>
+        @endif
     </div>
     <script src="{{ asset('js/modal-box.js') }}"></script>
 @endsection
