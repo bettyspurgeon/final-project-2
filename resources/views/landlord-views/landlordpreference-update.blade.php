@@ -1,8 +1,10 @@
 @extends('templates.layoutTemplate')
+<link rel="stylesheet" href="{{ asset('css/landlord-update-preferences.css') }}">
 
 @section('title', 'Insert new landlordpreference')
 
 @section('content')
+<div class="properties_create_container">
     <h1 class="contract">Update Tenant Preference For {{ $property->house_number . ' ' . $property->street_name }}</h1>
     <form action="" method="post" id="myForm" enctype="multipart/form-data">
         @csrf
@@ -26,7 +28,6 @@
                 {{ session('error') }}
             </div>
         @endif
-        <div class="properties_create_container">
             <div>
                 <strong>Type:</strong> <select id="" name="contract">
                     <option value="{{ $landlordpreference->contract }}"> {{ $landlordpreference->contract }}</option>
@@ -42,7 +43,7 @@
             <strong>Please Review your selections carefully before submitting!</strong><br>
             <input type="submit" value="Enter Selections">
             <div>
-                <a href="/landlordpreference">Go Back</a>
+                <a class = "go-back-btn" href="/myproperties/update/{{ $landlordpreference->user_id }}">Go Back</a>
                 <hr>
             </div>
         </div>
