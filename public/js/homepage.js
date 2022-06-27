@@ -16,10 +16,11 @@
 
 
 
+const h1 = document.querySelector('h1');
 
 console.clear();
 function typingEffect(element,speed){
-  let text=element.innerHTML;
+  let text=element.getAttribute('data-text');
   element.innerHTML="";
   let i=0;
   let timer=setInterval(function(){
@@ -28,20 +29,16 @@ function typingEffect(element,speed){
       i++;
     }else{
       clearInterval(timer);
+      setTimeout(function(){typingEffect(h1, 200)}, 2000)
 
     }
   },speed)
   
 }
 
-// typingEffect(element, speed);
 
 
-
-
-
-const h1 = document.querySelector('h1');
-typingEffect(h1,200);
+typingEffect(h1, 200);
 
 
 

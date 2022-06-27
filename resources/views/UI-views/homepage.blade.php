@@ -12,7 +12,7 @@
         <img class="main-logo" src="{{ asset('css/assets/logo-match-home-without-get.png') }}" alt="">
         <img class="main-logo-2" src="{{ asset('css/assets/logo-white-green.png') }}" alt="">
         <div class="wrapper">
-            <h1>Set preferences. Get matches.</h1>
+            <h1 data-text="Set preferences. Get matches."></h1>
         </div>
 
     </div>
