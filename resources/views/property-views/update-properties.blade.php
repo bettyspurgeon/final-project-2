@@ -105,7 +105,7 @@
 
             <a href='{{ $preference ? "/landlordpreference/update/$property->id" : "/landlordpreference/create/$property->id" }}' class="update-preferences-btn">Update Tenant
                 Preferences</a>
-            <a href="{{ "/myproperties/$property->user_id" }}" class="return-btn">Back to Properties</a>
+            <a href="{{ '/myproperties/$property->user_id' }}" class="return-btn">Back to Properties</a>
 
         </div>
     </section>

@@ -234,15 +234,17 @@ class PropertyController extends Controller
         $properties = Properties::WHERE('purpose', 'like', '%rent')
             ->limit(3)->get();;
         //dd($properties); 
-
-        return view('UI-views.hrproperties', ['properties' => $properties]);;
+        
+        return view('property-views.hrproperties', ['properties' => $properties]);;
+        
     }
     public function homes_properties()
     {
         $properties = Properties::WHERE('purpose', 'like', '%sale')
             ->limit(3)->get();;
         //dd($properties); 
-
-        return view('UI-views.hsproperties', ['properties' => $properties]);;
+        
+        return view('property-views.hsproperties', ['properties' => $properties]);;
+        
     }
 }

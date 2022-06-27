@@ -77,7 +77,7 @@
 
 
     <div class="centralize-register-btn">
-        <button onclick="goToRegisterPage()" class="register-to-see-all" id="register-to-see-all">
+        <button type="button" onclick="location.href='/properties'"  class="register-to-see-all" id="register-to-see-all">
             Register to see all of them!
         </button>
     </div>

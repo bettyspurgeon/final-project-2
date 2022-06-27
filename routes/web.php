@@ -111,6 +111,7 @@ Route::get('/user-profile/{id}', [UserProfileController::class, 'index']);
 Route::post('/user-profile/{id}', [UserProfileController::class, 'upload_user_file']);
 
 
+
 //Create a New Landlord Preference
 Route::get('/landlordpreference/create/{property_id}', [LandlordController::class, 'create'])->middleware([EnsureIsLoggedIn::class]);
 Route::post('/landlordpreference/create/{property_id}', [LandlordController::class, 'store'])->middleware(EnsureIsLoggedIn::class);

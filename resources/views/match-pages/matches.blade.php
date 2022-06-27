@@ -18,12 +18,12 @@
         <div class="properties-container">
             @foreach ($complete_matches as $match)
                 <div class="property-card">
-                    <div class="property-image" style="background-image: url('{{ asset("uploads/$match->pictures") }}')">
+                    <div class="property-image" style="background-image: url('uploads/{{ $match->pictures }}')">
                     </div>
                     <div class="property-description">
                         <p>Type: {{ ucfirst($match->type) }}</p>
                         <p> Price:
-                            {{ $match->purpose == 'rent' ? $match->price . '€/Per Month' : $match->price . '€' }}</p>
+                            {{ $match->purpose == 'For rent' ? $match->price . '€/Per Month' : $match->price . '€' }}</p>
 
                         <p>Location: {{ $match->location }}</p>
 

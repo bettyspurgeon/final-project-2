@@ -4,11 +4,11 @@
 
 @section('content')
 
-    <div class="property-container" style="">
+    <div class="property-container" >
 
-        <div class="property-picture" style="background-image: url({{ asset("uploads/$property->pictures") }})">
+        <div class="property-picture" style="background-image: url('/uploads/{{ $property->pictures }}')">
 
-            {{-- <img style="" src="{{ asset('uploads/' . $property->pictures) }}" alt=""></img><br> --}}
+            {{-- <img  src="{{ asset('/uploads/' . $property->pictures) }}" alt=""></img><br> --}}
         </div>
 
         <div class="property-description">
