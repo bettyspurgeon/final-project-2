@@ -51,7 +51,7 @@
             <h2>BUY</h2>
             <div class="buy-props">
                 <div>
-                    <img class = "prop-img" src="{{ asset('css/assets/house-1.jpg') }}" alt="">
+                    <img class="prop-img" src="{{ asset('css/assets/house-1.jpg') }}" alt="">
                 </div>
 
                 <div class="prop-desc">
@@ -61,9 +61,9 @@
 
             <div class="separator-mobile"></div>
 
-            <div class = "buy-props">
+            <div class="buy-props">
                 <div>
-                    <img class = "prop-img" src="{{ asset('uploads/house1.jpeg') }}" alt="">
+                    <img class="prop-img" src="{{ asset('uploads/house1.jpeg') }}" alt="">
                 </div>
 
                 <div class="prop-desc">
@@ -77,9 +77,12 @@
 
 
     <div class="centralize-register-btn">
-        <button onclick="goToRegisterPage()" class="register-to-see-all" id="register-to-see-all">
-            Register to see all of them!
-        </button>
+
+        <a href="{{ session('email') ? '/properties' : '/register' }}"><button onclick="goToRegisterPage()"
+                class="register-to-see-all" id="register-to-see-all">
+                Register to see all of them!
+            </button></a>
+
     </div>
     <script type="text/javascript" src="{{ asset('js/homepage.js') }}"></script>
 
